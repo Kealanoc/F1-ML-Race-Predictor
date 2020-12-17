@@ -87,7 +87,7 @@ This can paint a daunting and overwhelming picture for new fans discovering the 
 
 Upon accessing our web application, users will have access to pages and profiles of each driver, team and track in the 2020 season, featuring the most important information and statistics on the current performance and history of each driver and team. Users will also be able to see graphs visualising data we've gathered in a way that is easy to understand and approach but also informative. One example of this would be a graph showing the correlation between a driver's age and their performance or the psychological impact racing in your home country may have. The model will also update itself with new data in real time when new information becomes available after each race and qualifying session in order to predict the upcoming race with the most recent and relevant data.
 
-Users will also be able to access the results of our primary feature and goal, our predictive machine learning model. Our aim is to allow users to select the each race they wish to see the prediction for and be presented with graphs they can interact with showing the predicted outcome of the race and the chances of that prediction. The users will also be able to select a specific driver and see the chances of them finishing in each position.
+Users will also be able to access the results of our primary feature and goal, our predictive machine learning model. Our aim is to allow users to select each race they wish to see the prediction for and be presented with graphs they can interact with showing the predicted outcome of the race and the chances of that prediction. The users will also be able to select a specific driver and see the chances of them finishing in each position.
 Accompanying this will be a breakdown and explanation of how the model works in order to help users understand how we came to these conclusions and what data was used to help make the prediction, this will be done with the aim of maintaining transparency with our users and to ensure that the users can trust the information is built on a solid foundation and backed up by real data.
 
 
@@ -115,7 +115,7 @@ The primary goal of this project is not to make money however that does not mean
 - **Web Scraper** : An API or tool used to extract information from the HTML of a website.
 - **Regression** : A statistical method that is used to determine the strenght of the relationship between one varibale and a series of other variables.
 - **Machine Learning:** : Machine learning is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention.
-- **CSV Data** : CSV is a file format used to store large ammounts of tabular data, often used to store data for spreadsheets.
+- **CSV Data** : CSV is a file format used to store large amounts of tabular data, often used to store data for spreadsheets.
 - **Precision Scoring** : A fucntion used to determine the ratio of correctly predicted positive observations to the total predicted positive observations. Used in training and testing a predictive model.
 
 # **2. General Description**
@@ -177,7 +177,7 @@ The User will also be able to interact with the other dashboards that display th
 - **Internet Constraint:** Internet will be required by the user to view and use the web app.
 - **Hardware Constraint:** Hardware constraints may prove to be larger than expected, due to the unknown algorithm complexity of our machine learning model and data processing, the hardware we are using for the development of this project may struggle to compute the data we have gathered in a timely manner.
 - **API Rate Limit Constraint:** API rate limit constraints may cause issues. Due to the sheer quantity of data we aim to gather, we will have to put measures in place to prevent excessive amounts of data requests which may cause us to be locked out from our APIs due of rate limits.
-- **Remote Developmetn Constraint:** Remote development presents a number of constraints for us, as we cannot physically interact with each other, or our supervisor. While we have measures in place to streamline the process, distance will always cause issues while dealing with problems and may cause development delays. 
+- **Remote Development Constraint:** Remote development presents a number of constraints for us, as we cannot physically interact with each other, or our supervisor. While we have measures in place to streamline the process, distance will always cause issues while dealing with problems and may cause development delays. 
 
 # **3. Functional Requirements**
 
@@ -227,7 +227,7 @@ The User will also be able to interact with the other dashboards that display th
 
 * Criticality
 
-  This function will be crucial in training and assessing the precision of our algorithm and prediction and without it there is no way to teach the model which factors and variables to value higher than others and the predictions wont make sense.
+  This function will be crucial in training and assessing the precision of our algorithm and prediction and without it there is no way to teach the model which factors and variables to value higher than others and the predictions won't make sense.
 
 * Technical issues
 
@@ -271,8 +271,7 @@ The User will also be able to interact with the other dashboards that display th
 
 * Dependencies with other requirements
 
-  Dependencies with other requirements This function requires the user to have navigated to a dashboard with graphs and tables to be visualised. It also relies on INSERT HERE as well for us to show the graphs.
-
+  Dependencies with other requirements This function requires the user to have navigated to a dashboard with graphs and tables to be visualised. 
 
 ## **3.6 Dashboard Selection**
 
@@ -372,7 +371,7 @@ The User will also be able to interact with the other dashboards that display th
 
 * Criticality
 
-  This function would be critical for users as understanding the streghts and weakness' of teams is just as important as understanding the drivers.
+  This function would be critical for users as understanding the strengths and weakness' of teams is just as important as understanding the drivers.
 
 * Technical issues
 
@@ -386,7 +385,7 @@ The User will also be able to interact with the other dashboards that display th
 - ![System Architecture Diagram](Images/SystemArch.png)
 
 
-  The diagram above demonstrates the current plan for the system architecture. The System is comprised of a Flask based back end that will host our Webapp. The system also interacts with a 3rd party open source API called ERGAST, this is used to gather all of our information and data and store it in CSV files. We will also be useing webscrapers to fill in any gaps in our data and to gather hsitorical weather data for previous f1 races which the ERGAST API does not provide. All of this information will be stored in CSV Format and will be procesed into DataFrames which will be analysised and used by our Machine Learning Model. On the clinet side the user will be able to view and interact with dashboards that will display statistics and visualisations of data gathered by the ERGAST API as well as the results of our Predicitons.
+  The diagram above demonstrates the current plan for the system architecture. The System is comprised of a Flask based back end that will host our Webapp. The system also interacts with a 3rd party open source API called ERGAST, this is used to gather all of our information and data and store it in CSV files. We will also be useing webscrapers to fill in any gaps in our data and to gather hsitorical weather data for previous f1 races which the ERGAST API does not provide. All of this information will be stored in CSV Format and will be procesed into DataFrames which will be analysised and used by our Machine Learning Model. On the client side the user will be able to view and interact with dashboards that will display statistics and visualisations of data gathered by the ERGAST API as well as the results of our Predicitons.
 
 
 # **5. High-Level Design**
@@ -414,3 +413,8 @@ The User will also be able to interact with the other dashboards that display th
 - ![Gantt Chart](Images/GanttChart.png)
 
 # **7. Appendices**
+  [http://ergast.com/mrd/](http://ergast.com/mrd/)
+  [https://flask.palletsprojects.com/en/1.1.x/](https://flask.palletsprojects.com/en/1.1.x/)
+  [https://www.formula1.com/](https://www.formula1.com/)
+  [https://www.fia.com/](https://www.fia.com/)
+  [https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
