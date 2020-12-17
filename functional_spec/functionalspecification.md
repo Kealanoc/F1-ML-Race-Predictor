@@ -66,7 +66,7 @@
 
  - [6.1 Task List](#61-task-list)
 
- - [6.2 Gantt Diagram](#62-gantt-diagram)
+ - [6.2 Gantt Chart](#62-gantt-chart)
 
 [**7. Appendices**](#7-appendices)
 
@@ -383,7 +383,7 @@ The User will also be able to interact with the other dashboards that display th
   Statistics and Data will be taken from our CSV data used by the prediciton model.
 
 ## **4. System Architecture**
-- ![System Architecture Diagram](Images/SystemArch.jpg)
+- ![System Architecture Diagram](Images/SystemArch.png)
 
 
   The diagram above demonstrates the current plan for the system architecture. The System is comprised of a Flask based back end that will host our Webapp. The system also interacts with a 3rd party open source API called ERGAST, this is used to gather all of our information and data and store it in CSV files. We will also be useing webscrapers to fill in any gaps in our data and to gather hsitorical weather data for previous f1 races which the ERGAST API does not provide. All of this information will be stored in CSV Format and will be procesed into DataFrames which will be analysised and used by our Machine Learning Model. On the clinet side the user will be able to view and interact with dashboards that will display statistics and visualisations of data gathered by the ERGAST API as well as the results of our Predicitons.
@@ -393,7 +393,7 @@ The User will also be able to interact with the other dashboards that display th
 
 ## 5.1 Data Flow Diagram
 
-- ![Context Diagram](Images/DataFlow.png)
+- ![Data Flow Diagram](Images/DataFlow.png)
 
 ## 5.2 Logical Diagram
 
@@ -409,8 +409,8 @@ The User will also be able to interact with the other dashboards that display th
 
 - ![Task list](Images/TaskList.png)
 
-## 6.2 Gantt Diagram
+## 6.2 Gantt Chart
 
-- ![Gantt Diagram](Images/Gantt.png)
+- ![Gantt Chart](Images/GanttChart.png)
 
 # **7. Appendices**
