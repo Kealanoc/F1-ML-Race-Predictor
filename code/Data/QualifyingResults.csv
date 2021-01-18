@@ -14558,3 +14558,342 @@ Pos,No,Driver,Car,Time,season,round
 18,63,George  Russell  RUS,Williams Mercedes,1:38.717,2019,21
 19,88,Robert  Kubica  KUB,Williams Mercedes,1:39.236,2019,21
 20,77,Valtteri  Bottas  BOT,Mercedes,1:34.973,2019,21
+1,77,Valtteri  Bottas  BOT,Mercedes,1:02.939,2020,1
+2,33,Max  Verstappen  VER,Red Bull Racing Honda,1:03.477,2020,1
+3,4,Lando  Norris  NOR,McLaren Renault,1:03.626,2020,1
+4,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:03.868,2020,1
+5,44,Lewis  Hamilton  HAM,Mercedes,1:02.951,2020,1
+6,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:03.868,2020,1
+7,16,Charles  Leclerc  LEC,Ferrari,1:03.923,2020,1
+8,55,Carlos  Sainz  SAI,McLaren Renault,1:03.971,2020,1
+9,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:04.029,2020,1
+10,3,Daniel  Ricciardo  RIC,Renault,1:04.239,2020,1
+11,5,Sebastian  Vettel  VET,Ferrari,1:04.206,2020,1
+12,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:04.305,2020,1
+13,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:04.431,2020,1
+14,31,Esteban  Ocon  OCO,Renault,1:04.643,2020,1
+15,8,Romain  Grosjean  GRO,Haas Ferrari,1:04.691,2020,1
+16,20,Kevin  Magnussen  MAG,Haas Ferrari,1:05.164,2020,1
+17,63,George  Russell  RUS,Williams Mercedes,1:05.167,2020,1
+18,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:05.175,2020,1
+19,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:05.224,2020,1
+20,6,Nicholas  Latifi  LAT,Williams Mercedes,1:05.757,2020,1
+1,44,Lewis  Hamilton  HAM,Mercedes,1:19.273,2020,2
+2,33,Max  Verstappen  VER,Red Bull Racing Honda,1:20.489,2020,2
+3,55,Carlos  Sainz  SAI,McLaren Renault,1:20.671,2020,2
+4,77,Valtteri  Bottas  BOT,Mercedes,1:20.701,2020,2
+5,31,Esteban  Ocon  OCO,Renault,1:20.922,2020,2
+6,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:21.011,2020,2
+7,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:21.028,2020,2
+8,3,Daniel  Ricciardo  RIC,Renault,1:21.192,2020,2
+9,4,Lando  Norris  NOR,McLaren Renault,1:20.925,2020,2
+10,5,Sebastian  Vettel  VET,Ferrari,1:21.651,2020,2
+11,63,George  Russell  RUS,Williams Mercedes,1:19.636,2020,2
+12,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:19.645,2020,2
+13,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:19.717,2020,2
+14,16,Charles  Leclerc  LEC,Ferrari,1:19.628,2020,2
+15,20,Kevin  Magnussen  MAG,Haas Ferrari,1:20.211,2020,2
+16,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:21.372,2020,2
+17,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:21.607,2020,2
+18,6,Nicholas  Latifi  LAT,Williams Mercedes,1:21.759,2020,2
+19,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:21.831,2020,2
+1,44,Lewis  Hamilton  HAM,Mercedes,1:13.447,2020,3
+2,77,Valtteri  Bottas  BOT,Mercedes,1:13.554,2020,3
+3,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:14.377,2020,3
+4,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:14.545,2020,3
+5,5,Sebastian  Vettel  VET,Ferrari,1:14.774,2020,3
+6,16,Charles  Leclerc  LEC,Ferrari,1:14.817,2020,3
+7,33,Max  Verstappen  VER,Red Bull Racing Honda,1:14.849,2020,3
+8,4,Lando  Norris  NOR,McLaren Renault,1:14.966,2020,3
+9,55,Carlos  Sainz  SAI,McLaren Renault,1:15.027,2020,3
+10,10,Pierre  Gasly  GAS,AlphaTauri Honda,,2020,3
+11,3,Daniel  Ricciardo  RIC,Renault,1:15.661,2020,3
+12,63,George  Russell  RUS,Williams Mercedes,1:15.698,2020,3
+13,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:15.715,2020,3
+14,31,Esteban  Ocon  OCO,Renault,1:15.742,2020,3
+15,6,Nicholas  Latifi  LAT,Williams Mercedes,1:16.544,2020,3
+16,20,Kevin  Magnussen  MAG,Haas Ferrari,1:16.152,2020,3
+17,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:16.204,2020,3
+18,8,Romain  Grosjean  GRO,Haas Ferrari,1:16.407,2020,3
+19,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:16.506,2020,3
+20,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:16.614,2020,3
+1,44,Lewis  Hamilton  HAM,Mercedes,1:24.303,2020,4
+2,77,Valtteri  Bottas  BOT,Mercedes,1:24.616,2020,4
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:25.325,2020,4
+4,16,Charles  Leclerc  LEC,Ferrari,1:25.427,2020,4
+5,4,Lando  Norris  NOR,McLaren Renault,1:25.782,2020,4
+6,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:25.839,2020,4
+7,55,Carlos  Sainz  SAI,McLaren Renault,1:25.965,2020,4
+8,3,Daniel  Ricciardo  RIC,Renault,1:26.009,2020,4
+9,31,Esteban  Ocon  OCO,Renault,1:26.209,2020,4
+10,5,Sebastian  Vettel  VET,Ferrari,1:26.339,2020,4
+11,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:26.501,2020,4
+12,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:26.545,2020,4
+13,27,Nico  Hulkenberg  HUL,Racing Point BWT Mercedes,1:26.566,2020,4
+14,20,Kevin  Magnussen  MAG,Haas Ferrari,1:27.158,2020,4
+15,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:27.164,2020,4
+16,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:27.366,2020,4
+17,8,Romain  Grosjean  GRO,Haas Ferrari,1:27.643,2020,4
+18,6,Nicholas  Latifi  LAT,Williams Mercedes,1:27.705,2020,4
+19,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:26.744,2020,4
+20,63,George  Russell  RUS,Williams Mercedes,1:27.092,2020,4
+1,77,Valtteri  Bottas  BOT,Mercedes,1:25.154,2020,5
+2,44,Lewis  Hamilton  HAM,Mercedes,1:25.217,2020,5
+3,27,Nico  Hulkenberg  HUL,Racing Point BWT Mercedes,1:26.082,2020,5
+4,33,Max  Verstappen  VER,Red Bull Racing Honda,1:26.176,2020,5
+5,3,Daniel  Ricciardo  RIC,Renault,1:26.297,2020,5
+6,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:26.428,2020,5
+7,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:26.534,2020,5
+8,16,Charles  Leclerc  LEC,Ferrari,1:26.614,2020,5
+9,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:26.669,2020,5
+10,4,Lando  Norris  NOR,McLaren Renault,1:26.778,2020,5
+11,5,Sebastian  Vettel  VET,Ferrari,1:27.078,2020,5
+12,55,Carlos  Sainz  SAI,McLaren Renault,1:27.083,2020,5
+13,8,Romain  Grosjean  GRO,Haas Ferrari,1:27.254,2020,5
+14,31,Esteban  Ocon  OCO,Renault,1:27.011,2020,5
+15,63,George  Russell  RUS,Williams Mercedes,1:27.455,2020,5
+16,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:27.882,2020,5
+17,20,Kevin  Magnussen  MAG,Haas Ferrari,1:28.236,2020,5
+18,6,Nicholas  Latifi  LAT,Williams Mercedes,1:28.430,2020,5
+19,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:28.433,2020,5
+20,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:28.493,2020,5
+1,44,Lewis  Hamilton  HAM,Mercedes,1:15.584,2020,6
+2,77,Valtteri  Bottas  BOT,Mercedes,1:15.643,2020,6
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:16.292,2020,6
+4,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:16.482,2020,6
+5,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:16.589,2020,6
+6,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:17.029,2020,6
+7,55,Carlos  Sainz  SAI,McLaren Renault,1:17.044,2020,6
+8,4,Lando  Norris  NOR,McLaren Renault,1:17.084,2020,6
+9,16,Charles  Leclerc  LEC,Ferrari,1:17.087,2020,6
+10,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:17.136,2020,6
+11,5,Sebastian  Vettel  VET,Ferrari,1:17.168,2020,6
+12,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:17.192,2020,6
+13,3,Daniel  Ricciardo  RIC,Renault,1:17.198,2020,6
+14,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:17.386,2020,6
+15,31,Esteban  Ocon  OCO,Renault,1:17.567,2020,6
+16,20,Kevin  Magnussen  MAG,Haas Ferrari,1:17.908,2020,6
+17,8,Romain  Grosjean  GRO,Haas Ferrari,1:18.089,2020,6
+18,63,George  Russell  RUS,Williams Mercedes,1:18.099,2020,6
+19,6,Nicholas  Latifi  LAT,Williams Mercedes,1:18.532,2020,6
+20,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:18.697,2020,6
+1,44,Lewis  Hamilton  HAM,Mercedes,1:41.252,2020,7
+2,77,Valtteri  Bottas  BOT,Mercedes,1:41.763,2020,7
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:41.778,2020,7
+4,3,Daniel  Ricciardo  RIC,Renault,1:42.061,2020,7
+5,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:42.264,2020,7
+6,31,Esteban  Ocon  OCO,Renault,1:42.396,2020,7
+7,55,Carlos  Sainz  SAI,McLaren Renault,1:42.438,2020,7
+8,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:42.532,2020,7
+9,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:42.603,2020,7
+10,4,Lando  Norris  NOR,McLaren Renault,1:42.657,2020,7
+11,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:42.730,2020,7
+12,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:42.745,2020,7
+13,16,Charles  Leclerc  LEC,Ferrari,1:42.996,2020,7
+14,5,Sebastian  Vettel  VET,Ferrari,1:43.261,2020,7
+15,63,George  Russell  RUS,Williams Mercedes,1:43.468,2020,7
+16,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:43.743,2020,7
+17,8,Romain  Grosjean  GRO,Haas Ferrari,1:43.838,2020,7
+18,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:43.950,2020,7
+19,6,Nicholas  Latifi  LAT,Williams Mercedes,1:44.138,2020,7
+20,20,Kevin  Magnussen  MAG,Haas Ferrari,1:44.314,2020,7
+1,44,Lewis  Hamilton  HAM,Mercedes,1:18.887,2020,8
+2,77,Valtteri  Bottas  BOT,Mercedes,1:18.956,2020,8
+3,55,Carlos  Sainz  SAI,McLaren Renault,1:19.695,2020,8
+4,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:19.720,2020,8
+5,33,Max  Verstappen  VER,Red Bull Racing Honda,1:19.795,2020,8
+6,4,Lando  Norris  NOR,McLaren Renault,1:19.820,2020,8
+7,3,Daniel  Ricciardo  RIC,Renault,1:19.864,2020,8
+8,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:20.049,2020,8
+9,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:20.090,2020,8
+10,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:20.177,2020,8
+11,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:20.169,2020,8
+12,31,Esteban  Ocon  OCO,Renault,1:20.234,2020,8
+13,16,Charles  Leclerc  LEC,Ferrari,1:20.273,2020,8
+14,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:20.926,2020,8
+15,20,Kevin  Magnussen  MAG,Haas Ferrari,1:21.573,2020,8
+16,8,Romain  Grosjean  GRO,Haas Ferrari,1:21.139,2020,8
+17,5,Sebastian  Vettel  VET,Ferrari,1:21.151,2020,8
+18,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:21.206,2020,8
+19,63,George  Russell  RUS,Williams Mercedes,1:21.587,2020,8
+20,6,Nicholas  Latifi  LAT,Williams Mercedes,1:21.717,2020,8
+1,44,Lewis  Hamilton  HAM,Mercedes,1:15.144,2020,9
+2,77,Valtteri  Bottas  BOT,Mercedes,1:15.203,2020,9
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:15.509,2020,9
+4,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:15.954,2020,9
+5,16,Charles  Leclerc  LEC,Ferrari,1:16.270,2020,9
+6,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:16.356,2020,9
+7,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:16.311,2020,9
+8,3,Daniel  Ricciardo  RIC,Renault,1:16.543,2020,9
+9,55,Carlos  Sainz  SAI,McLaren Renault,1:17.870,2020,9
+10,31,Esteban  Ocon  OCO,Renault,,2020,9
+11,4,Lando  Norris  NOR,McLaren Renault,1:16.640,2020,9
+12,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:16.854,2020,9
+13,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:16.854,2020,9
+14,5,Sebastian  Vettel  VET,Ferrari,1:16.858,2020,9
+15,8,Romain  Grosjean  GRO,Haas Ferrari,1:17.254,2020,9
+16,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:17.125,2020,9
+17,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:17.220,2020,9
+18,63,George  Russell  RUS,Williams Mercedes,1:17.232,2020,9
+19,6,Nicholas  Latifi  LAT,Williams Mercedes,1:17.320,2020,9
+20,20,Kevin  Magnussen  MAG,Haas Ferrari,1:17.348,2020,9
+1,44,Lewis  Hamilton  HAM,Mercedes,1:31.304,2020,10
+2,33,Max  Verstappen  VER,Red Bull Racing Honda,1:31.867,2020,10
+3,77,Valtteri  Bottas  BOT,Mercedes,1:31.956,2020,10
+4,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:32.317,2020,10
+5,3,Daniel  Ricciardo  RIC,Renault,1:32.364,2020,10
+6,55,Carlos  Sainz  SAI,McLaren Renault,1:32.550,2020,10
+7,31,Esteban  Ocon  OCO,Renault,1:32.624,2020,10
+8,4,Lando  Norris  NOR,McLaren Renault,1:32.847,2020,10
+9,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:33.000,2020,10
+10,16,Charles  Leclerc  LEC,Ferrari,1:33.239,2020,10
+11,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:33.249,2020,10
+12,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:33.364,2020,10
+13,63,George  Russell  RUS,Williams Mercedes,1:33.583,2020,10
+14,5,Sebastian  Vettel  VET,Ferrari,1:33.609,2020,10
+15,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:33.008,2020,10
+16,8,Romain  Grosjean  GRO,Haas Ferrari,1:34.592,2020,10
+17,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:34.594,2020,10
+18,20,Kevin  Magnussen  MAG,Haas Ferrari,1:34.681,2020,10
+19,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:35.267,2020,10
+20,6,Nicholas  Latifi  LAT,Williams Mercedes,1:35.066,2020,10
+1,77,Valtteri  Bottas  BOT,Mercedes,1:25.269,2020,11
+2,44,Lewis  Hamilton  HAM,Mercedes,1:25.525,2020,11
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:25.562,2020,11
+4,16,Charles  Leclerc  LEC,Ferrari,1:26.035,2020,11
+5,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:26.047,2020,11
+6,3,Daniel  Ricciardo  RIC,Renault,1:26.223,2020,11
+7,31,Esteban  Ocon  OCO,Renault,1:26.242,2020,11
+8,4,Lando  Norris  NOR,McLaren Renault,1:26.458,2020,11
+9,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:26.704,2020,11
+10,55,Carlos  Sainz  SAI,McLaren Renault,1:26.709,2020,11
+11,5,Sebastian  Vettel  VET,Ferrari,1:26.738,2020,11
+12,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:26.776,2020,11
+13,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:26.848,2020,11
+14,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:26.936,2020,11
+15,20,Kevin  Magnussen  MAG,Haas Ferrari,1:27.125,2020,11
+16,8,Romain  Grosjean  GRO,Haas Ferrari,1:27.552,2020,11
+17,63,George  Russell  RUS,Williams Mercedes,1:27.564,2020,11
+18,6,Nicholas  Latifi  LAT,Williams Mercedes,1:27.812,2020,11
+19,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:27.817,2020,11
+20,27,Nico  Hulkenberg  HUL,Racing Point BWT Mercedes,1:28.021,2020,11
+1,44,Lewis  Hamilton  HAM,Mercedes,1:16.652,2020,12
+2,77,Valtteri  Bottas  BOT,Mercedes,1:16.754,2020,12
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:16.904,2020,12
+4,16,Charles  Leclerc  LEC,Ferrari,1:17.090,2020,12
+5,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:17.223,2020,12
+6,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:17.437,2020,12
+7,55,Carlos  Sainz  SAI,McLaren Renault,1:17.520,2020,12
+8,4,Lando  Norris  NOR,McLaren Renault,1:17.525,2020,12
+9,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:17.803,2020,12
+10,3,Daniel  Ricciardo  RIC,Renault,,2020,12
+11,31,Esteban  Ocon  OCO,Renault,1:17.614,2020,12
+12,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:17.626,2020,12
+13,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:17.728,2020,12
+14,63,George  Russell  RUS,Williams Mercedes,1:17.788,2020,12
+15,5,Sebastian  Vettel  VET,Ferrari,1:17.919,2020,12
+16,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:18.201,2020,12
+17,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:18.323,2020,12
+18,8,Romain  Grosjean  GRO,Haas Ferrari,1:18.364,2020,12
+19,20,Kevin  Magnussen  MAG,Haas Ferrari,1:18.508,2020,12
+20,6,Nicholas  Latifi  LAT,Williams Mercedes,1:18.777,2020,12
+1,77,Valtteri  Bottas  BOT,Mercedes,1:13.609,2020,13
+2,44,Lewis  Hamilton  HAM,Mercedes,1:13.706,2020,13
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:14.176,2020,13
+4,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:14.502,2020,13
+5,3,Daniel  Ricciardo  RIC,Renault,1:14.520,2020,13
+6,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:14.572,2020,13
+7,16,Charles  Leclerc  LEC,Ferrari,1:14.616,2020,13
+8,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:14.696,2020,13
+9,4,Lando  Norris  NOR,McLaren Renault,1:14.814,2020,13
+10,55,Carlos  Sainz  SAI,McLaren Renault,1:14.911,2020,13
+11,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:15.061,2020,13
+12,31,Esteban  Ocon  OCO,Renault,1:15.201,2020,13
+13,63,George  Russell  RUS,Williams Mercedes,1:15.323,2020,13
+14,5,Sebastian  Vettel  VET,Ferrari,1:15.385,2020,13
+15,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:15.494,2020,13
+16,8,Romain  Grosjean  GRO,Haas Ferrari,1:15.918,2020,13
+17,20,Kevin  Magnussen  MAG,Haas Ferrari,1:15.939,2020,13
+18,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:15.953,2020,13
+19,6,Nicholas  Latifi  LAT,Williams Mercedes,1:15.987,2020,13
+20,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:16.208,2020,13
+1,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:47.765,2020,14
+2,33,Max  Verstappen  VER,Red Bull Racing Honda,1:48.055,2020,14
+3,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:49.321,2020,14
+4,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:50.448,2020,14
+5,3,Daniel  Ricciardo  RIC,Renault,1:51.595,2020,14
+6,44,Lewis  Hamilton  HAM,Mercedes,1:52.560,2020,14
+7,31,Esteban  Ocon  OCO,Renault,1:52.622,2020,14
+8,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:52.745,2020,14
+9,77,Valtteri  Bottas  BOT,Mercedes,1:53.258,2020,14
+10,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:57.226,2020,14
+11,5,Sebastian  Vettel  VET,Ferrari,1:55.169,2020,14
+12,16,Charles  Leclerc  LEC,Ferrari,1:56.696,2020,14
+13,20,Kevin  Magnussen  MAG,Haas Ferrari,2:08.007,2020,14
+14,4,Lando  Norris  NOR,McLaren Renault,1:54.945,2020,14
+15,55,Carlos  Sainz  SAI,McLaren Renault,1:55.410,2020,14
+16,26,Daniil  Kvyat  KVY,AlphaTauri Honda,2:09.070,2020,14
+17,8,Romain  Grosjean  GRO,Haas Ferrari,2:12.909,2020,14
+18,6,Nicholas  Latifi  LAT,Williams Mercedes,2:21.611,2020,14
+19,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:58.556,2020,14
+20,63,George  Russell  RUS,Williams Mercedes,2:10.017,2020,14
+1,44,Lewis  Hamilton  HAM,Mercedes,1:27.264,2020,15
+2,77,Valtteri  Bottas  BOT,Mercedes,1:27.553,2020,15
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,1:27.678,2020,15
+4,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:28.274,2020,15
+5,11,Sergio  Perez  PER,Racing Point BWT Mercedes,1:28.322,2020,15
+6,3,Daniel  Ricciardo  RIC,Renault,1:28.417,2020,15
+7,31,Esteban  Ocon  OCO,Renault,1:28.419,2020,15
+8,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:28.448,2020,15
+9,4,Lando  Norris  NOR,McLaren Renault,1:28.542,2020,15
+10,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:28.618,2020,15
+11,5,Sebastian  Vettel  VET,Ferrari,1:29.149,2020,15
+12,16,Charles  Leclerc  LEC,Ferrari,1:29.165,2020,15
+13,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:29.557,2020,15
+14,63,George  Russell  RUS,Williams Mercedes,1:31.218,2020,15
+15,55,Carlos  Sainz  SAI,McLaren Renault,,2020,15
+16,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:29.491,2020,15
+17,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:29.810,2020,15
+18,20,Kevin  Magnussen  MAG,Haas Ferrari,1:30.111,2020,15
+19,8,Romain  Grosjean  GRO,Haas Ferrari,1:30.138,2020,15
+20,6,Nicholas  Latifi  LAT,Williams Mercedes,1:30.182,2020,15
+1,77,Valtteri  Bottas  BOT,Mercedes,53.376999999999995,2020,16
+2,63,George  Russell  RUS,Mercedes,53.403,2020,16
+3,33,Max  Verstappen  VER,Red Bull Racing Honda,53.433,2020,16
+4,16,Charles  Leclerc  LEC,Ferrari,53.613,2020,16
+5,11,Sergio  Perez  PER,Racing Point BWT Mercedes,53.79,2020,16
+6,26,Daniil  Kvyat  KVY,AlphaTauri Honda,53.906000000000006,2020,16
+7,3,Daniel  Ricciardo  RIC,Renault,53.957,2020,16
+8,55,Carlos  Sainz  SAI,McLaren Renault,54.01,2020,16
+9,10,Pierre  Gasly  GAS,AlphaTauri Honda,54.153999999999996,2020,16
+10,18,Lance  Stroll  STR,Racing Point BWT Mercedes,54.2,2020,16
+11,31,Esteban  Ocon  OCO,Renault,53.995,2020,16
+12,23,Alexander  Albon  ALB,Red Bull Racing Honda,54.026,2020,16
+13,5,Sebastian  Vettel  VET,Ferrari,54.175,2020,16
+14,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,54.376999999999995,2020,16
+15,4,Lando  Norris  NOR,McLaren Renault,54.693000000000005,2020,16
+16,20,Kevin  Magnussen  MAG,Haas Ferrari,54.705,2020,16
+17,6,Nicholas  Latifi  LAT,Williams Mercedes,54.79600000000001,2020,16
+18,89,Jack  Aitken  AIT,Williams Mercedes,54.891999999999996,2020,16
+19,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,54.963,2020,16
+20,51,Pietro  Fittipaldi  FIT,Haas Ferrari,55.426,2020,16
+1,33,Max  Verstappen  VER,Red Bull Racing Honda,1:35.246,2020,17
+2,77,Valtteri  Bottas  BOT,Mercedes,1:35.271,2020,17
+3,44,Lewis  Hamilton  HAM,Mercedes,1:35.332,2020,17
+4,4,Lando  Norris  NOR,McLaren Renault,1:35.497,2020,17
+5,23,Alexander  Albon  ALB,Red Bull Racing Honda,1:35.571,2020,17
+6,55,Carlos  Sainz  SAI,McLaren Renault,1:35.815,2020,17
+7,26,Daniil  Kvyat  KVY,AlphaTauri Honda,1:35.963,2020,17
+8,18,Lance  Stroll  STR,Racing Point BWT Mercedes,1:36.046,2020,17
+9,10,Pierre  Gasly  GAS,AlphaTauri Honda,1:36.242,2020,17
+10,31,Esteban  Ocon  OCO,Renault,1:36.359,2020,17
+11,3,Daniel  Ricciardo  RIC,Renault,1:36.406,2020,17
+12,16,Charles  Leclerc  LEC,Ferrari,1:36.065,2020,17
+13,5,Sebastian  Vettel  VET,Ferrari,1:36.631,2020,17
+14,99,Antonio  Giovinazzi  GIO,Alfa Romeo Racing Ferrari,1:38.248,2020,17
+15,7,Kimi  Räikkönen  RAI,Alfa Romeo Racing Ferrari,1:37.555,2020,17
+16,63,George  Russell  RUS,Williams Mercedes,1:38.045,2020,17
+17,51,Pietro  Fittipaldi  FIT,Haas Ferrari,1:38.173,2020,17
+18,6,Nicholas  Latifi  LAT,Williams Mercedes,1:38.443,2020,17
+19,11,Sergio  Perez  PER,Racing Point BWT Mercedes,,2020,17
+20,20,Kevin  Magnussen  MAG,Haas Ferrari,1:37.863,2020,17
