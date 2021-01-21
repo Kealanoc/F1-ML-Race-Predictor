@@ -37,4 +37,4 @@ for year in list(range(1950, 2021)):
 races = pd.DataFrame(races)
 print(races.shape)
 
-races.to_csv("../Data/RaceData.csv", index = False)
+races.to_csv("../Data/RaceData.csv", index=False)
