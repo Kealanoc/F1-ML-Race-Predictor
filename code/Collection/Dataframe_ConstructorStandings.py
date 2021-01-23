@@ -45,6 +45,8 @@ for i in list(range(len(rounds))):
             rows += 1
         print("Completed entries: " + str(rows))
 
-constructor_standings = pd.DataFrame(constructor_standings)
-constructor_standings.to_csv("../Data/ConstructorStandings.csv", index = False)
+
+df = pd.DataFrame(constructor_standings)
+df = df.reindex(columns=list(constructor_standings.keys()))
+df.to_csv("../Data/ConstructorStandings.csv", index = False)
 print("--- %s seconds ---" % (time.time() - start_time))

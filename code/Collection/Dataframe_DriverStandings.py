@@ -11,7 +11,6 @@ for year in np.array(race.Season.unique()):
 start_time = time.time()
 driver_standings = {"Season": [], "Round": [], "Driver": [], "Driver Points": [], "Driver Wins": [], "Driver Standings": []}
 
-rows = 0
 for i in list(range(len(rounds))):
     for j in rounds[i][1]:
         url = "https://ergast.com/api/f1/{}/{}/driverStandings.json"
@@ -42,9 +41,8 @@ for i in list(range(len(rounds))):
                 driver_standings['Driver Standings'].append(int(entry['position']))
             except:
                 driver_standings['Driver Standings'].append(None)
-            rows += 1
-        print("Completed entries: " + str(rows))
 
-driver_standings = pd.DataFrame(driver_standings)
-driver_standings.to_csv("../Data/DriverStandings.csv", index = False)
+df = pd.DataFrame(driver_standings)
+df = df.reindex(columns=list(driver_standings.keys()))
+df.to_csv("../Data/DriverStandings.csv", index = False)
 print("--- %s seconds ---" % (time.time() - start_time))

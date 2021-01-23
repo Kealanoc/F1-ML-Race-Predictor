@@ -1,4 +1,4 @@
-Pos,No,Driver,Car,Time,season,round
+Grid,No,Driver_ID,Car,Time,Season,Round
 1,1,Keke  Rosberg  ROS,Williams Honda,1:34.526,1983,1
 2,15,Alain  Prost  PRO,Renault,1:34.672,1983,1
 3,27,Patrick  Tambay  TAM,Ferrari,1:34.758,1983,1

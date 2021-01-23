@@ -8,9 +8,9 @@ race = pd.read_csv("../Data/RaceData.csv")
 for year in np.array(race.Season.unique()):
     rounds.append([year, list(race[race.Season == year]['Round'])])
 
-RaceResults = {"Season": [], "Round": [], "Track": [], "Driver": [],
-                "D.O.B": [], "Nationality": [], "Constructor": [], "Grid Pos": [],
-                "Time": [], "Status": [], "Points": [], "Podium": [], "URL": []}
+RaceResults = {"Season": [], "Round": [], "Track_ID": [], "Driver": [],
+                "DOB": [], "Nationality": [], "Constructor": [], "Grid": [],
+                "Race_Time": [], "Status": [], "Points": [], "Podium": [], "URL": []}
 
 for i in list(range(len(rounds))):
     for j in rounds[i][1]:
@@ -29,9 +29,9 @@ for i in list(range(len(rounds))):
             except:
                 RaceResults["Round"].append(None)
             try:
-                RaceResults["Track"].append(json['MRData']['RaceTable']['Races'][0]['Circuit']['circuitId'])
+                RaceResults["Track_ID"].append(json['MRData']['RaceTable']['Races'][0]['Circuit']['circuitId'])
             except:
-                RaceResults["Track"].append(None)
+                RaceResults["Track_ID"].append(None)
             try:
                 RaceResults["Driver"].append(entry['Driver']['driverId'])
             except:
@@ -45,21 +45,21 @@ for i in list(range(len(rounds))):
             except:
                 RaceResults['Constructor'].append(None)
             try:
-                RaceResults["D.O.B"].append(entry['Driver']['dateOfBirth'])
+                RaceResults["DOB"].append(entry['Driver']['dateOfBirth'])
             except:
-                RaceResults["D.O.B"].append(None)
+                RaceResults["DOB"].append(None)
             try:
-                RaceResults["Grid Pos"].append(int(entry["grid"]))
+                RaceResults["Grid"].append(int(entry["grid"]))
             except:
-                RaceResutls["Grid Pos"].append(None)
+                RaceResults["Grid"].append(None)
             try:
                 RaceResults["Points"].append(int(entry["points"]))
             except:
                 RaceResults["Points"].append(None)
             try:
-                RaceResults["Time"].append(int(entry['Time']['millis']))
+                RaceResults["Race_Time"].append(int(entry['Time']['millis']))
             except:
-                RaceResults["Time"].append(None)
+                RaceResults["Race_Time"].append(None)
             try:
                 RaceResults['Status'].append(entry['status'])
             except:
@@ -73,7 +73,7 @@ for i in list(range(len(rounds))):
             except:
                 RaceResults['URL'].append(None)
 
-RaceResults = pd.DataFrame(RaceResults)
-print(RaceResults.shape)
-RaceResults.to_csv("../Data/RaceResults.csv", index = False)
+df = pd.DataFrame(RaceResults)
+df = df.reindex(columns=list(RaceResults.keys()))
+df.to_csv("../Data/RaceResults.csv", index = False)
 print("--- %s seconds ---" % (time.time() - start_time))
