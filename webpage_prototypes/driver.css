@@ -1,78 +1,49 @@
-
-
-      html {
-        height: 100%;
-        width: 100%;
-      }
+html {
+      height: 100%;
+      width: 100%;
+    }
 
       body {
-        font-family: 'Open Sans', serif;
+        font-family: 'Yu Gothic UI', Arial;
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
-        -webkit-font-smoothing: antialiased;
-        overflow: -moz-scrollbars-none;
-        -ms-overflow-style: none;
+        background-color: rgba(232, 246, 248, 1);
+      }
+      /* Navigation bar */
+      .navbar{
+        background-color: #F8EAE8;
+        overflow: hidden;
       }
 
-      
+      .navbar a{
+        float: left;
+        color: #070707;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+      }
 
-      .web19201 {
+      .navbar a:hover{
+        background-color: #ddd;
+        color: black;
+        text-decoration: underline black;
+      }
 
-      display: block;
-      position: absolute;
-      box-sizing: content-box;
-      -ms-transform: rotate(0.00deg);
-    -webkit-transform: rotate(0.00deg);
-    transform: rotate(0.00deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-      opacity: 1;
-      cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
-      padding-top: 0.00px;
-      padding-right: 0.00px;
-      padding-bottom: 0.00px;
-      padding-left: 0.00px;
-      overflow-x: auto;
-      overflow-y: auto;
-      background-color: rgba(232, 246, 248, 1);
-      width: 1920.00px;
-    height: 3272.00px;
-    left: 0px;
-    top: 0px;
-
-}
+      .navbar a.active{
+        background-color: #c1e0c9;
+        color: white;
+      }
 
 .web19201 .path1 {
     position: absolute;
-      box-sizing: content-box;
       -ms-transform: rotate(1.00deg);
     -webkit-transform: rotate(1.00deg);
     transform: rotate(1.00deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
       opacity: 1;
-      cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
-      padding-top: 0.00px;
-      padding-right: 0.00px;
-      padding-bottom: 0.00px;
-      padding-left: 0.00px;
-      fill: rgba(255, 255, 255, 1);
       stroke: rgba(112, 112, 112, 1);
-          stroke-width: 1.00px;
-          stroke-linecap: butt;
-      box-shadow: none;
       width: 1919.46px;
     height: 158.74px;
     left: 0.22px;
