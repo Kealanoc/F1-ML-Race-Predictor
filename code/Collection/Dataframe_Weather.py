@@ -42,9 +42,9 @@ weather_class = {"weather_warm": ['clear', 'warm', 'hot', 'sunny', 'fine', 'mild
                "weather_wet": ['showers', 'wet', 'rain', 'damp', 'thunderstorms', 'rainy'],
                "weather_cloudy": ['overcast', 'clouds', 'cloudy', 'grey']}
 
-weather_data = pd.DataFrame(columns= weather_class.keys())
+weather_data = pd.DataFrame(columns=weather_class.keys())
 for column in weather_data:
-    weather_data[column] = weather["weather"].map(lambda x: i if any(i in weather_class[column] for i in x.lower().split()) else 0)
+    weather_data[column] = weather["weather"].map(lambda x: 1 if any(i in weather_class[column] for i in x.lower().split()) else 0)
 weather_data = pd.concat([weather, weather_data], axis=1)
 weather_data.to_csv("../Data/Weather.csv", index=False)
 print("--- %s seconds ---" % (time.time() - start_time))
