@@ -31,7 +31,6 @@ for year in list(range(1983,2021)):
                 dataframe.drop(column, axis=1, inplace=True)
 
         year_df = pd.concat([year_df, dataframe])
-
     qualifying_results = pd.concat([qualifying_results, year_df])
 qualifying_results.to_csv("../Data/QualifyingResults.csv", index=False)
 print("--- %s seconds ---" % (time.time() - start_time))

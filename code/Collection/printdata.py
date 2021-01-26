@@ -2,7 +2,12 @@ import pandas as pd
 import numpy as np
 import requests
 import time
-race = pd.read_csv("../Data/RaceData.csv")
-races = {"Season": [], "Round": [], "Track_ID": [] , "Country": [], "Date": [], "URL": []}
-df = race.reindex(columns=list(races.keys()))
-print(df)
+total = 0
+race = pd.read_csv("../Data/QualifyingResults.csv")
+for i in race.Quali_Time:
+    try:
+        m = ("{:.3f}".format(i))
+        race["Quali_Time"].replace({i:m}, inplace=True)
+    except:
+        pass
+race.to_csv("../Data/QualifyingResults.csv", index=False)

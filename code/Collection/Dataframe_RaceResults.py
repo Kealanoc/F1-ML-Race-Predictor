@@ -10,7 +10,7 @@ for year in np.array(race.Season.unique()):
 
 RaceResults = {"Season": [], "Round": [], "Track_ID": [], "Driver": [],
                 "DOB": [], "Nationality": [], "Constructor": [], "Grid": [],
-                "Race_Time": [], "Status": [], "Points": [], "Podium": [], "URL": []}
+                "Time": [], "Status": [], "Points": [], "Podium": [], "URL": []}
 
 for i in list(range(len(rounds))):
     for j in rounds[i][1]:
@@ -57,9 +57,9 @@ for i in list(range(len(rounds))):
             except:
                 RaceResults["Points"].append(None)
             try:
-                RaceResults["Race_Time"].append(int(entry['Time']['millis']))
+                RaceResults["Time"].append(int(entry['Time']['millis']))
             except:
-                RaceResults["Race_Time"].append(None)
+                RaceResults["Time"].append(None)
             try:
                 RaceResults['Status'].append(entry['status'])
             except:
