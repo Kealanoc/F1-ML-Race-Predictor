@@ -1,48 +1,129 @@
 <!DOCTYPE html>
-    <html>
+<html>
 
     <head>
-        <meta charset="utf-8">
-        <title>homepage</title>
+        <meta charset="utf-8" >
+        <title>Home Page</title>
         
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="driver.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
     </head>
 
+    <div class="navbar">
+        <a class="active" href="./index.html">Home</a>
+        <a href="./driver.html">Drivers</a>
+        <a href="./team.html">Teams</a>
+        <a href="./predictor.html">Predictor</a>
+        <a href="./races.html">Grands Prix</a>
+        <a href="./season.html">This Season</a>
+        <button onclick="lightsOut()">DarkMode</button>
+    </div>
+
     <body>
-        <div data-layer="e55446bc-01bb-445d-bb27-db606dfae6cd" class="web19204">        <div data-layer="5d178bb8-3991-4edf-af5d-331c95bffd1d" class="component34">            <div data-layer="ef027358-861f-43e4-a1a9-2973f0c045d5" class="group1">                <svg data-layer="cfe184b0-94fe-4238-9a38-a16a3babaf42" preserveAspectRatio="none" viewBox="-0.75 -0.75 1926.5 94" class="path2"><path d="M 0 0 L 1924.999877929688 0 L 1924.999877929688 92.5 L 0 92.5 L 0 0 Z"  /></svg>
-</div>
-            <svg data-layer="e87cbda6-e0be-42f8-8141-f3f3d2056951" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line2"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="f64bae22-e867-4562-80ff-63423652eb73" class="seasons">Seasons</div>
-            <svg data-layer="d4d8d046-7b98-4b3f-8883-f6ee26c83bad" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line3"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="79e47a37-51f5-4055-a073-1c34c6af0c9b" class="predictor">Predictor</div>
-            <svg data-layer="53a9837a-9d0e-44ce-8a7a-fcead490ae14" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line4"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="41ed77f9-5557-4017-823c-51c37d644c79" class="teams">Teams</div>
-            <svg data-layer="7876f094-1ab1-47ac-86f0-01840eb94a55" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line5"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="34aca67c-2ec3-45be-af21-6e6646376f09" class="drivers">Drivers</div>
-            <svg data-layer="7cd2f649-e7cf-47f9-bd92-1a8b06bf7967" preserveAspectRatio="none" viewBox="-0.75 -0.75 2.5 93.5" class="path8"><path d="M 0 0 L 0.4296875 39.53125 L 1 92"  /></svg>
-            <div data-layer="3f73cae5-f8c9-49ca-ba18-4124fd42dec2" class="home">Home</div>
-            <svg data-layer="88a591cf-87f9-4a01-9224-5c16910b271c" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line6"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="617091f6-603d-4600-b478-fc9f61134699" class="grandsPrix">Grands Prix</div>
-</div>
-        <svg data-layer="c2c6e2b6-7f13-42c2-b65b-5b4a3aeb61df" preserveAspectRatio="none" viewBox="1916.7142333984375 237.84454345703125 1.5 1.5" class="path3"><path d="M 1917.464233398438 238.5945434570313"  /></svg>
-        <svg data-layer="d802f1b5-33c4-4e46-97f1-a79c17f29ad0" preserveAspectRatio="none" viewBox="1916.7142333984375 237.84454345703125 1.5 1.5" class="path5"><path d="M 1917.464233398438 238.5945434570313"  /></svg>
-        <svg data-layer="bc5dba73-cc75-42d6-a8fa-cca0473a4220" preserveAspectRatio="none" viewBox="1916.7142333984375 237.84454345703125 1.5 1.5" class="path7"><path d="M 1917.464233398438 238.5945434570313"  /></svg>
-        <svg data-layer="3eb304a2-5889-4a30-ab51-527ad21fe63a" preserveAspectRatio="none" viewBox="-0.75 237.84454345703125 1918.96435546875 158.240966796875" class="path9"><path d="M 0 395.3354797363281 L 1917.464233398438 238.5945434570313"  /></svg>
-        <div data-layer="f11ccf46-09a8-464b-aabf-caf33a5c56e1" class="rectangle22"></div>
-        <div data-layer="ed6f3623-d92c-481b-8ea0-4460a7873a44" class="formulaMlLogo">Formula ML Logo</div>
-        <div data-layer="36bf666a-6566-462d-bdbd-664add5bbe53" class="rectangle23"></div>
-        <div data-layer="c85eae60-ba96-44f7-925b-23942b7fb48f" class="introductionToSiteContent">Introduction to site content</div>
-        <div data-layer="1f35f5a3-319f-446d-839e-c4b8b421c38b" class="rectangle24"></div>
-        <div data-layer="242b74b2-b372-47ee-9018-279e2afa813d" class="hyperlinksToRecommendedPages">Hyperlinks to recommended pages</div>
-        <div data-layer="88382fa1-144e-487d-9aaa-907646257649" class="image9"></div>
-        <div data-layer="e8ac8f8d-106f-4cab-b3d4-856d08d918c1" class="rectangle25"></div>
-        <div data-layer="6de21633-70b7-454b-9387-ea025732d974" class="searchBar">Search Bar</div>
-        <svg data-layer="bb0eb732-6216-496c-9ddf-34b3e32fee95" preserveAspectRatio="none" viewBox="-0.75 -0.75 754.5 544.823974609375" class="path10"><path d="M 0 0 L 753 0 L 753 543.323974609375 L 0 543.323974609375 L 0 0 Z"  /></svg>
-        <div data-layer="f69f2492-4b46-481f-ab0e-026e2abe338c" class="f1SeasonCalendar">F1 Season Calendar</div>
-</div>
-
-
-    
+        <div class="header">
+            <h1>#33 Max Verstappen</h1> 
+            <img id="flag" src= "./assets/verstappen_flag.png" alt="National Flag">
+            <img id="team" src= "./assets/redbull_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "./assets/verstappen_photo.png" alt="Driver Photo">
+            <h2>Red Bull Racing - Honda</h2> 
+            <div id="left">
+                <p>Age: 23</p>
+                <p>Entries: 119</p>
+                <p>Titles: 0</p>
+                <p>Poles: 3</p>
+            </div>
+            <div id="right">
+                <p>Wins: 10</p>
+                <p>Podiums: 42</p>
+                <p>First Start: 2015 Australian Grand Prix</p>
+                <p>First Win: 2016 Spanish Grand Prix</p>
+            </div>
+        </div>       
+        <div class="container">
+            <canvas id="driver_stats"></canvas>
+        </div>
+        <div id="awards">
+            <h3> Awards </h3>           
+            <ul>
+                <li> 2014, 15, 16, 19 FIA Action of the Year </li>
+                <li> 2015, 16, 17 FIA Personality of the Year </li>
+                <li> 2015 FIA Rookie of the Year </li>
+                <li> 2016 Lorenzo Bandini Trophy </li>
+            </ul>
+        </div>
+        <div id="teamHistory">
+            <h3> Teams Driven For </h3>           
+            <ul>
+                <li> 2014-2016: Scuderia Toro Rosso</li>
+                <li> 2016-Present: Red Bull Racing</li>
+            </ul>
+        </div>
+        <script>
+            const xlabels = [];
+            const points_data = [];
+            makeChart();
+            async function makeChart(){
+                await getStanding();
+                const ctx = document.getElementById('driver_stats').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: xlabels,
+                        datasets: [{
+                        label: 'Points Earned',
+                    data: points_data,
+                    fill: false,
+                    backgroundColor: [
+                        'white',
+                    ],
+                    borderColor: [
+                        'black',
+                    ],
+                    borderWidth: 1
+                                    }]
+                            },
+                    options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                            }
+                            }
+                    });
+                }
+        async function getStanding(){
+        const standings = await fetch('data/DriverStandings.csv');
+        const data = await standings.text();
+        const d_standings = data.split('\n');
+        const point_list = [];
+        for (var i = 0; i < d_standings.length; i++){
+            const row = d_standings[i].split(',');
+            const year = row[0]; 
+            const round = row[1];
+            const driver = row[2];
+            const points = row[3];
+            if (driver == "max_verstappen"){
+                xlabels.push(year);
+                points_data.push(points);
+            }      
+        };
+        console.log(points_data);
+        }
+        function lightsOut() {
+            var element = document.body;
+            var element2 = document.getElementById("header");
+            element.classList.toggle("dark-mode");
+            element2.classList.toggle("dark-mode");
+        } 
+        </script>
+        <footer>
+            <p> Contact us @ email@email.com </p>
+            <p> Business enquiries only! </p>
+        </footer>
     </body>
-    </html>
+</html>
             

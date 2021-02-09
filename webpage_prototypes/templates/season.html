@@ -1,53 +1,129 @@
 <!DOCTYPE html>
-    <html>
+<html>
 
     <head>
-        <meta charset="utf-8">
-        <title>Season info</title>
+        <meta charset="utf-8" >
+        <title>Season Page</title>
         
-        <link rel="stylesheet" href="season.css">
+        <link rel="stylesheet" href="driver.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
     </head>
 
+    <div class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./driver.html">Drivers</a>
+        <a href="./team.html">Teams</a>
+        <a href="./predictor.html">Predictor</a>
+        <a href="./races.html">Grands Prix</a>
+        <a class="active" href="./season.html">This Season</a>
+        <button onclick="lightsOut()">DarkMode</button>
+    </div>
+
     <body>
-        <div data-layer="6088f0ca-5e21-4686-b46a-5535d2a08450" class="web19202">        <svg data-layer="ea30b928-f72a-4559-96a2-3d3bb5f8019b" preserveAspectRatio="none" viewBox="-0.75 237.84454345703125 1918.96435546875 158.240966796875" class="path1"><path d="M 0 395.3354797363281 L 1917.464233398438 238.5945434570313"  /></svg>
-        <div data-layer="1509e932-4f47-472d-be8f-9752b832377d" class="x2020Formula1Season">2020 Formula 1 Season</div>
-        <div data-layer="41abd3f0-a682-4cab-aefd-d1e10ca07e17" class="component32">            <div data-layer="cae538fe-28f3-448c-942e-ca88bef88925" class="group1">                <svg data-layer="b45f891a-20db-4012-8fb9-d480f34d5bc6" preserveAspectRatio="none" viewBox="-0.75 -0.75 1926.5 94" class="path2"><path d="M 0 0 L 1924.999877929688 0 L 1924.999877929688 92.5 L 0 92.5 L 0 0 Z"  /></svg>
-</div>
-            <svg data-layer="42c91e02-1223-4a99-b278-e337c946dcd4" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line2"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="ec8aa2c4-cf59-4fe3-ba6c-01707a4e522a" class="x2021">2021</div>
-            <svg data-layer="ecd0631e-ebad-41d9-95be-2bf82c116551" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line3"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="1a0fc6ba-3c06-46cb-b237-c1c796e8e7a6" class="predictor">Predictor</div>
-            <svg data-layer="27528bd1-a73a-4945-bcaa-2aca95f01f5f" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line4"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="afc11919-5f11-4da3-8950-3a6853a566f0" class="teams">Teams</div>
-            <svg data-layer="96a9786a-2333-4835-869a-cd76000e6652" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line5"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="17d5c53f-a0a1-4321-98c3-6f3f90bc74b4" class="drivers">Drivers</div>
-            <svg data-layer="4eb950d7-61e8-4897-bb03-294996f05491" preserveAspectRatio="none" viewBox="-0.5 -0.005435943603515625 2 92.0108642578125" class="line1"><path d="M 0 0 L 1 92"  /></svg>
-            <div data-layer="bf552c60-b227-4b82-83c0-0f4159eecddd" class="home">Home</div>
-</div>
-        <div data-layer="e947d4dd-7154-4d5f-95ba-cd94ecbfa50c" class="rectangle3"></div>
-        <div data-layer="b74db107-55c1-47d5-8770-4f0b3e50d8de" class="textAndMoreData">Text and more data</div>
-        <div data-layer="463b0d24-a74f-474d-9b74-eb1a7bbbd593" class="races1714d7d05d">Races : 17</div>
-        <div data-layer="422f2d33-0417-4bf4-89e4-2f6aab4a58ad" class="constructorsChampionMercedes708a53a1f">Constructor's Champion : Mercedes [7] </div>
-        <div data-layer="5feabe41-b4e2-4b62-8781-4fd5a7220ef7" class="driversChampionLewisHamilton7808b29b8">Driver's Champion : Lewis Hamilton [7]</div>
-        <div data-layer="67e4f1c2-aa7c-413b-81dc-25a77b243cee" class="uniqueWinners59e44ede7">Unique Winners : 5</div>
-        <div data-layer="edd9600d-dc2c-4472-8e52-ee0aaffde236" class="image3"></div>
-        <div data-layer="9693388e-2ce0-404e-89c7-a742aae2ab29" class="races17">Races : 17</div>
-        <div data-layer="27a28919-b0bb-4fcb-b698-7397574f33c5" class="constructorsChampionMercedes7">Constructor's Champion : Mercedes [7] </div>
-        <div data-layer="1fb04888-fa47-4e95-91c6-fd49d53bafb2" class="driversChampionLewisHamilton7">Driver's Champion : Lewis Hamilton [7]</div>
-        <div data-layer="9de400d6-a536-4264-bc2d-31a6cfce9a8c" class="uniqueWinners5">Unique Winners : 5</div>
-        <div data-layer="eeedcea4-c27a-44e8-827e-efc51e37bf55" class="image4"></div>
-        <div data-layer="b59207c4-840c-4336-ac64-1794a4a848cf" class="rectangle4"></div>
-        <div data-layer="e00d50fa-e80a-42a9-9c98-10b51cf24d19" class="lewisHamiltonWonHis7thDriversWorldChampionshipAndHis4thInARow">Lewis Hamilton won his 7th Driver's World Championship and his 4th in a row.</div>
-        <div data-layer="d036a505-7a25-4885-8062-cc90c79613e5" class="image5"></div>
-        <div data-layer="ca269f6a-7485-40ad-8657-2c79aaafc3c4" class="image6"></div>
-        <div data-layer="7b984e00-dcd3-4d68-bba6-615db1801909" class="rectangle5"></div>
-        <div data-layer="1be38702-528d-44a2-8ce9-7e8a395ecdf4" class="mercedesWonTheir7thConstructorsTitleInARowAndA7thDriversTitleInARow">Mercedes won their 7th Constructor's Title in a row and a 7th Driver's Title in a row.</div>
-        <div data-layer="504231ca-8b41-4cfc-a16b-efc4871fcafc" class="rectangle6"></div>
-        <div data-layer="8cd1bdf8-8d8a-4afa-9e04-16c0ed4a2353" class="listOfRacesAlongWithPosters">List of races along with posters</div>
-</div>
-
-
-    
+        <div class="header">
+            <h1>#33 Max Verstappen</h1> 
+            <img id="flag" src= "./assets/verstappen_flag.png" alt="National Flag">
+            <img id="team" src= "./assets/redbull_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "./assets/verstappen_photo.png" alt="Driver Photo">
+            <h2>Red Bull Racing - Honda</h2> 
+            <div id="left">
+                <p>Age: 23</p>
+                <p>Entries: 119</p>
+                <p>Titles: 0</p>
+                <p>Poles: 3</p>
+            </div>
+            <div id="right">
+                <p>Wins: 10</p>
+                <p>Podiums: 42</p>
+                <p>First Start: 2015 Australian Grand Prix</p>
+                <p>First Win: 2016 Spanish Grand Prix</p>
+            </div>
+        </div>       
+        <div class="container">
+            <canvas id="driver_stats"></canvas>
+        </div>
+        <div id="awards">
+            <h3> Awards </h3>           
+            <ul>
+                <li> 2014, 15, 16, 19 FIA Action of the Year </li>
+                <li> 2015, 16, 17 FIA Personality of the Year </li>
+                <li> 2015 FIA Rookie of the Year </li>
+                <li> 2016 Lorenzo Bandini Trophy </li>
+            </ul>
+        </div>
+        <div id="teamHistory">
+            <h3> Teams Driven For </h3>           
+            <ul>
+                <li> 2014-2016: Scuderia Toro Rosso</li>
+                <li> 2016-Present: Red Bull Racing</li>
+            </ul>
+        </div>
+        <script>
+            const xlabels = [];
+            const points_data = [];
+            makeChart();
+            async function makeChart(){
+                await getStanding();
+                const ctx = document.getElementById('driver_stats').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: xlabels,
+                        datasets: [{
+                        label: 'Points Earned',
+                    data: points_data,
+                    fill: false,
+                    backgroundColor: [
+                        'white',
+                    ],
+                    borderColor: [
+                        'black',
+                    ],
+                    borderWidth: 1
+                                    }]
+                            },
+                    options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                            }
+                            }
+                    });
+                }
+        async function getStanding(){
+        const standings = await fetch('data/DriverStandings.csv');
+        const data = await standings.text();
+        const d_standings = data.split('\n');
+        const point_list = [];
+        for (var i = 0; i < d_standings.length; i++){
+            const row = d_standings[i].split(',');
+            const year = row[0]; 
+            const round = row[1];
+            const driver = row[2];
+            const points = row[3];
+            if (driver == "max_verstappen"){
+                xlabels.push(year);
+                points_data.push(points);
+            }      
+        };
+        console.log(points_data);
+        }
+        function lightsOut() {
+            var element = document.body;
+            var element2 = document.getElementById("header");
+            element.classList.toggle("dark-mode");
+            element2.classList.toggle("dark-mode");
+        } 
+        </script>
+        <footer>
+            <p> Contact us @ email@email.com </p>
+            <p> Business enquiries only! </p>
+        </footer>
     </body>
-    </html>
+</html>
             
