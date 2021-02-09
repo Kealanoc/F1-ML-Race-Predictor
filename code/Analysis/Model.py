@@ -13,7 +13,7 @@ dataframe = data.copy()
 trainer = dataframe[dataframe.Season < year]
 x_train = trainer.drop(["Driver", "Podium"], axis=1)
 y_train = trainer.Podium
-results ={'model':[],'params': [],'score': []}
+results ={"model":[],"params": [],"score": []}
 scaler = StandardScaler()
 x_train = pd.DataFrame(scaler.fit_transform(x_train), columns=x_train.columns)
 
@@ -58,24 +58,23 @@ def linear_regression():
 def random_forest():
     race_results = {}
     params={"criterion": ["mse"],
-            "max_features": [0.8, "auto", None],
-            'max_depth': list(np.linspace(5, 55, 26)) + [None]}
+            "max_features": [0.8],
+            'max_depth': [7.0]}
     count = 0
     best = 0
     for criterion in params["criterion"]:
         for max_features in params["max_features"]:
             for max_depth in params["max_depth"]:
                 count +=1
-                print(count)
                 model_params = (criterion, max_features, max_depth)
-                model = RandomForestRegressor(criterion=criterion, max_features=max_features, max_depth=max_depth, random_state=1)
+                model = RandomForestRegressor(criterion=criterion, max_features=max_features, max_depth=7.0, random_state=1)
                 model.fit(x_train, y_train)
                 model_score, predictions = regression(model)
     best = model_score
     best_predictions = predictions
-    results['model'].append('random_forest_regressor')
-    results['params'].append(model_params)
-    results['score'].append(model_score)
+    results["model"].append("random_forest")
+    results["params"].append(model_params)
+    results["score"].append(model_score)
 
     Round = 1
     for i in best_predictions:
