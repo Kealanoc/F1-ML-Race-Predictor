@@ -1,3 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" >
+        <title>Season Page</title>
+        
+        <link rel="stylesheet" href="season.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+    </head>
+
+    <div class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./driver.html">Drivers</a>
+        <a href="./team.html">Teams</a>
+        <a href="./predictor.html">Predictor</a>
+        <a href="./races.html">Grands Prix</a>
+        <a class="active" href="./season.html">This Season</a>
+        <button onclick="lightsOut()">DarkMode</button>
+    </div>
+
+    <body>
+        <div class="header">
+            <h1>2020 Formula 1 Championship</h1>
+        </div>       
+        <div class="container">
+            <canvas id="driver_stats"></canvas>
+        </div>
+        <div id="awards">
+            <h3> Awards </h3>           
+            <ul>
+                <li> 2014, 15, 16, 19 FIA Action of the Year </li>
+                <li> 2015, 16, 17 FIA Personality of the Year </li>
+                <li> 2015 FIA Rookie of the Year </li>
+                <li> 2016 Lorenzo Bandini Trophy </li>
+            </ul>
+        </div>
+        <div id="teamHistory">
+            <h3> Teams Driven For </h3>           
+            <ul>
+                <li> 2014-2016: Scuderia Toro Rosso</li>
+                <li> 2016-Present: Red Bull Racing</li>
+            </ul>
+        </div>
         <script>
             const xlabels = [];
             const points_data = [];
@@ -37,7 +83,6 @@
         const standings = await fetch('data/DriverStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
-        const year_list = [];
         const point_list = [];
         for (var i = 0; i < d_standings.length; i++){
             const row = d_standings[i].split(',');
@@ -45,14 +90,12 @@
             const round = row[1];
             const driver = row[2];
             const points = row[3];
-            if (driver == "max_verstappen" && year == "2020"){
-                year_list.push(year);
-                point_list.push(points);
+            if (driver == "max_verstappen"){
                 xlabels.push(year);
-                points_data.push(point_list[point_list.length -1]);
+                points_data.push(points);
             }      
         };
-        console.log(point_list);
+        console.log(points_data);
         }
         function lightsOut() {
             var element = document.body;
@@ -61,3 +104,10 @@
             element2.classList.toggle("dark-mode");
         } 
         </script>
+        <footer>
+            <p> Contact us @ email@email.com </p>
+            <p> Business enquiries only! </p>
+        </footer>
+    </body>
+</html>
+            
