@@ -97,7 +97,7 @@
                     });
                 }
         async function getStanding(){
-        const standings = await fetch('data/DriverStandings.csv');
+        const standings = await fetch('../../code/Data/DriverStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const point_list = [];
