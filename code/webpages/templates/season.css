@@ -48,33 +48,63 @@ html {
 
   .header h1{
     color: black;
-    float: left;
-    left: 50%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .header p{
+    color: black;
+    text-align: center;
+  }
+
+  .header #champion{
+    height: 350px;
+    float: right;
+    position: relative;
+    padding-right: 150px;
+    color: black;
+    margin-top: 12px;
   }
     /* Body of page */
-  .container{
-    height: 400px;
-    width: 700px;
+  #championship{
     display: inline-block;
-    padding-left: 100px;
-    padding-top: 40px;
+    text-align: center;
   }
 
-  #awards{
+  #championship table, td, tr, th{
+    margin-top: 10px;
+    margin-left: 140px;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: white;
+  }
+
+  #championship h2{
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 140px;
+  }
+
+  #season{
+    margin-top: 10px;
+    text-align: center;
+    width: 45%;
     float: right;
-    clear: both;
-    padding-right: 300px;
-    font-size: 25px;
-    padding-bottom: 0px;
-    padding-top: 40px;
   }
 
-  #teamHistory{
-    clear: both;
-    padding-left: 100px;
-    padding-bottom: 150px;
-    padding-top: 0px;
-    font-size: 25px;
+  #season h2{
+    margin-top: 10px;
+    margin-right:90px;
+  }
+
+  #season p{
+    margin-right: 90px;
+  }
+
+  #gasly-win{
+    width: 450px;
+    float: middle;
   }
 /*footer */
   footer{

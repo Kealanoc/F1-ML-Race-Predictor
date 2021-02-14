@@ -3,6 +3,7 @@
 
     <head>
         <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Season Page</title>
         
         <link rel="stylesheet" href="season.css">
@@ -23,80 +24,243 @@
 
     <body>
         <div class="header">
+            <img id="champion" src= "./assets/hamiltonTurkey.jpg" alt="Lewis Hamilton">
             <h1>2020 Formula 1 Championship</h1>
-        </div>       
-        <div class="container">
-            <canvas id="driver_stats"></canvas>
+            <p>Champion Driver: Lewis Hamilton[7]</p>
+            <p>Champion Constructor: Mercedes-AMG Petronas[7]</p>
         </div>
-        <div id="awards">
-            <h3> Awards </h3>           
-            <ul>
-                <li> 2014, 15, 16, 19 FIA Action of the Year </li>
-                <li> 2015, 16, 17 FIA Personality of the Year </li>
-                <li> 2015 FIA Rookie of the Year </li>
-                <li> 2016 Lorenzo Bandini Trophy </li>
-            </ul>
+        <div id="season">
+            <h2>Tale of the season</h2>
+            <p>The 2020 season was simultaneously one of the most unpredictable and most predictable seasons in Formula 1. Originally planned to have 22 races, the most in a single F1 season. Due to begin in Melbourne, the annual season opener, in March. However, due to the COVID-19 pandemic that gripped the world, the season start was postponed to July. Despite a shortened season and some races having to take place at the same track as was used in the previous race, there was no loss of drama or of spectacular entertainment.</p>
+            <p>The season began in Austria to empty stands, but the lack of fans didn't affect the racing. Nine drivers retired as Bottas won the first race of the season for the second consecutive year. This fails to mention the intensity of the on track action. Hamilton hit the rear of Albon's car as he was passed for second place in a race where if Albon passed Hamilton, the win was his for the taking. This led to Hamilton receiving a time penalty, with a storming Norris needing to finish less than five seconds behind Hamilton, he set the fastest lap of the race on the last lap and took his first ever podium.</p>
+            <p>The Styrian GP was won by Hamilton in a fairly uneventful race. While the following race in Hungary saw Verstappen lose his car on the wet and cold surface and hit the wall on his reconaissance lap. His engineers did an incredible job to get the suspension fixed in time for the beginning of the race. Not the only time Red Bull's incredible mechanics did more than their share towards the team effort. The British GP followed, and although recently having become a place of Hamilton dominance the script was different this year. Daniil Kvyat had a puncture at very high speed slamming into the wall hard. This was followed by a number of near end of race tyre failures. Carlos Sainz's tyre blew up while he was on for a fourth place finish, Bottas suffered a puncture which made him finish eleventh and Hamilton suffered a tyre delamination and puncture but still found his way across the line in first. </p>
+            <img id="gasly-win" src="./assets/gasly_win.jpg" alt="Pierre Gasly">
+            <p>
         </div>
-        <div id="teamHistory">
-            <h3> Teams Driven For </h3>           
-            <ul>
-                <li> 2014-2016: Scuderia Toro Rosso</li>
-                <li> 2016-Present: Red Bull Racing</li>
-            </ul>
+        <div id="championship">
+            <h2>2020 Championship Table</h2>   
+            <table>
+                <tr>
+                    <th>Pos</th>
+                    <th>Driver</th>
+                    <th>Team</th>
+                    <th>Wins</th>
+                    <th>Poles</th>
+                    <th>Podiums</th>
+                    <th>Points</th>
+                </tr>
+                    <td>1</td>
+                    <td>Lewis Hamilton</td>
+                    <td>Mercedes</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>14</td>
+                    <td>347</td>
+                <tr>
+                    <td>2</td>
+                    <td>Valtteri Bottas</td>
+                    <td>Mercedes</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>11</td>
+                    <td>223</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Max Verstappen</td>
+                    <td>Red Bull</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>11</td>
+                    <td>214</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Sergio Perez</td>
+                    <td>Racing Point</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>125</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Daniel Ricciardo</td>
+                    <td>Renault</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>119</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Carlos Sainz Jr.</td>
+                    <td>McLaren</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Alexander Albon</td>
+                    <td>Red Bull</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Charles Leclerc</td>
+                    <td>Ferrari</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Lando Norris</td>
+                    <td>McLaren</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>97</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Pierre Gasly</td>
+                    <td>AlphaTauri</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Lance Stroll</td>
+                    <td>Racing Point</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>75</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Esteban Ocon</td>
+                    <td>Renault</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Sebastian Vettel</td>
+                    <td>Ferrari</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Daniil Kvyat</td>
+                    <td>AlphaTauri</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Nico Hulkenberg</td>
+                    <td>Racing Point</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Kimi Raikkonen</td>
+                    <td>Alfa Romeo</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Antonio Giovinazzi</td>
+                    <td>Alfa Romeo</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>George Russell</td>
+                    <td>Williams</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Romain Grosjean</td>
+                    <td>Haas F1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Kevin Magnussen</td>
+                    <td>Haas F1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Nicolas Latifi</td>
+                    <td>Williams</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Jack Aitken</td>
+                    <td>Williams</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>Pietro Fittipaldi</td>
+                    <td>Haas F1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+        <div id="graphlocation">
+        </div>
+        <div id="moreText">
         </div>
         <script>
-            const xlabels = [];
-            const points_data = [];
-            makeChart();
-            async function makeChart(){
-                await getStanding();
-                const ctx = document.getElementById('driver_stats').getContext('2d');
-                const myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: xlabels,
-                        datasets: [{
-                        label: 'Points Earned',
-                    data: points_data,
-                    fill: false,
-                    backgroundColor: [
-                        'white',
-                    ],
-                    borderColor: [
-                        'black',
-                    ],
-                    borderWidth: 1
-                                    }]
-                            },
-                    options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                            }
-                            }
-                    });
-                }
-        async function getStanding(){
-        const standings = await fetch('data/DriverStandings.csv');
-        const data = await standings.text();
-        const d_standings = data.split('\n');
-        const point_list = [];
-        for (var i = 0; i < d_standings.length; i++){
-            const row = d_standings[i].split(',');
-            const year = row[0]; 
-            const round = row[1];
-            const driver = row[2];
-            const points = row[3];
-            if (driver == "max_verstappen"){
-                xlabels.push(year);
-                points_data.push(points);
-            }      
-        };
-        console.log(points_data);
-        }
         function lightsOut() {
             var element = document.body;
             var element2 = document.getElementById("header");
