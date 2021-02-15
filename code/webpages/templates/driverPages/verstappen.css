@@ -9,7 +9,7 @@ html {
         padding: 0;
         height: 100%;
         width: 100%;
-        background-color: #8fbce6;
+        background-color: rgba(232, 246, 248, 1);
       }
       /* Navigation bar */ 
       .navbar{
@@ -44,7 +44,7 @@ html {
         color: white;
         font-size: 30px;
         position: relative;
-        background-color: #cc8080;
+        background-color: #d6d1d1;
       }
 
       .header h1{
@@ -116,7 +116,7 @@ html {
       #awards{
         float: right;
         clear: both;
-        padding-right: 300px;
+        padding-right: 200px;
         font-size: 25px;
         padding-bottom: 0px;
         padding-top: 40px;
@@ -134,3 +134,4 @@ html {
         display: block;
         padding-top: 50px;
       }
+      

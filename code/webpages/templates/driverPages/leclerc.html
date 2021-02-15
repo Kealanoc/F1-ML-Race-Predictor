@@ -4,9 +4,9 @@
     <head>
         <meta charset="utf-8" >
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Driver Page</title>
+        <title>Charles Leclerc</title>
         
-        <link rel="stylesheet" href="driver.css">
+        <link rel="stylesheet" href="leclerc.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
@@ -23,22 +23,22 @@
 
     <body>
         <div class="header">
-            <h1>#23 Alex Albon</h1> 
-            <img id="flag" src= "./assets/thailand_flag.png" alt="National Flag">
-            <img id="team" src= "./assets/redbull_logo.png" alt="Driver Team Logo"> 
-            <img id="photo" src= "./assets/albon_photo.webp" alt="Driver Photo">
+            <h1>#16 Charles Leclerc</h1> 
+            <img id="flag" src= "./assets/monaco_flag.jpg" alt="National Flag">
+            <img id="team" src= "./assets/ferrari_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "./assets/leclerc_photo.webp" alt="Driver Photo">
             <h2>Red Bull Racing - Honda</h2> 
             <div id="left">
-                <p>Age: 24</p>
-                <p>Entries: 38</p>
+                <p>Age: 23</p>
+                <p>Entries: 59</p>
                 <p>Titles: 0</p>
-                <p>Poles: 0</p>
+                <p>Poles: 7</p>
             </div>
             <div id="right">
-                <p>Wins: 0</p>
-                <p>Podiums: 2</p>
-                <p>First Start: 2019 Australian Grand Prix</p>
-                <p>First Podium: 2020 Tuscan Grand Prix</p>
+                <p>Wins: 2</p>
+                <p>Podiums: 12</p>
+                <p>First Start: 2018 Australian Grand Prix</p>
+                <p>First Win: 2019 Italian Grand Prix</p>
             </div>
         </div>       
         <div class="container">
@@ -47,16 +47,18 @@
         <div id="awards">
             <h3> Awards Won </h3>           
             <ul>
-                <li> 2014 Formula Renault 2.0 3rd Place </li>
-                <li> 2016 GP3 Series 3rd Place </li>
-                <li> 2018 Formula 2 Championship Runner-Up </li>
+                <li> 2016 GP3 Series Champion </li>
+                <li> 2017 Formula 2 Champion </li>
+                <li> 2017, 18 Autosports Awards Rookie of the Year </li>
+                <li> 2017, 18 FIA Rookie of the Year </li>
+                <li> 2019 Pole Position Trophy </li>
             </ul>
         </div>
         <div id="teamHistory">
             <h3> Teams Driven For: </h3>           
             <ul>
-                <li> Jan 2019-Aug 2019: Scuderia Toro Rosso</li>
-                <li> 2019-Present: Red Bull Racing</li>
+                <li> 2018: Sauber F1 Team</li>
+                <li> 2019-Present: Scuderia Ferrari</li>
             </ul>
         </div>
         <script>
@@ -107,7 +109,7 @@
             const round = row[1];
             const driver = row[2];
             const points = row[3];
-            if (driver == "albon"){
+            if (driver == "leclerc"){
                 year_list.push(year);
                 point_list.push(points);
                 round_list.push(round);
@@ -130,4 +132,3 @@
         </footer>
     </body>
 </html>
-            

@@ -9,7 +9,7 @@ html {
         padding: 0;
         height: 100%;
         width: 100%;
-        background-color: #8fbce6;
+        background-color: #ffa5a1;
       }
       /* Navigation bar */ 
       .navbar{
@@ -44,7 +44,7 @@ html {
         color: white;
         font-size: 30px;
         position: relative;
-        background-color: #cc8080;
+        background-color: white;
       }
 
       .header h1{
@@ -97,11 +97,10 @@ html {
 
       .header #team{
         width:  250px;
-        height: 130px;
         float: right;
         padding-left: 90px;
         padding-right: 150px;
-        padding-top: 100px;
+        padding-top: 10px;
         color: black;
       }
         /* Body of page */
@@ -116,7 +115,7 @@ html {
       #awards{
         float: right;
         clear: both;
-        padding-right: 300px;
+        padding-right: 200px;
         font-size: 25px;
         padding-bottom: 0px;
         padding-top: 40px;
