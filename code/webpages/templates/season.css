@@ -111,31 +111,3 @@ html {
     display: block;
     padding-top: 50px;
   }
-/* dark mode and button */
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
-
-  button{
-    background-color: #F8EAE8;
-    float: left;
-    color: #070707;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 30px;
-    overflow: hidden;
-    border-style: solid;
-  }
-
-  button:hover{
-    background-color: #ddd;
-    color: black;
-    text-decoration: underline black;
-  }
-
-  button:active{
-    background-color: #c1e0c9;
-    color: white;
-  }

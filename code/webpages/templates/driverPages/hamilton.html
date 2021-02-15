@@ -4,9 +4,9 @@
     <head>
         <meta charset="utf-8" >
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Driver Page</title>
+        <title>Lewis Hamilton</title>
         
-        <link rel="stylesheet" href="driver.css">
+        <link rel="stylesheet" href="hamilton.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
@@ -23,40 +23,43 @@
 
     <body>
         <div class="header">
-            <h1>#23 Alex Albon</h1> 
-            <img id="flag" src= "./assets/thailand_flag.png" alt="National Flag">
-            <img id="team" src= "./assets/redbull_logo.png" alt="Driver Team Logo"> 
-            <img id="photo" src= "./assets/albon_photo.webp" alt="Driver Photo">
-            <h2>Red Bull Racing - Honda</h2> 
+            <h1>#44 Lewis Hamilton</h1> 
+            <img id="flag" src= "./assets/britain_flag.jpg" alt="National Flag">
+            <img id="team" src= "./assets/merc_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "./assets/hamilton_photo.webp" alt="Driver Photo">
+            <h2>Mercedes AMG-Petronas</h2> 
             <div id="left">
-                <p>Age: 24</p>
-                <p>Entries: 38</p>
-                <p>Titles: 0</p>
-                <p>Poles: 0</p>
+                <p>Age: 36</p>
+                <p>Entries: 266</p>
+                <p>Titles: 7</p>
+                <p>Poles: 98</p>
             </div>
             <div id="right">
-                <p>Wins: 0</p>
-                <p>Podiums: 2</p>
-                <p>First Start: 2019 Australian Grand Prix</p>
-                <p>First Podium: 2020 Tuscan Grand Prix</p>
+                <p>Wins: 95</p>
+                <p>Podiums: 165</p>
+                <p>First Start: 2007 Australian Grand Prix</p>
+                <p>First Win: 2007 Canadian Grand Prix</p>
             </div>
         </div>       
         <div class="container">
             <canvas id="driver_stats"></canvas>
         </div>
         <div id="awards">
-            <h3> Awards Won </h3>           
+            <h3> Awards Won and Records Held</h3>           
             <ul>
-                <li> 2014 Formula Renault 2.0 3rd Place </li>
-                <li> 2016 GP3 Series 3rd Place </li>
-                <li> 2018 Formula 2 Championship Runner-Up </li>
+                <li> 2003 Formula Renault UK Champion</li>
+                <li> 2005 Formula 3 Euro Series Champion</li>
+                <li> 2006 GP2 Series Champion</li>
+                <li> 2007, 16 Formula 1 Runner-Up</li>
+                <li> 2008, 14, 15, 17, 18, 19, 20 Formula 1 Champion</li>
+                <li> Most Wins, Most World Titles, Most Poles, Most Points, Most Podiums</li>
             </ul>
         </div>
         <div id="teamHistory">
             <h3> Teams Driven For: </h3>           
             <ul>
-                <li> Jan 2019-Aug 2019: Scuderia Toro Rosso</li>
-                <li> 2019-Present: Red Bull Racing</li>
+                <li> 2007-2012: McLaren Racing</li>
+                <li> 2013-Present: Mercedes AMG-Petronas</li>
             </ul>
         </div>
         <script>
@@ -107,7 +110,7 @@
             const round = row[1];
             const driver = row[2];
             const points = row[3];
-            if (driver == "albon"){
+            if (driver == "hamilton"){
                 year_list.push(year);
                 point_list.push(points);
                 round_list.push(round);
@@ -130,4 +133,3 @@
         </footer>
     </body>
 </html>
-            

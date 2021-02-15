@@ -1,0 +1,135 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+  body {
+    font-family: 'Yu Gothic UI', Arial;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffa5a1;
+  }
+  /* Navigation bar */ 
+  .navbar{
+    background-color: #F8EAE8;
+    overflow: hidden;
+  }
+
+  .navbar a{
+    float: left;
+    color: #070707;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+  }
+
+  .navbar a:hover{
+    background-color: #ddd;
+    color: black;
+    text-decoration: underline black;
+  }
+
+  .navbar a.active{
+    background-color: #c1e0c9;
+    color: white;
+  }
+  /* heading */ 
+  .header {
+    padding-top: 10px;
+    padding-bottom: 80px;
+    height: 300px;
+    color: white;
+    font-size: 30px;
+    position: relative;
+    background-color: white;
+  }
+
+  .header h1{
+    text-indent: 100px;
+    color: black;
+    padding-top: 20px;
+    line-height: 20%;
+    clear:both;
+    display: inline-block;
+  }
+
+  .header h2{
+    text-indent: 100px;
+    color: black;
+    vertical-align: text-top;
+    line-height: 0%;
+  }
+
+  .header #left{
+    text-indent: 100px;
+    color: black;
+    vertical-align: text-top;
+    line-height: 10%;
+    display: inline-block;
+  }
+
+  .header #right{
+    text-indent: 25px;
+    color: black;
+    vertical-align: text-top;
+    line-height: 10%;
+    display: inline-block;
+  }
+
+  .header #flag{
+    width: 75px;
+    height: 45px;
+    clear:both;
+    display: inline-block;
+    color: black;
+  }
+
+  .header #photo{
+    height: 350px;
+    vertical-align: top;
+    float: right;
+    padding-left: 150px;
+    color: black;
+  }
+
+  .header #team{
+    width: 250px;
+    float: right;
+    padding-left: 90px;
+    padding-right: 150px;
+    padding-top: 100px;
+    color: black;
+  }
+    /* Body of page */
+  .container{
+    height: 400px;
+    width: 700px;
+    display: inline-block;
+    padding-left: 100px;
+    padding-top: 40px;
+  }
+
+  #awards{
+    float: right;
+    clear: both;
+    padding-right: 200px;
+    font-size: 25px;
+    padding-bottom: 0px;
+    padding-top: 40px;
+  }
+
+  #teamHistory{
+    clear: both;
+    padding-left: 100px;
+    padding-bottom: 150px;
+    padding-top: 0px;
+    font-size: 25px;
+  }
+/*footer */
+  footer{
+    display: block;
+    padding-top: 50px;
+  }
