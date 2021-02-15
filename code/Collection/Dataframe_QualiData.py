@@ -32,5 +32,14 @@ for year in list(range(1983,2021)):
 
         year_df = pd.concat([year_df, dataframe])
     qualifying_results = pd.concat([qualifying_results, year_df])
+qualifying_results.rename(columns={"Time":"Quali_Time"}, inplace=True)
+
+for i in qualifying_results.Quali_Time:
+    try:
+        if ":" in i:
+            m,s = i.split(":")
+            m = round((float(m)*60) + float(s), 3)
+            qualifying_results["Quali_Time"].replace({i:m}, inplace=True)
+    except:
+        pass
 qualifying_results.to_csv("../Data/QualifyingResults.csv", index=False)
-print("--- %s seconds ---" % (time.time() - start_time))
