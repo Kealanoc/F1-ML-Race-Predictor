@@ -64,47 +64,42 @@
         </div>
 
         <script>
-            const chartOptions = {
-            scales: {
-                    yAxes: [{barPercentage: 0.5}]
-                    },
-                    elements: {
-                    rectangle: {
-                    borderSkipped: 'left',}}};
-            const colours = [];
             const xlabels = [];
             const points_data = [];
-
             makeChart();
             async function makeChart(){
                 await getStanding();
                 const ctx = document.getElementById('TeamPoints_stats').getContext('2d');
                 const myChart = new Chart(ctx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
                         labels: xlabels,
                         datasets: [{
                         label: 'Points Earned',
-                        data: points_data,
-                        backgroundColor: colours,
-                        fill: false,
-                        borderWidth: 1
-                                        }]
+                    data: points_data,
+                    fill: false,
+                    backgroundColor: [
+                        'white',
+                    ],
+                    borderColor: [
+                        'black',
+                    ],
+                    borderWidth: 1
+                                    }]
                             },
-                    options: { chartOptions,
+                    options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                            }
                             }
                     });
                 }
-
-        var dynamicColors = function() {
-        var r = 6
-        var g = 0
-        var b = 239
-            return "rgb(" + r + "," + g + "," + b + ")";
-        };
-
         async function getStanding(){
-        const standings = await fetch('data/ConstructorStandings.csv');
+        const standings = await fetch('../../Data/ConstructorStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const point_list = [];
@@ -120,7 +115,6 @@
                 year_list.push(year);
                 point_list.push(points);
                 round_list.push(round);
-                colours.push(dynamicColors());
             }    
         };
         round_list.push("1");
@@ -135,14 +129,6 @@
                 }
             }
         }
-
-        function lightsOut() {
-            var element = document.body;
-            var element2 = document.getElementById("header");
-            element.classList.toggle("dark-mode");
-            element2.classList.toggle("dark-mode");
-        } 
-
         </script>
 
         <footer>
