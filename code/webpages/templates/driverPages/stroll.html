@@ -24,9 +24,9 @@
     <body>
         <div class="header">
             <h1>#18 Lance Stroll</h1> 
-            <img id="flag" src= "./assets/canada_flag.jpg" alt="National Flag">
-            <img id="team" src= "./assets/racingpoint_logo.png" alt="Driver Team Logo"> 
-            <img id="photo" src= "./assets/stroll_photo.webp" alt="Driver Photo">
+            <img id="flag" src= "../assets/flags/canada_flag.jpg" alt="National Flag">
+            <img id="team" src= "../assets/logos/racingpoint_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "../assets/portraits/stroll_photo.webp" alt="Driver Photo">
             <h2>Racing Point F1 Team</h2> 
             <div id="left">
                 <p>Age: 22</p>
@@ -95,7 +95,7 @@
                     });
                 }
         async function getStanding(){
-        const standings = await fetch('data/DriverStandings.csv');
+        const standings = await fetch('../../../Data/DriverStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const point_list = [];

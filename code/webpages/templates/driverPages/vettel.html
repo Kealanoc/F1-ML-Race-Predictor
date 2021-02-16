@@ -24,9 +24,9 @@
     <body>
         <div class="header">
             <h1>#5 Sebastian Vettel</h1> 
-            <img id="flag" src= "./assets/germany_flag.jpg" alt="National Flag">
-            <img id="team" src= "./assets/ferrari_logo.png" alt="Driver Team Logo"> 
-            <img id="photo" src= "./assets/vettel_photo.jpg" alt="Driver Photo">
+            <img id="flag" src= "../assets/flags/germany_flag.jpg" alt="National Flag">
+            <img id="team" src= "../assets/logos/ferrari_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "../assets/portraits/vettel_photo.jpg" alt="Driver Photo">
             <h2>Scurderia Ferrari</h2> 
             <div id="left">
                 <p>Age: 33</p>
@@ -80,7 +80,7 @@
                     data: points_data,
                     fill: false,
                     backgroundColor: [
-                        'white',
+                        'black',
                     ],
                     borderColor: [
                         'black',
@@ -100,7 +100,7 @@
                     });
                 }
         async function getStanding(){
-        const standings = await fetch('data/DriverStandings.csv');
+        const standings = await fetch('../../../Data/DriverStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const point_list = [];
