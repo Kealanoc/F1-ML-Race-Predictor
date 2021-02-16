@@ -4,9 +4,9 @@
     <head>
         <meta charset="utf-8" >
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Driver Page</title>
+        <title>Kevin Magnussen</title>
         
-        <link rel="stylesheet" href="albon.css">
+        <link rel="stylesheet" href="magnussen.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
@@ -23,22 +23,22 @@
 
     <body>
         <div class="header">
-            <h1>#23 Alex Albon</h1> 
-            <img id="flag" src= "./assets/thailand_flag.png" alt="National Flag">
-            <img id="team" src= "./assets/redbull_logo.png" alt="Driver Team Logo"> 
-            <img id="photo" src= "./assets/albon_photo.webp" alt="Driver Photo">
-            <h2>Red Bull Racing - Honda</h2> 
+            <h1>#20 Kevin Magnussen</h1> 
+            <img id="flag" src= "./assets/denmark_flag.jpg" alt="National Flag">
+            <img id="team" src= "./assets/haas_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "./assets/magnussen_photo.jpg" alt="Driver Photo">
+            <h2>Haas F1 Team</h2> 
             <div id="left">
-                <p>Age: 24</p>
-                <p>Entries: 38</p>
+                <p>Age: 28</p>
+                <p>Entries: 120</p>
                 <p>Titles: 0</p>
                 <p>Poles: 0</p>
             </div>
             <div id="right">
                 <p>Wins: 0</p>
-                <p>Podiums: 2</p>
-                <p>First Start: 2019 Australian Grand Prix</p>
-                <p>First Podium: 2020 Tuscan Grand Prix</p>
+                <p>Podiums: 1</p>
+                <p>First Start: 2014 Australian Grand Prix</p>
+                <p>First Podium: 2014 Australian Grand Prix</p>
             </div>
         </div>       
         <div class="container">
@@ -47,18 +47,19 @@
         <div id="awards">
             <h3> Awards Won </h3>           
             <ul>
-                <li> 2014 Formula Renault 2.0 Third Place </li>
-                <li> 2016 GP3 Series Third Place </li>
-                <li> 2018 Formula 2 Championship Third Place </li>
-                <li> 2019 FIA Rookie of the Year </li>
-                <li> 2019 Autosport Rookie of the Year </li>
+                <li> 2008 Danish Formula Ford Championship Winner</li>
+                <li> 2009 Formula Renault 2.0 NEC Runner-Up</li>
+                <li> 2010 German Formula 3 Championship Third Place</li>
+                <li> 2011 British Formula 3 Championship Runner-Up</li>
+                <li> 2013 Formula Renault 3.5 Series Champion</li>
             </ul>
         </div>
         <div id="teamHistory">
             <h3> Teams Driven For: </h3>           
             <ul>
-                <li> Jan 2019-Aug 2019: Scuderia Toro Rosso</li>
-                <li> 2019-Present: Red Bull Racing</li>
+                <li> 2014: McLaren F1 Team</li>
+                <li> 2016: Renault F1 Team</li>
+                <li> 2017-2020: Haas F1 Team</li>
             </ul>
         </div>
         <script>
@@ -109,7 +110,7 @@
             const round = row[1];
             const driver = row[2];
             const points = row[3];
-            if (driver == "albon"){
+            if (driver == "kevin_magnussen"){
                 year_list.push(year);
                 point_list.push(points);
                 round_list.push(round);
@@ -132,4 +133,3 @@
         </footer>
     </body>
 </html>
-            
