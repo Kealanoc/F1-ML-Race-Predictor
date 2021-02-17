@@ -9,7 +9,7 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #ffa5a1;
+    background-color: white;
   }
   /* Navigation bar */ 
   .navbar{
@@ -44,7 +44,7 @@ html {
     color: white;
     font-size: 30px;
     position: relative;
-    background-color: white;
+    background-color: #FF8700;
   }
 
   .header h1{
