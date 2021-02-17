@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-        <meta charset="utf-8" >
-        <title>Driver Page</title>
-        
-        <link rel="stylesheet" href="driver.css">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    </head>
-       <script>
             const drivers = [];
             const numRaces = [];
             const colours = [];
@@ -66,12 +52,3 @@
             var b = Math.floor(Math.random() * 255);
             return "rgb(" + r + "," + g + "," + b + ")";
             };
-
-            function lightsOut() {
-                var element = document.body;
-                var element2 = document.getElementById("header");
-                element.classList.toggle("dark-mode");
-                element2.classList.toggle("dark-mode");
-            }
-        </script>
-</html>

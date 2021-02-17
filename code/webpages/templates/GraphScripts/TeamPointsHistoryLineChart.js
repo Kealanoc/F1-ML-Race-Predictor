@@ -1,6 +1,5 @@
-<script>
             const xlabels = [];
-            const championship_data = [];
+            const points_data = [];
             makeChart();
             async function makeChart(){
                 await getStanding();
@@ -11,13 +10,13 @@
                         labels: xlabels,
                         datasets: [{
                         label: 'Points Earned',
-                    data: championship_data,
+                    data: points_data,
                     fill: false,
                     backgroundColor: [
                         'white',
                     ],
                     borderColor: [
-                        "#0600EF",
+                        'black',
                     ],
                     borderWidth: 1
                                     }]
@@ -26,11 +25,7 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: false,
-                                reverse : true,
-                                suggestedMin: 1,
-                                suggestedMax: 10
-                                
+                                beginAtZero: true
                             }
                         }]
                             }
@@ -38,41 +33,33 @@
                     });
                 }
         async function getStanding(){
-        const standings = await fetch('data/ConstructorStandings.csv');
+        const standings = await fetch('../../Data/ConstructorStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const point_list = [];
         const year_list = [];
         const round_list = [];
-        const position_list = [];
         for (var i = 0; i < d_standings.length; i++){
             const row = d_standings[i].split(',');
             const year = row[0]; 
             const round = row[1];
             const team = row[2];
             const points = row[3];
-            const position = row[5]
             if (team == "red_bull"){
                 year_list.push(year);
                 point_list.push(points);
                 round_list.push(round);
-                position_list.push(position)
             }    
         };
         round_list.push("1");
-        for (var i = 1; i < year_list.length && position_list.length; i++){
+        for (var i = 1; i < year_list.length && point_list.length; i++){
                 if(!xlabels.includes(year_list[i])){
                     xlabels.push(year_list[i]);
                 }
+                console.log(round_list);
+                console.log(point_list);
                 if(parseFloat(round_list[i]) > parseFloat(round_list[i + 1])){
-                    championship_data.push(position_list[i]);
+                    points_data.push(point_list[i]);
                 }
             }
         }
-        function lightsOut() {
-            var element = document.body;
-            var element2 = document.getElementById("header");
-            element.classList.toggle("dark-mode");
-            element2.classList.toggle("dark-mode");
-        } 
-        </script>

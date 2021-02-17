@@ -1,4 +1,3 @@
-<script>
             const team_list = ["mercedes", "red_bull", "mclaren", "racing_point", "renault", "ferrari", "alphatauri", "alfa", "haas", "williams"];
             const xlabels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
             const team_positions = [];
@@ -127,10 +126,3 @@
             };
             team_positions.push(points_data)
         }};
-        function lightsOut() {
-            var element = document.body;
-            var element2 = document.getElementById("header");
-            element.classList.toggle("dark-mode");
-            element2.classList.toggle("dark-mode");
-        } 
-        </script>

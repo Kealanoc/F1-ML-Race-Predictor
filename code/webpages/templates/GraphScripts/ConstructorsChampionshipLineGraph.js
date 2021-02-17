@@ -1,23 +1,23 @@
-        <script>
+
             const xlabels = [];
-            const points_data = [];
+            const championship_data = [];
             makeChart();
             async function makeChart(){
                 await getStanding();
-                const ctx = document.getElementById('driver_stats').getContext('2d');
+                const ctx = document.getElementById('TeamPoints_stats').getContext('2d');
                 const myChart = new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: xlabels,
                         datasets: [{
                         label: 'Points Earned',
-                    data: points_data,
+                    data: championship_data,
                     fill: false,
                     backgroundColor: [
                         'white',
                     ],
                     borderColor: [
-                        'black',
+                        "#0600EF",
                     ],
                     borderWidth: 1
                                     }]
@@ -26,7 +26,11 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false,
+                                reverse : true,
+                                suggestedMin: 1,
+                                suggestedMax: 10
+                                
                             }
                         }]
                             }
@@ -34,30 +38,34 @@
                     });
                 }
         async function getStanding(){
-        const standings = await fetch('data/DriverStandings.csv');
+        const standings = await fetch('data/ConstructorStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
-        const year_list = [];
         const point_list = [];
+        const year_list = [];
+        const round_list = [];
+        const position_list = [];
         for (var i = 0; i < d_standings.length; i++){
             const row = d_standings[i].split(',');
             const year = row[0]; 
             const round = row[1];
-            const driver = row[2];
+            const team = row[2];
             const points = row[3];
-            if (driver == "max_verstappen" && year == "2020"){
+            const position = row[5]
+            if (team == "red_bull"){
                 year_list.push(year);
                 point_list.push(points);
-                xlabels.push(year);
-                points_data.push(point_list[point_list.length -1]);
-            }      
+                round_list.push(round);
+                position_list.push(position)
+            }    
         };
-        console.log(point_list);
+        round_list.push("1");
+        for (var i = 1; i < year_list.length && position_list.length; i++){
+                if(!xlabels.includes(year_list[i])){
+                    xlabels.push(year_list[i]);
+                }
+                if(parseFloat(round_list[i]) > parseFloat(round_list[i + 1])){
+                    championship_data.push(position_list[i]);
         }
-        function lightsOut() {
-            var element = document.body;
-            var element2 = document.getElementById("header");
-            element.classList.toggle("dark-mode");
-            element2.classList.toggle("dark-mode");
-        } 
-        </script>
+    }
+}
