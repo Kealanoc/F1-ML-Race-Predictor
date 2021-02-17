@@ -42,7 +42,7 @@
             </div>
         </div>       
         <div class="container">
-            <canvas id="driver_stats"></canvas>
+            <canvas id="TeamPoints_stats"></canvas>
         </div>
         <div id="awards">
             <h3> Awards Won </h3>           
@@ -100,7 +100,7 @@
         };
 
         async function getStanding(){
-        const standings = await fetch('data/ConstructorStandings.csv');
+        const standings = await fetch('../../Data/ConstructorStandings.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const point_list = [];
