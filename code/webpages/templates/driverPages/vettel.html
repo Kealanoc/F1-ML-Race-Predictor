@@ -6,10 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Sebastian Vettel</title>
         
-        <link rel="stylesheet" href="vettel.css">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/vettel.css')}}" />
         <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource@0.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+        var d_name = '{{ driver_name }}';
+        var d_code = '{{ driver_code }}';
+        </script>
+        <script type="text/javascript" src="../../static/GraphScripts/careerPoints.js"></script>
+        <script type="text/javascript" src="../../static/GraphScripts/DriverPointsThroughoutSeasonLineChart.js"></script>
+        <script type="text/javascript" src="../../static/GraphScripts/QualiGapTeammateBarChart.js"></script>
     </head>
 
     <div class="navbar">
@@ -24,9 +30,9 @@
     <body>
         <div class="header">
             <h1>#5 Sebastian Vettel</h1> 
-            <img id="flag" src= "../assets/flags/germany_flag.jpg" alt="National Flag">
-            <img id="team" src= "../assets/logos/ferrari_logo.png" alt="Driver Team Logo"> 
-            <img id="photo" src= "../assets/portraits/vettel_photo.jpg" alt="Driver Photo">
+            <img id="flag" src= "../../static/assets/flags/germany_flag.jpg" alt="National Flag">
+            <img id="team" src= "../../static/assets/logos/ferrari_logo.png" alt="Driver Team Logo"> 
+            <img id="photo" src= "../../static/assets/portraits/vettel_photo.jpg" alt="Driver Photo">
             <h2>Scurderia Ferrari</h2> 
             <div id="left">
                 <p>Age: 33</p>
@@ -42,7 +48,7 @@
             </div>
         </div>       
         <div class="container">
-            <canvas id="driver_stats"></canvas>
+            <canvas id="driver_points"></canvas>
         </div>
         <div id="awards">
             <h3> Awards Won and Records Held</h3>           
@@ -64,71 +70,12 @@
                 <li> 2015-2020: Scuderia Ferrari</li>
             </ul>
         </div>
-        <script>
-            const xlabels = [];
-            const points_data = [];
-            makeChart();
-            async function makeChart(){
-                await getStanding();
-                const ctx = document.getElementById('driver_stats').getContext('2d');
-                const myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: xlabels,
-                        datasets: [{
-                        label: 'Points Earned',
-                    data: points_data,
-                    fill: false,
-                    backgroundColor: [
-                        'black',
-                    ],
-                    borderColor: [
-                        'black',
-                    ],
-                    borderWidth: 1
-                                    }]
-                            },
-                    options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                            }
-                            }
-                    });
-                }
-        async function getStanding(){
-        const standings = await fetch('../../../Data/DriverStandings.csv');
-        const data = await standings.text();
-        const d_standings = data.split('\n');
-        const point_list = [];
-        const year_list = [];
-        const round_list = [];
-        for (var i = 0; i < d_standings.length; i++){
-            const row = d_standings[i].split(',');
-            const year = row[0]; 
-            const round = row[1];
-            const driver = row[2];
-            const points = row[3];
-            if (driver == "vettel"){
-                year_list.push(year);
-                point_list.push(points);
-                round_list.push(round);
-            }    
-        };
-        round_list.push("1");
-        for (var i = 1; i < year_list.length && point_list.length; i++){
-                if(!xlabels.includes(year_list[i])){
-                    xlabels.push(year_list[i]);
-                }
-                if(parseFloat(round_list[i]) > parseFloat(round_list[i + 1])){
-                    points_data.push(point_list[i]);
-                }
-            }
-        }
-        </script>
+        <div style="height: 400px; width: 700px;">
+            <canvas id="driver_stats" ></canvas>
+        </div>
+        <div style="height: 400px; width: 700px;">
+            <canvas id="TeamPoints_stats"></canvas>
+        </div>
         <footer>
             <p> Contact us @ email@email.com </p>
             <p> Business enquiries only! </p>

@@ -6,8 +6,9 @@
                     rectangle: {
                     borderSkipped: 'left',}}};
             const colours = [];
-            const xlabels = [];
-            const points_data = [];
+            const xlabels_round = [];
+            const quali_data = [];
+            console.log('Yet another chart');
 
             makeChart();
             async function makeChart(){
@@ -16,10 +17,10 @@
                 const myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: xlabels,
+                        labels: xlabels_round,
                         datasets: [{
                         label: 'Qualifying Gap to Teammate 2020 (Lower is better)',
-                        data: points_data,
+                        data: quali_data,
                         backgroundColor: colours,
                         fill: false,
                         borderWidth: 1
@@ -48,7 +49,7 @@
         };
 
         async function getStanding(){
-        const standings = await fetch('../../Data/QualiComparison/HAM.csv');
+        const standings = await fetch('../static/Data/QualiComparison/'+d_code+'.csv');
         const data = await standings.text();
         const d_standings = data.split('\n');
         const rounds = [];
@@ -57,9 +58,9 @@
             const row = d_standings[i].split(',');
             const round = row[0];
             const time = row[1];
-                points_data.push(time);
+                quali_data.push(time);
                 console.log(time);
-                xlabels.push(round);
+                xlabels_round.push(round);
                 colours.push(dynamicColors());
             }    
         };

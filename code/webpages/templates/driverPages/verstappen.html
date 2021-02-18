@@ -9,11 +9,17 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/verstappen.css')}}" />
         <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <script src="../../static/GraphScripts/careerPoints.js"></script>
+        <script>
+        var d_name = '{{ driver_name }}';
+        var d_code = '{{ driver_code }}';
+        </script>
+        <script type="text/javascript" src="../../static/GraphScripts/careerPoints.js"></script>
+        <script type="text/javascript" src="../../static/GraphScripts/DriverPointsThroughoutSeasonLineChart.js"></script>
+        <script type="text/javascript" src="../../static/GraphScripts/QualiGapTeammateBarChart.js"></script>
     </head>
 
     <div class="navbar">
-        <a href="./index.html">Home</a>
+        <a href="../templates/index.html">Home</a>
         <a class="active" href="./driver.html">Drivers</a>
         <a href="./team.html">Teams</a>
         <a href="./predictor.html">Predictor</a>
@@ -60,6 +66,12 @@
                 <li> 2014-2016: Scuderia Toro Rosso</li>
                 <li> 2016-Present: Red Bull Racing</li>
             </ul>
+        </div>
+        <div style="height: 400px; width: 700px;">
+            <canvas id="driver_stats"></canvas>
+        </div>
+        <div style="height: 400px; width: 700px;">
+            <canvas id="TeamPoints_stats"></canvas>
         </div>
         <footer>
             <p> Contact us @ email@email.com </p>

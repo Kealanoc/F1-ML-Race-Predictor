@@ -46,7 +46,7 @@ async function getStanding(){
         const round = row[1];
         const driver = row[2];
         const points = row[3];
-        if (driver == "max_verstappen"){
+        if (driver == d_name){
             year_list.push(year);
             point_list.push(points);
             round_list.push(round);
