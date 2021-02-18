@@ -1,10 +1,10 @@
 const xlabels = [];
-console.log("hello");
+console.log("hello the script is here");
 const points_data = [];
 makeChart();
 async function makeChart(){
     await getStanding();
-    const ctx = document.getElementById('driver_points').getContext('2d');
+    const ctx = document.getElementById("driver_points").getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -34,7 +34,7 @@ async function makeChart(){
         });
     }
 async function getStanding(){
-    const standings = await fetch('../../../Data/DriverStandings.csv');
+    const standings = await fetch('../static/Data/DriverStandings.csv');
     const data = await standings.text();
     const d_standings = data.split('\n');
     const point_list = [];
