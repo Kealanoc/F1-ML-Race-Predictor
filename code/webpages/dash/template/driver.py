@@ -7,19 +7,95 @@ import plotly.express as px
 import pandas as pd
 
 name = "max_verstappen"
-df = pd.read_csv("static/Data/DriverStandings.csv")
-df = df.drop(["Driver Wins", "Driver Standings"], axis=1)
-season = []
-points = {}
-for i in range(len(df)):
-    j = i+1
-    if df.Driver[i] == name:
-        Season = df.Season[i]
-        Points = df.DriverPoints[i]
-        points[Season] = Points
-df = {'Points': points.values(), 'Season': points.keys()}
-df = pd.DataFrame.from_dict(df)
-fig = px.line(df, x="Season", y="Points")
+code = "VER"
+team = "red_bull"
+def get_DriverCareerPoints(name):
+    df = pd.read_csv("static/Data/DriverStandings.csv")
+    points = {}
+    for i in range(len(df)):
+        j = i+1
+        if df.Driver[i] == name:
+            Season = df.Season[i]
+            Points = df.DriverPoints[i]
+            points[Season] = Points
+    df = {'Points': points.values(), 'Season': points.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Season", y="Points")
+    return fig
+
+
+def get_QualiDiff(code):
+    df = pd.read_csv("static/Data/QualiComparison/{}.csv".format(code))
+    fig = px.bar(df, x="Round", y="Quali Time Difference")
+    return fig
+
+def get_TeamCareerPoints(team):
+    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    points = {}
+    for i in range(len(df)):
+        if df.Constructor[i] == team:
+            Season = df.Season[i]
+            Points = df.ConstructorPoints[i]
+            points[Season] = Points
+    df = {'Points': points.values(), 'Season': points.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Season", y="Points")
+    return fig
+
+def get_ConstructorChampionship(team):
+    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    position = {}
+    for i in range(len(df)):
+        if df.Constructor[i] == team:
+            Season = df.Season[i]
+            Position = df.ConstructorStandings[i]
+            position[Season] = Position
+    df = {'Position': position.values(), 'Season': position.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Season", y="Position")
+    fig.update_layout(yaxis_range=[10,0])
+    return fig
+
+def get_DriverChampionship(name):
+    df = pd.read_csv("static/Data/DriverStandings.csv")
+    position = {}
+    for i in range(len(df)):
+        if df.Driver[i] == name:
+            Season = df.Season[i]
+            Position = df.DriverStandings[i]
+            position[Season] = Position
+    df = {'Position': position.values(), 'Season': position.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Season", y="Position")
+    fig.update_layout(yaxis_range=[10,0])
+    return fig
+
+def get_DriverSeasonPoints(name):
+    df = pd.read_csv("static/Data/DriverStandings.csv")
+    points = {}
+    for i in range(len(df)):
+        if df.Driver[i] == name and df.Season[i] == 2020:
+            Round = df.Round[i]
+            Points = df.DriverPoints[i]
+            points[Round] = Points
+    df = {'Points': points.values(), 'Round': points.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.bar(df, x="Round", y="Points")
+    return fig
+
+def get_SeasonChampionship(team):
+    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    position = {}
+    for i in range(len(df)):
+        if df.Constructor[i] == team and df.Season[i] == 2020:
+            Round = df.Round[i]
+            Position = df.ConstructorStandings[i]
+            position[Round] = Position
+    df = {'Position': position.values(), 'Round': position.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Round", y="Position")
+    fig.update_layout(yaxis_range=[10,0])
+    return fig
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -92,8 +168,19 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black'}),
     dcc.Graph(
-        id='example-graph', figure=fig),
-    #awards
+        id='example-graph', figure=get_DriverCareerPoints(name)),
+    dcc.Graph(
+        id='example-graph', figure=get_QualiDiff(code)),
+    dcc.Graph(
+        id='example-graph', figure=get_DriverSeasonPoints(name)),
+    dcc.Graph(
+        id='example-graph', figure=get_DriverChampionship(name)),
+    dcc.Graph(
+        id='example-graph', figure=get_TeamCareerPoints(team)),
+    dcc.Graph(
+        id='example-graph', figure=get_ConstructorChampionship(team)),
+    dcc.Graph(
+        id='example-graph', figure=get_SeasonChampionship(team)),
     html.Div([
         html.H3('Awards Won:'),
         html.Ul(children=[html.Li(i) for i in awards]),
