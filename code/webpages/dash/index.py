@@ -13,6 +13,7 @@ from template import driver
 
 
 app.layout = html.Div([
+
     dcc.Location(id='url', refresh=True),
     html.Div(id='page-content')
 ])
@@ -22,7 +23,7 @@ app.layout = html.Div([
               Input('url', 'pathname'))
 def display_page(pathname):
     if pathname == '/driver':
-        return driver.layout
+        return driver.dropdown, driver.layout
     else:
         return '404'
 
