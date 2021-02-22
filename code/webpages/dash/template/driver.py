@@ -2,9 +2,24 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
-
 from formulaml_dash import app
+import plotly.express as px
+import pandas as pd
+
+name = "max_verstappen"
+df = pd.read_csv("static/Data/DriverStandings.csv")
+df = df.drop(["Driver Wins", "Driver Standings"], axis=1)
+season = []
+points = {}
+for i in range(len(df)):
+    j = i+1
+    if df.Driver[i] == name:
+        Season = df.Season[i]
+        Points = df.DriverPoints[i]
+        points[Season] = Points
+df = {'Points': points.values(), 'Season': points.keys()}
+df = pd.DataFrame.from_dict(df)
+fig = px.line(df, x="Season", y="Points")
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -76,6 +91,8 @@ layout = html.Div([
                             'padding-bottom':'70px', 
                             'font-size':'35px',
                             'color':'black'}),
+    dcc.Graph(
+        id='example-graph', figure=fig),
     #awards
     html.Div([
         html.H3('Awards Won:'),
