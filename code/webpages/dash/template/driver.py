@@ -15,7 +15,7 @@ team = "red_bull"
 lineup = "Red_Bull"
 
 def get_DriverCareerPoints(name):
-    df = pd.read_csv("static/Data/DriverStandings.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/DriverStandings.csv")
     points = {}
     for i in range(len(df)):
         j = i+1
@@ -30,12 +30,12 @@ def get_DriverCareerPoints(name):
 
 
 def get_QualiDiff(code):
-    df = pd.read_csv("static/Data/QualiComparison/{}.csv".format(code))
+    df = pd.read_csv("code/webpages/dash/static/Data/QualiComparison/{}.csv".format(code))
     fig = px.bar(df, x="Round", y="Quali Time Difference")
     return fig
 
 def get_TeamCareerPoints(team):
-    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/ConstructorStandings.csv")
     points = {}
     for i in range(len(df)):
         if df.Constructor[i] == team:
@@ -48,7 +48,7 @@ def get_TeamCareerPoints(team):
     return fig
 
 def get_ConstructorChampionship(team):
-    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/ConstructorStandings.csv")
     position = {}
     for i in range(len(df)):
         if df.Constructor[i] == team:
@@ -62,7 +62,7 @@ def get_ConstructorChampionship(team):
     return fig
 
 def get_DriverChampionship(name):
-    df = pd.read_csv("static/Data/DriverStandings.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/DriverStandings.csv")
     position = {}
     for i in range(len(df)):
         if df.Driver[i] == name:
@@ -76,7 +76,7 @@ def get_DriverChampionship(name):
     return fig
 
 def get_DriverSeasonPoints(name):
-    df = pd.read_csv("static/Data/DriverStandings.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/DriverStandings.csv")
     points = {}
     for i in range(len(df)):
         if df.Driver[i] == name and df.Season[i] == 2020:
@@ -89,7 +89,7 @@ def get_DriverSeasonPoints(name):
     return fig
 
 def get_SeasonChampionship(team):
-    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/ConstructorStandings.csv")
     position = {}
     for i in range(len(df)):
         if df.Constructor[i] == team and df.Season[i] == 2020:
@@ -103,7 +103,7 @@ def get_SeasonChampionship(team):
     return 
 
 def get_TeamLineup(lineup):
-    df = pd.read_csv("static/Data/TeamLineups/Red_Bull.csv")
+    df = pd.read_csv("code/webpages/dash/static/Data/TeamLineups/Red_Bull.csv")
     Lineup = {}
     for i in range(len(df)):
         driver = df.Driver[i]
@@ -128,7 +128,6 @@ dropdown = dbc.DropdownMenu(
     style={"padding-top":"8px"},
     nav=True,
     label="Drivers",
-    options=[]
 )
 
 layout = html.Div([
