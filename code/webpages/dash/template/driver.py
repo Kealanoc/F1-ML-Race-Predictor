@@ -8,24 +8,7 @@ import plotly.express as px
 import pandas as pd
 import index
 
-<<<<<<< HEAD:code/webpages/dash/template/drive1r.py
-data = dj()
-
-
-df = pd.read_csv("code\webpages\dash\static\Data\DriverStandings.csv")
-df = df.drop(["Driver Wins", "Driver Standings"], axis=1)
-season = []
-points = {}
-for i in range(len(df)):
-    j = i+1
-    if df.Driver[i] == name:
-        Season = df.Season[i]
-        Points = df.DriverPoints[i]
-        points[Season] = Points
-df = {'Points': points.values(), 'Season': points.keys()}
-df = pd.DataFrame.from_dict(df)
-fig = px.line(df, x="Season", y="Points")
-=======
+data=dj()
 name = "max_verstappen"
 code = "VER"
 team = "red_bull"
@@ -116,7 +99,6 @@ def get_SeasonChampionship(team):
     fig = px.line(df, x="Round", y="Position")
     fig.update_layout(yaxis_range=[10,0])
     return fig
->>>>>>> 5df14c35dd77ce9c7d0ad5044ee2f57a2bfc16b6:code/webpages/dash/template/driver.py
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
