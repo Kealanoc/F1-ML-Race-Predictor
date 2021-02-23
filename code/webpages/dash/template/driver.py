@@ -4,11 +4,15 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from formulaml_dash import app
 from driver_json import driver_json as dj
+import flask
+from dash.dependencies import Input, Output, State
+from markupsafe import escape
 import plotly.express as px
 import pandas as pd
 
+driverList = ['max_verstappen', 'ricciardo']
 data=dj()
-name = "max_verstappen"
+name = 'max_verstappen'
 code = "VER"
 team = "red_bull"
 lineup = "Red_Bull"
@@ -118,24 +122,21 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 awards = data[name]["awards_won"]
 teams = ['2014-2016: Scuderia Toro Rosso', '2016-Present: Red Bull Racing']
 
-dropdown = dbc.DropdownMenu(
-    children=[
-        dbc.NavLink("Daniel Ricciardo", href="/ricciardo"), 
-        dbc.NavLink("Max Verstappen", href="/max_verstappen"),
-        dbc.NavLink("Entry 3", href="#"),
-    ],
-    style={"padding-top":"8px"},
-    nav=True,
-    label="Drivers",
-)
-
 layout = html.Div([
-    dcc.Location(id='url', refresh=False),
+    dcc.Location(id='url', refresh=True),
     html.Div(
     [
         dbc.Navbar(
             [
-                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="#")), dbc.NavLink(dbc.NavLink("Season", href="#")), dbc.NavLink(dbc.NavLink("Predictor", href="#")), dropdown]),
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/ricciardo", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Driver", href="#", active="exact")), dbc.DropdownMenu(
+                    children=[
+                dbc.DropdownMenuItem("Max Verstappen", href="/driver/max_verstappen"),
+                dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Drivers",
+                )]),
             ],
             sticky="top",
             style={"font-size":"25px",
@@ -145,6 +146,7 @@ layout = html.Div([
     ]
 ),
     #header
+    html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
                                         'line-height':'100%', 
@@ -226,6 +228,7 @@ layout = html.Div([
                             'padding-left':'6%',
                             'padding-top':'4%'}),
     ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px'})
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
