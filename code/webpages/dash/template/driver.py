@@ -12,6 +12,8 @@ data=dj()
 name = "max_verstappen"
 code = "VER"
 team = "red_bull"
+lineup = "Red_Bull"
+
 def get_DriverCareerPoints(name):
     df = pd.read_csv("static/Data/DriverStandings.csv")
     points = {}
@@ -98,6 +100,18 @@ def get_SeasonChampionship(team):
     df = pd.DataFrame.from_dict(df)
     fig = px.line(df, x="Round", y="Position")
     fig.update_layout(yaxis_range=[10,0])
+    return 
+
+def get_TeamLineup(lineup):
+    df = pd.read_csv("static/Data/TeamLineups/Red_Bull.csv")
+    Lineup = {}
+    for i in range(len(df)):
+        driver = df.Driver[i]
+        races = df.Races[i]
+        Lineup[driver] = races
+    df = {'Races': Lineup.values(), 'Driver': Lineup.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.pie(df, values='Races', names='Driver', title='Share of each drivers time in a teams history')
     return fig
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -197,6 +211,8 @@ layout = html.Div([
         id='example-graph', figure=get_ConstructorChampionship(team)),
     dcc.Graph(
         id='example-graph', figure=get_SeasonChampionship(team)),
+    dcc.Graph(
+        id='example-graph', figure=get_TeamLineup(lineup)),
     html.Div([
         html.H3('Awards Won:'),
         html.Ul(children=[html.Li(i) for i in awards]),
