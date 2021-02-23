@@ -3,11 +3,15 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 from formulaml_dash import app
+from driver_json import driver_json as dj
 import plotly.express as px
 import pandas as pd
+import index
 
-name = "max_verstappen"
-df = pd.read_csv("static/Data/DriverStandings.csv")
+data = dj()
+
+
+df = pd.read_csv("code\webpages\dash\static\Data\DriverStandings.csv")
 df = df.drop(["Driver Wins", "Driver Standings"], axis=1)
 season = []
 points = {}
@@ -23,31 +27,44 @@ fig = px.line(df, x="Season", y="Points")
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-awards = ['2014, 15, 16, 19 FIA Action of the Year', '2015, 16, 17 FIA Personality of the Year', '2015 FIA Rookie of the Year', '2016 Lorenzo Bandini Trophy', '2014 FIA European Formula 3 Championship Third Place']
+awards = data[name]["awards_won"]
 teams = ['2014-2016: Scuderia Toro Rosso', '2016-Present: Red Bull Racing']
 
 dropdown = dbc.DropdownMenu(
     children=[
-        dbc.DropdownMenuItem("Entry 1"),
-        dbc.DropdownMenuItem("Entry 2"),
-        dbc.DropdownMenuItem(divider=True),
-        dbc.DropdownMenuItem("Entry 3"),
+        dbc.NavLink("Daniel Ricciardo", href="/ricciardo", id="ricciardo"), 
+        dbc.NavLink("Max Verstappen", href="/max_verstappen", id="max_verstappen"),
+        dbc.NavLink("Entry 3", href="#"),
     ],
+    style={"padding-top":"8px"},
     nav=True,
-    in_navbar=True,
-    label="Menu",
+    label="Drivers",
+    options=[]
 )
 
 layout = html.Div([
     dcc.Location(id='url', refresh=False),
+    html.Div(
+    [
+        dbc.Navbar(
+            [
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="#")), dbc.NavLink(dbc.NavLink("Season", href="#")), dbc.NavLink(dbc.NavLink("Predictor", href="#")), dropdown]),
+            ],
+            sticky="top",
+            style={"font-size":"25px",
+                    "height":"65px",
+                    "background-color":"#F8EAE8",}
+        ),
+    ]
+),
     #header
     html.Div([
-    html.H1('Max Verstappen', style={'text-indent':'100px', 
+    html.H1(data[name]["name"], style={'text-indent':'100px', 
                                         'line-height':'100%', 
                                         'clear':'both',
                                         'display':'inline-block',
                                         'padding-top':'1%'}),
-    html.Img(src="../../static/assets/flags/netherlands_flag.png", style={'width':'75px',
+    html.Img(src=data[name]["flag"], style={'width':'75px',
                                                                         'height':'45px',
                                                                         'display':'inline-block',
                                                                         'clear':'both'}),
@@ -62,30 +79,30 @@ layout = html.Div([
                                                                             'padding-top' :'1%',
                                                                             'float':'right',
                                                                             'vertical-align':'top',}),
-    html.H2('Red Bull Racing', style={'text-indent':'100px',
+    html.H2(data[name]["team"], style={'text-indent':'100px',
                                         'vertical-align':'text-top',
                                         'line-height':'100%'}),
     #left
     html.Div([
-        html.P('Age: 23'),
-        html.P('Entries: 119'),
-        html.P('Titles: 0'),
-        html.P('Poles: 3'),
+        html.P("Age: " + data[name]["age"]),
+        html.P("Entries: " + data[name]["entries"]),
+        html.P("Titles: " + data[name]["titles"]),
+        html.P('Poles: ' + data[name]["poles"]),
     ],id='left', style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
                             'display':'inline-block'}),
     #right
     html.Div([
-        html.P('Wins: 10'),
-        html.P('Podiums: 42'),
-        html.P('First Start: 2015 Australian Grand Prix'),
-        html.P('First Win: 2016 Spanish Grand Prix'),
+        html.P('Wins: ' + data[name]["wins"]),
+        html.P('Podiums: ' + data[name]["podiums"]),
+        html.P('First Start: ' + data[name]["first_start"]),
+        html.P('First Win: ' + data[name]["first_win"]),
     ],id='right',style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
                             'display':'inline-block'}),
-    ],id='header', style={'background-color':'#223971',
+    ],id='header', style={'background-color':data[name]["background-color"],
                             'height':'300px', 
                             'padding-top':'10px', 
                             'padding-bottom':'70px', 

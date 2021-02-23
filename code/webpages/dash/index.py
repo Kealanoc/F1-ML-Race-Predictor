@@ -19,13 +19,16 @@ app.layout = html.Div([
 ])
 
 
-@app.callback(Output('page-content', 'children'),
-              Input('url', 'pathname'))
+@app.callback(Output('page-content', 'max_verstappen',),
+              Input('url', 'pathname',))
 def display_page(pathname):
-    if pathname == '/driver':
-        return driver.dropdown, driver.layout
+    if pathname == '/max_verstappen':
+        return driver.layout
+    elif pathname == '/ricciardo':
+        return driver.layout
     else:
         return '404'
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

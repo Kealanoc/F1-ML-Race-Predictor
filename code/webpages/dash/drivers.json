@@ -1,0 +1,34 @@
+{
+    "max_verstappen":{
+                        "name" : "Max Verstappen",
+                        "team" : "Red Bull",
+                        "age" : "23",
+                        "entries":"119",
+                        "titles":"0",
+                        "poles":"3",
+                        "wins":"10",
+                        "podiums":"42",
+                        "first_start":"2015 Australian Grand Prix",
+                        "first_win":"2016 Spanish Grand Prix",
+                        "awards_won": ["2014, 15, 16, 19 FIA Action of the Year", "2015, 16, 17 FIA Personality of the Year", "2015 FIA Rookie of the Year", "2016 Lorenzo Bandini Trophy", "2014 FIA European Formula 3 Championship Third Place"],
+                        "background-color":"#223971",
+                        "flag":"../../static/assets/flags/netherlands_flag.png"
+                    },
+    "ricciardo":{
+                        "name" : "Daniel Ricciardo",
+                        "graph_name" : "ricciardo",
+                        "team" : "Renault",
+                        "age" : "23",
+                        "entries":"119",
+                        "titles":"0",
+                        "poles":"3",
+                        "wins":"10",
+                        "podiums":"42",
+                        "first_start":"2015 Australian Grand Prix",
+                        "first_win":"2016 Spanish Grand Prix",
+                        "awards_won": ["2014, 15, 16, 19 FIA Action of the Year", "2015, 16, 17 FIA Personality of the Year", "2015 FIA Rookie of the Year", "2016 Lorenzo Bandini Trophy", "2014 FIA European Formula 3 Championship Third Place"],
+                        "background-color":"yellow",
+                        "flag":"../../static/assets/flags/australia_flag.jpg"
+                    }
+
+}
