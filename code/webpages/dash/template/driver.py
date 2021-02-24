@@ -5,10 +5,12 @@ import dash_bootstrap_components as dbc
 from formulaml_dash import app
 from driver_json import driver_json as dj
 import flask
+from urllib.parse import urlparse
 from dash.dependencies import Input, Output, State
 from markupsafe import escape
 import plotly.express as px
 import pandas as pd
+
 
 driverList = ['max_verstappen', 'ricciardo']
 data=dj()
@@ -198,21 +200,21 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black'}),
     dcc.Graph(
-        id='example-graph', figure=get_DriverCareerPoints(name)),
+        id='example-graph', figure=get_DriverCareerPoints(name), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_QualiDiff(code)),
+        id='example-graph', figure=get_QualiDiff(code), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_DriverSeasonPoints(name)),
+        id='example-graph', figure=get_DriverSeasonPoints(name), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_DriverChampionship(name)),
+        id='example-graph', figure=get_DriverChampionship(name), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_TeamCareerPoints(team)),
+        id='example-graph', figure=get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_ConstructorChampionship(team)),
+        id='example-graph', figure=get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_SeasonChampionship(team)),
+        id='example-graph', figure=get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=get_TeamLineup(lineup)),
+        id='example-graph', figure=get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
     html.Div([
         html.H3('Awards Won:'),
         html.Ul(children=[html.Li(i) for i in awards]),

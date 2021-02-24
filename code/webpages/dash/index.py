@@ -8,9 +8,9 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
-
 from formulaml_dash import app
 from template import driver
+
 
 
 app.layout = html.Div([
@@ -18,11 +18,11 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
-
 @app.callback(Output('page-content','children', ),
               Input('url', 'pathname', ))
 def display_page(pathname):
-    if pathname == '/driver/max_verstappen': 
+    time.sleep(1)
+    if pathname == '/driver/max_verstappen':
         return driver.layout
     elif pathname == '/driver/ricciardo':
         return driver.layout
