@@ -123,7 +123,7 @@ def get_TeamLineup(lineup):
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
-teams = ['2014-2016: Scuderia Toro Rosso', '2016-Present: Red Bull Racing']
+teams = data[name]["driver_for"]
 
 layout = html.Div([
     dcc.Location(id='url', refresh=True),
