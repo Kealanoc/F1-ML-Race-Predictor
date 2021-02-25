@@ -120,6 +120,29 @@ def get_TeamLineup(lineup):
     fig = px.pie(df, values='Races', names='Driver', title='Share of each drivers time in a teams history')
     return fig
 
+teamlist = ["mercedes", "red_bull", "mclaren", "racing_point", "renault", "ferrari", "alphatauri", "alfa", "haas", "williams"]
+teamcolour = ['#00D2BE', '#1E41FF', '#FF8700', '#F596C8', '#FFF500', '#C80000','#FFFFFF', '#9B0000', '#787878', '#0082FA']
+def get_FullSeasonChampionship(teamlist):
+    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    standings = {}
+    for team in teamlist:
+        position = {}
+        for i in range(len(df)):
+            if df.Constructor[i] == team and df.Season[i] == 2020:
+                Round = df.Round[i]
+                Position = df.ConstructorStandings[i]
+                position[Round] = Position
+        if "Round" not in standings:
+            standings["Round"] = position.keys()
+        if team not in standings:
+            standings[team] = position.values()
+        standings = pd.DataFrame.from_dict(standings)
+    fig = px.line(standings, x="Round", y=["mercedes", "red_bull", "mclaren", "racing_point", "renault", "ferrari", "alphatauri", "alfa", "haas", "williams"])
+    fig.update_layout(yaxis_range=[11,0])
+    for i in range(len(teamlist)):
+        fig['data'][i]['line']['color']=teamcolour[i]
+    return fig
+
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
@@ -148,7 +171,7 @@ layout = html.Div([
         ),
     ]
 ),
-    #header
+        #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -156,21 +179,25 @@ layout = html.Div([
                                         'clear':'both',
                                         'display':'inline-block',
                                         'padding-top':'1%'}),
+
     html.Img(src=data[name]["flag"], style={'width':'75px',
-                                                                        'height':'45px',
-                                                                        'display':'inline-block',
-                                                                        'clear':'both'}),
-    html.Img(src="../../static/assets/logos/redbull_logo.png", style={'height':'80%',
-                                                                    'float':'right',
-                                                                    'padding-top':'6%',
-                                                                    'padding-right':'2.5%',
-                                                                    'padding-left':'2%',
-                                                                    'display':'inline-block'}),
-    html.Img(src="../../static/assets/portraits/verstappen_photo.png", style={'height':'120%',
-                                                                            'padding-left':'2.5%',
-                                                                            'padding-top' :'1%',
-                                                                            'float':'right',
-                                                                            'vertical-align':'top',}),
+                                            'height':'45px',
+                                            'display':'inline-block',
+                                            'clear':'both'}),
+    
+    html.Img(src=data[name]["team_logo"], style={'height':'80%',
+                                            'float':'right',
+                                            'padding-top':'6%',
+                                            'padding-right':'2.5%',
+                                            'padding-left':'2%',
+                                            'display':'inline-block'}),
+
+    html.Img(src=data[name]["driver_photo"], style={'height':'120%',
+                                            'padding-left':'2.5%',
+                                            'padding-top' :'1%',
+                                            'float':'right',
+                                            'vertical-align':'top',}),
+
     html.H2(data[name]["team"], style={'text-indent':'100px',
                                         'vertical-align':'text-top',
                                         'line-height':'100%'}),
@@ -216,6 +243,8 @@ layout = html.Div([
         id='example-graph', figure=get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
         id='example-graph', figure=get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=get_FullSeasonChampionship(teamlist)),
     html.Div([
         html.H3('Awards Won:'),
         html.Ul(children=[html.Li(i) for i in awards]),

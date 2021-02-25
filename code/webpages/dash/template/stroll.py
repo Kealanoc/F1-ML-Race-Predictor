@@ -63,7 +63,7 @@ layout = html.Div([
         ),
     ]
 ),
-    #header
+        #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -71,21 +71,25 @@ layout = html.Div([
                                         'clear':'both',
                                         'display':'inline-block',
                                         'padding-top':'1%'}),
+
     html.Img(src=data[name]["flag"], style={'width':'75px',
-                                                                        'height':'45px',
-                                                                        'display':'inline-block',
-                                                                        'clear':'both'}),
+                                            'height':'45px',
+                                            'display':'inline-block',
+                                            'clear':'both'}),
+    
     html.Img(src=data[name]["team_logo"], style={'height':'80%',
-                                                                    'float':'right',
-                                                                    'padding-top':'6%',
-                                                                    'padding-right':'2.5%',
-                                                                    'padding-left':'2%',
-                                                                    'display':'inline-block'}),
+                                            'float':'right',
+                                            'padding-top':'6%',
+                                            'padding-right':'2.5%',
+                                            'padding-left':'2%',
+                                            'display':'inline-block'}),
+
     html.Img(src=data[name]["driver_photo"], style={'height':'120%',
-                                                                            'padding-left':'2.5%',
-                                                                            'padding-top' :'1%',
-                                                                            'float':'right',
-                                                                            'vertical-align':'top',}),
+                                            'padding-left':'2.5%',
+                                            'padding-top' :'1%',
+                                            'float':'right',
+                                            'vertical-align':'top',}),
+
     html.H2(data[name]["team"], style={'text-indent':'100px',
                                         'vertical-align':'text-top',
                                         'line-height':'100%'}),
