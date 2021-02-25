@@ -33,6 +33,9 @@ for year in list(range(1983,2021)):
         year_df = pd.concat([year_df, dataframe])
     qualifying_results = pd.concat([qualifying_results, year_df])
 qualifying_results.rename(columns={"Time":"Quali_Time"}, inplace=True)
+qualifying_results.rename(columns={"season":"Season"}, inplace=True)
+qualifying_results.rename(columns={"Driver":"driver"}, inplace=True)
+qualifying_results.rename(columns={"round":"Round"}, inplace=True)
 
 for i in qualifying_results.Quali_Time:
     try:
@@ -42,4 +45,5 @@ for i in qualifying_results.Quali_Time:
             qualifying_results["Quali_Time"].replace({i:m}, inplace=True)
     except:
         pass
-qualifying_results.to_csv("../Data/QualifyingResults.csv", index=False)
+qualifying_results.to_csv("../webpages/dash/static/Data/QualifyingResults.csv", index=False)
+print("--- %s seconds ---" % (time.time() - start_time))

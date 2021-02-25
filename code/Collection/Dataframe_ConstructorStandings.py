@@ -4,12 +4,12 @@ import requests
 import time
 
 rounds = []
-race = pd.read_csv("../Data/RaceData.csv")
+race = pd.read_csv("../webpages/dash/static/Data/RaceData.csv")
 for year in np.array(race.Season.unique()):
     rounds.append([year, list(race[race.Season == year]["Round"])])
 rounds = rounds[8:]
 start_time = time.time()
-constructor_standings = {"Season": [], "Round": [], "ConstructorId": [], "Constructor Points": [], "Constructor Wins": [], "Constructor Standings": []}
+constructor_standings = {"Season": [], "Round": [], "Constructor": [], "ConstructorPoints": [], "ConstructorWins": [], "ConstructorStandings": []}
 
 rows = 0
 for i in list(range(len(rounds))):
@@ -27,26 +27,24 @@ for i in list(range(len(rounds))):
             except:
                 constructor_standings['Round'].append(None)                              
             try:
-                constructor_standings['ConstructorId'].append(entry['Constructor']['constructorId'])
+                constructor_standings['Constructor'].append(entry['Constructor']['constructorId'])
             except:
-                constructor_standings['ConstructorId'].append(None)  
+                constructor_standings['Constructor'].append(None)  
             try:
-                constructor_standings['Constructor Points'].append(int(entry['points']))
+                constructor_standings['ConstructorPoints'].append(int(entry['points']))
             except:
-                constructor_standings['Constructor Points'].append(None)
+                constructor_standings['ConstructorPoints'].append(None)
             try:
-                constructor_standings['Constructor Wins'].append(int(entry['wins']))
+                constructor_standings['ConstructorWins'].append(int(entry['wins']))
             except:
-                constructor_standings['Constructor Wins'].append(None)       
+                constructor_standings['ConstructorWins'].append(None)       
             try:
-                constructor_standings['Constructor Standings'].append(int(entry['position']))
+                constructor_standings['ConstructorStandings'].append(int(entry['position']))
             except:
-                constructor_standings['Constructor Standings'].append(None)
+                constructor_standings['ConstructorStandings'].append(None)
             rows += 1
-        print("Completed entries: " + str(rows))
-
 
 df = pd.DataFrame(constructor_standings)
 df = df.reindex(columns=list(constructor_standings.keys()))
-df.to_csv("../Data/ConstructorStandings.csv", index = False)
+df.to_csv("../webpages/dash/static/Data/ConstructorStandings.csv", index = False)
 print("--- %s seconds ---" % (time.time() - start_time))

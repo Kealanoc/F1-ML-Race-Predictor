@@ -15,7 +15,7 @@ import pandas as pd
 driverList = ['max_verstappen', 'ricciardo']
 data=dj()
 name = 'max_verstappen'
-code = "VER"
+code = "NOR"
 team = "red_bull"
 lineup = "Red_Bull"
 
@@ -45,7 +45,8 @@ def get_TeamCareerPoints(team):
     for i in range(len(df)):
         if df.Constructor[i] == team:
             Season = df.Season[i]
-            Points = df.ConstructorPoints[i]
+            if df.ConstructorPoints[i]!= "":
+                Points = df.ConstructorPoints[i]
             points[Season] = Points
     df = {'Points': points.values(), 'Season': points.keys()}
     df = pd.DataFrame.from_dict(df)
@@ -105,7 +106,7 @@ def get_SeasonChampionship(team):
     df = pd.DataFrame.from_dict(df)
     fig = px.line(df, x="Round", y="Position")
     fig.update_layout(yaxis_range=[10,0])
-    return 
+    return fig
 
 def get_TeamLineup(lineup):
     df = pd.read_csv("static/Data/TeamLineups/Red_Bull.csv")

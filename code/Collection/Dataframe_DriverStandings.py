@@ -4,12 +4,12 @@ import requests
 import time
 
 rounds = []
-race = pd.read_csv("../Data/RaceData.csv")
+race = pd.read_csv("../webpages/dash/static/Data/RaceData.csv")
 for year in np.array(race.Season.unique()):
     rounds.append([year, list(race[race.Season == year]['Round'])])
 
 start_time = time.time()
-driver_standings = {"Season": [], "Round": [], "Driver": [], "Driver Points": [], "Driver Wins": [], "Driver Standings": []}
+driver_standings = {"Season": [], "Round": [], "Driver": [], "DriverPoints": [], "DriverWins": [], "DriverStandings": []}
 
 for i in list(range(len(rounds))):
     for j in rounds[i][1]:
@@ -30,19 +30,19 @@ for i in list(range(len(rounds))):
             except:
                 driver_standings['Driver'].append(None)  
             try:
-                driver_standings['Driver Points'].append(int(entry['points']))
+                driver_standings['DriverPoints'].append(int(entry['points']))
             except:
-                driver_standings['Driver Points'].append(None)
+                driver_standings['DriverPoints'].append(None)
             try:
-                driver_standings['Driver Wins'].append(int(entry['wins']))
+                driver_standings['DriverWins'].append(int(entry['wins']))
             except:
-                driver_standings['Driver Wins'].append(None)       
+                driver_standings['DriverWins'].append(None)       
             try:
-                driver_standings['Driver Standings'].append(int(entry['position']))
+                driver_standings['DriverStandings'].append(int(entry['position']))
             except:
-                driver_standings['Driver Standings'].append(None)
+                driver_standings['DriverStandings'].append(None)
 
 df = pd.DataFrame(driver_standings)
 df = df.reindex(columns=list(driver_standings.keys()))
-df.to_csv("../Data/DriverStandings.csv", index = False)
+df.to_csv("../webpages/dash/static/Data/DriverStandings.csv", index = False)
 print("--- %s seconds ---" % (time.time() - start_time))

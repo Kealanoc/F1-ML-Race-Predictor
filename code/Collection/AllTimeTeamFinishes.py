@@ -1,10 +1,10 @@
 import pandas as pd
 import numpy as np
 total = 0
-race = pd.read_csv("../Data/RaceResults.csv")
+race = pd.read_csv("../webpages/dash/static/Data/RaceResults.csv")
 
 def get_comparison(team):
-    df = team.drop(["Track_ID", "Nationality", "Time", "Status", "Points", "URL", "DOB", "Grid"], axis=1)
+    df = team.drop(["Track_ID", "Nationality", "Time", "Status", "Points", "URL", "DOB", "Pos"], axis=1)
     results = {}
     race_num = 1
     for team in df.Constructor:
@@ -13,8 +13,8 @@ def get_comparison(team):
         if position != "":
             results[race_num] = position
             race_num +=1
-    results = pd.DataFrame.from_dict(results, orient='index', columns=["Race Result"])
-    results.to_csv("../Data/TeamRaceFinishes/{}.csv".format(name), index=False)
+    results = pd.DataFrame.from_dict(results, orient='index', columns=["RaceResult"])
+    results.to_csv("../webpages/dash/static/Data/TeamRaceFinishes/{}.csv".format(name), index=False)
     
 
 team = race[(race["Constructor"] == 'alfa')]

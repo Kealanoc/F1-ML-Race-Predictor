@@ -36,4 +36,4 @@ for year in list(range(1950, 2021)):
             races['URL'].append(None)
 race = pd.DataFrame(races)
 df = race.reindex(columns=list(races.keys()))
-df.to_csv("../Data/RaceData.csv", index=False)
+df.to_csv("../webpages/dash/static/Data/RaceData.csv", index=False)

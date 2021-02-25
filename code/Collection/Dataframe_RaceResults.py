@@ -4,12 +4,12 @@ import requests
 import time
 start_time = time.time()
 rounds = []
-race = pd.read_csv("../Data/RaceData.csv")
+race = pd.read_csv("../webpages/dash/static/Data/RaceData.csv")
 for year in np.array(race.Season.unique()):
     rounds.append([year, list(race[race.Season == year]['Round'])])
 
 RaceResults = {"Season": [], "Round": [], "Track_ID": [], "Driver": [],
-                "DOB": [], "Nationality": [], "Constructor": [], "Grid": [],
+                "DOB": [], "Nationality": [], "Constructor": [], "Pos": [],
                 "Time": [], "Status": [], "Points": [], "Podium": [], "URL": []}
 
 for i in list(range(len(rounds))):
@@ -21,7 +21,6 @@ for i in list(range(len(rounds))):
         for entry in json['MRData']['RaceTable']['Races'][0]['Results']:
             try:
                 RaceResults["Season"].append(int(json['MRData']['RaceTable']['Races'][0]['season']))
-                print(RaceResults["Season"])
             except:
                 RaceResults["Season"].appned(None)
             try:
@@ -49,9 +48,9 @@ for i in list(range(len(rounds))):
             except:
                 RaceResults["DOB"].append(None)
             try:
-                RaceResults["Grid"].append(int(entry["grid"]))
+                RaceResults["Pos"].append(int(entry["grid"]))
             except:
-                RaceResults["Grid"].append(None)
+                RaceResults["Pos"].append(None)
             try:
                 RaceResults["Points"].append(int(entry["points"]))
             except:
@@ -75,5 +74,5 @@ for i in list(range(len(rounds))):
 
 df = pd.DataFrame(RaceResults)
 df = df.reindex(columns=list(RaceResults.keys()))
-df.to_csv("../Data/RaceResults.csv", index = False)
+df.to_csv("../webpages/dash/static/Data/RaceResults.csv", index = False)
 print("--- %s seconds ---" % (time.time() - start_time))

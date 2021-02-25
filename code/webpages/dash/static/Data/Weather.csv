@@ -227,7 +227,7 @@ Season,Round,Track_ID,weather,weather_warm,weather_cold,weather_dry,weather_wet,
 1973,6,monaco,N/A,0,0,0,0,0
 1973,7,anderstorp,N/A,0,0,0,0,0
 1973,8,ricard,N/A,0,0,0,0,0
-1973,9,silverstone,Dry,0,0,1,0,0
+1973,9,silverstone,N/A,0,0,0,0,0
 1973,10,zandvoort,N/A,0,0,0,0,0
 1973,11,nurburgring,Dry,0,0,1,0,0
 1973,12,osterreichring,N/A,0,0,0,0,0
@@ -525,7 +525,7 @@ Season,Round,Track_ID,weather,weather_warm,weather_cold,weather_dry,weather_wet,
 1992,8,magny_cours,N/A,0,0,0,0,0
 1992,9,silverstone,Dry,0,0,1,0,0
 1992,10,hockenheimring,Dry,0,0,1,0,0
-1992,11,hungaroring,Dry,0,0,1,0,0
+1992,11,hungaroring,N/A,0,0,0,0,0
 1992,12,spa,N/A,0,0,0,0,0
 1992,13,monza,Sunny and warm,1,0,0,0,0
 1992,14,estoril,"Dry, sunny, windy",0,0,0,0,0
@@ -1030,7 +1030,7 @@ Season,Round,Track_ID,weather,weather_warm,weather_cold,weather_dry,weather_wet,
 2020,11,nurburgring,Partly cloudy,0,0,0,0,1
 2020,12,portimao,Cloudy,0,0,0,0,1
 2020,13,imola,Partly cloudy,0,0,0,0,1
-2020,14,istanbul,Overcast. Wet and drying track.,0,0,0,1,0
+2020,14,istanbul,Overcast. Wet and drying track. Air: 11–14 °C (52–57 °F); Track: 14–17 °C (57–63 °F),0,0,0,1,0
 2020,15,bahrain,Clear,1,0,0,0,0
 2020,16,bahrain,Clear,1,0,0,0,0
 2020,17,yas_marina,Clear,1,0,0,0,0
