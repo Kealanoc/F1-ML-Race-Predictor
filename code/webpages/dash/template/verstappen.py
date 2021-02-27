@@ -10,9 +10,13 @@ from dash.dependencies import Input, Output, State
 from markupsafe import escape
 import plotly.express as px
 import pandas as pd
+from .GraphScripts import PlotlyGraphScripts as gs
 
 data=dj()
 name = 'max_verstappen'
+code = data[name]["code"]
+team = data[name]["graph_team"]
+lineup = data[name]["team_lineup"]
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -120,22 +124,22 @@ layout = html.Div([
                             'padding-bottom':'70px', 
                             'font-size':'35px',
                             'color':'black'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_DriverCareerPoints(name), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_QualiDiff(code), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_DriverSeasonPoints(name), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_DriverChampionship(name), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-    #    id='example-graph', figure=get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverCareerPoints(name), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_QualiDiff(code), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverSeasonPoints(name), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverChampionship(name), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
     html.Div([
         html.H3('Awards Won:'),
         html.Ul(children=[html.Li(i) for i in awards]),
