@@ -46,7 +46,7 @@ driver = race[(race["Driver"] == 'leclerc')]
 get_comparison(driver) 
 driver = race[(race["Driver"] == 'vettel')]
 get_comparison(driver) 
-driver = race[(race["Driver"] == 'kyvat')]
+driver = race[(race["Driver"] == 'kvyat')]
 get_comparison(driver) 
 driver = race[(race["Driver"] == 'gasly')]
 get_comparison(driver) 

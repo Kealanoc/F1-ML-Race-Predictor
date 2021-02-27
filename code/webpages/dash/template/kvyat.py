@@ -139,8 +139,8 @@ layout = html.Div([
                             'width':'40%',
                             'float':'left',
                             'clear':'both'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_DriverFinishesScatter(name), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverFinishesScatter(name), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
     dcc.Graph(
         id='example-graph', figure=gs.get_DriverCareerPoints(name), style={'height':'20%', 'width':'40%', 'display':'inline-block', 'margin-left':'3%'}),
     html.Div([
