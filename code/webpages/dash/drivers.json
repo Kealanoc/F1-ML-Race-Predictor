@@ -230,7 +230,7 @@
                         "team_logo":"../../static/assets/logos/haas_logo.png",
                         "driver_photo":"../../static/assets/portraits/grosjean_photo.jpg"
                     },
-                    "magnussen":{
+                    "kevin_magnussen":{
                         "name" : "Kevin Magnussen",
                         "team" : "Haas F1 Team",
                         "graph_team":"haas",

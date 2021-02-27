@@ -13,7 +13,7 @@ import pandas as pd
 from .GraphScripts import PlotlyGraphScripts as gs
 
 data=dj()
-name = 'magnussen'
+name = 'kevin_magnussen'
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -123,22 +123,16 @@ layout = html.Div([
                             'padding-bottom':'70px', 
                             'font-size':'35px',
                             'color':'black'}),
+    #dcc.Graph(
+        #id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
+    #dcc.Graph(
+       # id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
+    #dcc.Graph(
+        #id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
+    #dcc.Graph(
+        #id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
-        id='example-graph', figure=gs.get_DriverCareerPoints(name), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_QualiDiff(code), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_DriverSeasonPoints(name), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_DriverChampionship(name), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
+        id='example-graph', figure=gs.get_DriverCareerPoints(name), style={'height':'20%', 'width':'40%', 'display':'inline-block', 'margin-left':'3%'}),
     html.Div([
         html.H3('Awards Won:'),
         html.Ul(children=[html.Li(i) for i in awards]),
@@ -150,11 +144,39 @@ layout = html.Div([
     html.Div([
         html.H3('Team(s) Driven For:'),
         html.Ul(children=[html.Li(i) for i in teams]),
-    ],id='teamHistory', style={'clear':'both',
+    ],id='teamHistory', style={'padding-left':'6%',
+                            'padding-top':'4%',
+                            'width':'40%',
+                            'float':'left',
+                            'clear':'both'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverChampionship(name), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
+    
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverSeasonPoints(name), style={'height':'20%', 'width':'40%', 'margin-left':'3%', 'display':'inline-block'}),
+    
+    html.Div([
+        html.H3('2020 Season'),
+        html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+    ],id='points', style={'float':'right',
+                            'padding-right':'6%',
+                            'padding-top':'4%',
+                            'width':'40%',
+                            'clear':'both'}),
+    
+    html.Div([
+        html.H3('2020 Qualifying'),
+        html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+    ],id='qualifying', style={'float':'left',
                             'padding-left':'6%',
-                            'padding-top':'4%'}),
-    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px'})
+                            'padding-top':'4%',
+                            'width':'40%',
+                            'clear':'both'}),
+    
+    dcc.Graph(
+        id='example-graph', figure=gs.get_QualiDiff(code), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
 
+    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px'}),
 
 if __name__ == '__main__':
     app.run_server(debug=True)
