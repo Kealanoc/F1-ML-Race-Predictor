@@ -131,6 +131,16 @@ layout = html.Div([
         #id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
     #dcc.Graph(
         #id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
+    html.Div([
+        html.H3('Driver Summary'),
+        html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+    ],id='points', style={'padding-left':'6%',
+                            'padding-top':'4%',
+                            'width':'40%',
+                            'float':'left',
+                            'clear':'both'}),
+    #dcc.Graph(
+        #id='example-graph', figure=gs.get_DriverFinishesScatter(name), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
     dcc.Graph(
         id='example-graph', figure=gs.get_DriverCareerPoints(name), style={'height':'20%', 'width':'40%', 'display':'inline-block', 'margin-left':'3%'}),
     html.Div([
