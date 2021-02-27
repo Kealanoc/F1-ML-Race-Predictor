@@ -134,3 +134,16 @@ def get_FullSeasonChampionship(teamlist):
     for i in range(len(teamlist)):
         fig['data'][i]['line']['color']=teamcolour[i]
     return fig
+
+
+def get_TeamFinishesScatter(team):
+    df = pd.read_csv("static/Data/TeamRaceFinishes/{}.csv".format(team))
+    fig = px.scatter(df, x="Race_Num", y="RaceResult")
+    fig.update_layout(yaxis_range=[25,0])
+    return fig
+
+def get_DriverFinishesScatter(name):
+    df = pd.read_csv("static/Data/DriverRaceFinishes/{}.csv".format(name))
+    fig = px.scatter(df, x="Race_Num", y="RaceResult")
+    fig.update_layout(yaxis_range=[25,0])
+    return fig

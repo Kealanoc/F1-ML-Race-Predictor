@@ -6,14 +6,18 @@ race = pd.read_csv("../webpages/dash/static/Data/RaceResults.csv")
 def get_comparison(team):
     df = team.drop(["Track_ID", "Nationality", "Time", "Status", "Points", "URL", "DOB", "Pos"], axis=1)
     results = {}
+    race = []
     race_num = 1
     for team in df.Constructor:
         name = team
     for position in df.Podium:
         if position != "":
             results[race_num] = position
+            race.append(round(race_num))
             race_num +=1
+    df = pd.DataFrame({"Race_Num": race})        
     results = pd.DataFrame.from_dict(results, orient='index', columns=["RaceResult"])
+    results  = results.join(df)
     results.to_csv("../webpages/dash/static/Data/TeamRaceFinishes/{}.csv".format(name), index=False)
     
 
