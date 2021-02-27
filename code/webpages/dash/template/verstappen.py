@@ -132,6 +132,10 @@ layout = html.Div([
         #id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
     #dcc.Graph(
         #id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
+    #dcc.Graph(
+        #id='example-graph', figure=gs.get_TeamFinishesScatter(team), style={'height':'300px', 'width':'500px'}),
+    dcc.Graph(
+        id='example-graph', figure=gs.get_DriverFinishesScatter(name), style={'height':'300px', 'width':'500px'}),
     dcc.Graph(
         id='example-graph', figure=gs.get_DriverCareerPoints(name), style={'height':'20%', 'width':'40%', 'display':'inline-block', 'margin-left':'3%'}),
     html.Div([
