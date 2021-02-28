@@ -23,13 +23,36 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 awards = data[name]["awards_won"]
 teams = data[name]["driven_for"]
 
+teams_dd = dbc.DropdownMenu(
+                    children=[
+                dbc.DropdownMenuItem("Red Bull Racing", href="/team/red_bull"),
+                dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),
+                dbc.DropdownMenuItem("Lewis Hamilton", href="/driver/hamilton"),
+                dbc.DropdownMenuItem("Kimi Raikkonen", href="/driver/raikkonen"),
+                dbc.DropdownMenuItem("Sebastian Vettel", href="/driver/vettel"),
+                dbc.DropdownMenuItem("Lando Norris", href="/driver/norris"),
+                dbc.DropdownMenuItem("George Russell", href="/driver/russell"),
+                dbc.DropdownMenuItem("Alex Albon", href="/driver/albon"),
+                dbc.DropdownMenuItem("Sergio Perez", href="/driver/perez"),
+                dbc.DropdownMenuItem("Esteban Ocon", href="/driver/ocon"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Teams",
+            style={
+                "padding-top":"7px",
+            }
+                )
+
+
+
 layout = html.Div([
     dcc.Location(id='url', refresh=True),
     html.Div(
     [
         dbc.Navbar(
             [
-                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Teams", href="#", active="exact")), dbc.DropdownMenu(
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), teams_dd, dbc.DropdownMenu(
                     children=[
                 dbc.DropdownMenuItem("Max Verstappen", href="/driver/verstappen"),
                 dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),
