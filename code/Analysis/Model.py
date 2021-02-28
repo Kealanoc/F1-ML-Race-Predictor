@@ -5,10 +5,11 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 import time
+from matplotlib import pyplot
 start_time = time.time()
 
 year = int(input())
-data = pd.read_csv("../Data/CompleteDF.csv")
+data = pd.read_csv("../webpages/dash/static/Data/CompleteDF.csv")
 dataframe = data.copy()
 trainer = dataframe[dataframe.Season < year]
 x_train = trainer.drop(["Driver", "Podium"], axis=1)
@@ -37,8 +38,21 @@ def regression(model):
         score += precision_score(prediction.Actual, prediction.Predicted)
         predictions.append(prediction)
     model_score = score/dataframe[dataframe.Season==year]["Round"].unique().max()
-    #coefficients = pd.concat([pd.DataFrame(dataframe.columns),pd.DataFrame(np.transpose(model.coef_))], axis=1)
-    #coefficients.to_csv("Feature_Importance.csv", index=False)
+    importance = model.feature_importances_
+    # summarize feature importance
+    features = {}
+    nums = []
+    for num in importance:
+        nums.append(round(float(num), 5))
+    i = 0
+    for col in data.columns:
+        try:
+            features[col] = nums[i]
+            i+=1
+        except:
+            pass
+    importance = pd.DataFrame.from_records([features])
+    importance.to_csv("../webpages/dash/static/Data/Predictions/{}_FeatureImportance".format(year))
     return model_score, predictions
 
 def linear_regression():
@@ -80,7 +94,7 @@ def random_forest():
     for i in best_predictions:
         f_name = "{}_{}".format(year,str(Round))
         df = pd.DataFrame(i)
-        df.to_csv("../Data/Predictions/{}".format(f_name), index=False)
+        df.to_csv("../webpages/dash/static/Data/Predictions/{}".format(f_name), index=False)
         Round += 1
     print(results)
     print("--- %s seconds ---" % (time.time() - start_time))
