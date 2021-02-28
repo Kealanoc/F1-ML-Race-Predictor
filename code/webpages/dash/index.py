@@ -14,14 +14,13 @@ from template import verstappen, albon, ricciardo, ocon, stroll, perez, russell,
 
 
 app.layout = html.Div([
-    dcc.Location(id='url', refresh=True),
+    dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
 
 @app.callback(Output('page-content','children', ),
               Input('url', 'pathname', ))
 def display_page(pathname):
-    time.sleep(1)
     if pathname == '/driver/verstappen':
         return verstappen.layout
     elif pathname == '/driver/albon':
