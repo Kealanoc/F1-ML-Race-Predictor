@@ -23,13 +23,34 @@ code = data[name]["code"]
 team = data[name]["graph_team"]
 lineup = data[name]["team_lineup"]
 
+teams_dd = dbc.DropdownMenu(
+                    children=[
+                dbc.DropdownMenuItem("Red Bull Racing", href="/team/red_bull"),
+                dbc.DropdownMenuItem("Mercedes AMG", href="/team/mercedes"),
+                dbc.DropdownMenuItem("Scuderia Ferrari", href="/team/ferrari"),
+                dbc.DropdownMenuItem("Renault Sport", href="/team/renault"),
+                dbc.DropdownMenuItem("McLaren F1 Team", href="/team/mclaren"),
+                dbc.DropdownMenuItem("Racing Point F1 Team", href="/team/racingpoint"),
+                dbc.DropdownMenuItem("AlphaTauri", href="/team/alphatauri"),
+                dbc.DropdownMenuItem("Alfa Romeo Racing", href="/team/alfaromeo"),
+                dbc.DropdownMenuItem("Haas F1 Team", href="/team/haas"),
+                dbc.DropdownMenuItem("Williams Racing", href="/team/williams"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Teams",
+            style={
+                "padding-top":"7px",
+            }
+                )
+            
 layout = html.Div([
     dcc.Location(id='url', refresh=True),
     html.Div(
     [
         dbc.Navbar(
             [
-                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Teams", href="#", active="exact")), dbc.DropdownMenu(
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), teams_dd, dbc.DropdownMenu(
                     children=[
                 dbc.DropdownMenuItem("Max Verstappen", href="/driver/verstappen"),
                 dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),

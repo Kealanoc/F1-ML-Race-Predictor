@@ -3,25 +3,23 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 from formulaml_dash import app
-from driver_json import driver_json as dj
+from driver_json import team_json as tj
 import flask
-from urllib.parse import urlparse
 from dash.dependencies import Input, Output, State
 from markupsafe import escape
 import plotly.express as px
 import pandas as pd
 from .GraphScripts import PlotlyGraphScripts as gs
 
-data=dj()
-name = 'stroll'
+data=tj()
+name = 'mercedes'
+team = data[name]["graph_team"]
+lineup = data[name]["team_lineup"]
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
-teams = data[name]["driven_for"]
-code = data[name]["code"]
-team = data[name]["graph_team"]
-lineup = data[name]["team_lineup"]
+drivers = data[name]["top_drivers"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -84,11 +82,12 @@ layout = html.Div([
             sticky="top",
             style={"font-size":"25px",
                     "height":"65px",
+                    
                     "background-color":"#F8EAE8",}
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -102,28 +101,23 @@ layout = html.Div([
                                             'display':'inline-block',
                                             'clear':'both'}),
     
-    html.Img(src=data[name]["team_logo"], style={'height':'80%',
+    html.Img(src=data[name]["team_logo"], style={'width':'20%',
                                             'float':'right',
                                             'padding-top':'6%',
+                                            'padding-bottom':'6%',
                                             'padding-right':'2.5%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
-    html.Img(src=data[name]["driver_photo"], style={'height':'120%',
-                                            'padding-left':'2.5%',
-                                            'padding-top' :'1%',
-                                            'float':'right',
-                                            'vertical-align':'top',}),
-
-    html.H2(data[name]["team"], style={'text-indent':'100px',
+    html.H2(data[name]["pairing"], style={'text-indent':'100px',
                                         'vertical-align':'text-top',
                                         'line-height':'100%'}),
     #left
     html.Div([
-        html.P("Age: " + data[name]["age"]),
+        html.P("Base: " + data[name]["base"]),
         html.P("Entries: " + data[name]["entries"]),
-        html.P("Titles: " + data[name]["titles"]),
-        html.P('Poles: ' + data[name]["poles"]),
+        html.P("Driver's Titles: " + data[name]["driver_titles"]),
+        html.P("Constructor's Titles: " + data[name]["team_titles"]),
     ],id='left', style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
@@ -132,8 +126,9 @@ layout = html.Div([
     html.Div([
         html.P('Wins: ' + data[name]["wins"]),
         html.P('Podiums: ' + data[name]["podiums"]),
+         html.P('Poles: ' + data[name]["poles"]),
         html.P('First Start: ' + data[name]["first_start"]),
-        html.P('First Podium: ' + data[name]["first_win"]),
+        html.P('First Win: ' + data[name]["first_win"]),
     ],id='right',style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
@@ -143,16 +138,7 @@ layout = html.Div([
                             'padding-top':'10px', 
                             'padding-bottom':'70px', 
                             'font-size':'35px',
-                            'color':'black',
-                            'margin-bottom': '50px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-       # id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
+                            'color':'black'}),
     html.Div([
         html.Div([
             html.H3('Driver Summary'),
@@ -163,73 +149,69 @@ layout = html.Div([
                                 'float':'left',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverFinishesScatter(name), 
-                        style={'height':'10%', 
-                                'width':'40%', 
-                                'margin-right':'3%', 
-                                'margin-left':'15%', 
-                                'display':'inline-block',
-                                'border-radius': '10px',
-                                'border-top':'solid 10px' + data[name]["background-color"],
-                                'border-right':'solid 10px' + data[name]["background-color"],
-                                'border-bottom':'solid 10px' + data[name]["background-color"]}),
+            id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'10%', 
+                                    'width':'40%', 
+                                    'margin-right':'3%', 
+                                    'margin-left':'15%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-right':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
     ]),
-
+    
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverCareerPoints(name), 
-                    style={'height':'20%', 'width':'40%', 
-                                'display':'inline-block',
-                                'margin-right': '15%', 
-                                'margin-left':'3%',
-                                'margin-top':'3%',
-                                'border-radius': '10px',
-                                'border-top':'solid 10px' + data[name]["background-color"],
-                                'border-left':'solid 10px' + data[name]["background-color"],
-                                'border-bottom':'solid 10px' + data[name]["background-color"]}),
+            id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'20%', 'width':'40%', 
+                                    'display':'inline-block',
+                                    'margin-right': '15%', 
+                                    'margin-left':'3%',
+                                    'margin-top':'3%',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-left':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('Awards Won:'),
             html.Ul(children=[html.Li(i) for i in awards]),
-        ],id='awards', style={'padding-right':'6%',
-                                'padding-top':'4%',
+        ],id='awards', style={'float':'right',
+                                'clear':'both',
                                 'width':'40%',
-                                'float':'right',
-                                'clear':'both'}),
-    ],style={}),
+                                'padding-right':'3%',
+                                'padding-top':'4%'}),
+    ]),
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Team(s) Driven For:'),
-            html.Ul(children=[html.Li(i) for i in teams]),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='teamHistory', style={'padding-left':'6%',
                                 'padding-top':'4%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverChampionship(name), 
-                            style={'height':'10%', 
-                                'width':'40%', 
-                                'margin-right':'3%', 
-                                'margin-left':'15%', 
-                                'display':'inline-block',
-                                'border-radius': '10px',
-                                'border-top':'solid 10px' + data[name]["background-color"],
-                                'border-right':'solid 10px' + data[name]["background-color"],
-                                'border-bottom':'solid 10px' + data[name]["background-color"]}),
-    ]),
-    
+            id='example-graph', figure=gs.get_SeasonChampionship(team),  style={'height':'10%', 
+                                    'width':'40%', 
+                                    'margin-right':'3%', 
+                                    'margin-left':'15%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-right':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+        ]),
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverSeasonPoints(name), 
-                        style={'height':'20%', 
-                                'width':'40%', 
-                                'margin-left':'3%', 
-                                'display':'inline-block',
-                                'border-radius': '10px',
-                                'border-top':'solid 10px' + data[name]["background-color"],
-                                'border-left':'solid 10px' + data[name]["background-color"],
-                                'border-bottom':'solid 10px' + data[name]["background-color"]}),
+            id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'20%', 
+                                    'width':'40%', 
+                                    'margin-left':'3%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-left':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+        
         html.Div([
             html.H3('2020 Season'),
             html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
@@ -239,6 +221,7 @@ layout = html.Div([
                                 'width':'40%',
                                 'clear':'both'}),
     ]),
+
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
@@ -248,21 +231,20 @@ layout = html.Div([
                                 'padding-top':'4%',
                                 'width':'40%',
                                 'clear':'both'}),
+        
         dcc.Graph(
-            id='example-graph', figure=gs.get_QualiDiff(code), 
-                            style={'height':'10%', 
-                                'width':'40%', 
-                                'margin-right':'3%', 
-                                'margin-left':'15%', 
-                                'display':'inline-block',
-                                'border-radius': '10px',
-                                'border-top':'solid 10px' + data[name]["background-color"],
-                                'border-right':'solid 10px' + data[name]["background-color"],
-                                'border-bottom':'solid 10px' + data[name]["background-color"]}),
+            id='example-graph', figure=gs.get_TeamFinishesScatter(team), style={'height':'10%', 
+                                    'width':'40%', 
+                                    'margin-right':'3%', 
+                                    'margin-left':'15%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-right':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
     ]),
-    
 
-    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px','background-color': '#cccccc'}),
+    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px'}),
 
 if __name__ == '__main__':
     app.run_server(debug=True)

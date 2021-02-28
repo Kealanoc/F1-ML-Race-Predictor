@@ -21,13 +21,34 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
 
+teams_dd = dbc.DropdownMenu(
+                    children=[
+                dbc.DropdownMenuItem("Red Bull Racing", href="/team/red_bull"),
+                dbc.DropdownMenuItem("Mercedes AMG", href="/team/mercedes"),
+                dbc.DropdownMenuItem("Scuderia Ferrari", href="/team/ferrari"),
+                dbc.DropdownMenuItem("Renault Sport", href="/team/renault"),
+                dbc.DropdownMenuItem("McLaren F1 Team", href="/team/mclaren"),
+                dbc.DropdownMenuItem("Racing Point F1 Team", href="/team/racingpoint"),
+                dbc.DropdownMenuItem("AlphaTauri", href="/team/alphatauri"),
+                dbc.DropdownMenuItem("Alfa Romeo Racing", href="/team/alfaromeo"),
+                dbc.DropdownMenuItem("Haas F1 Team", href="/team/haas"),
+                dbc.DropdownMenuItem("Williams Racing", href="/team/williams"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Teams",
+            style={
+                "padding-top":"7px",
+            }
+                )
+
 layout = html.Div([
     dcc.Location(id='url', refresh=True),
     html.Div(
     [
         dbc.Navbar(
             [
-                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Teams", href="#", active="exact")), dbc.DropdownMenu(
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), teams_dd, dbc.DropdownMenu(
                     children=[
                 dbc.DropdownMenuItem("Max Verstappen", href="/driver/verstappen"),
                 dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),
@@ -80,7 +101,7 @@ layout = html.Div([
                                             'display':'inline-block',
                                             'clear':'both'}),
     
-    html.Img(src=data[name]["team_logo"], style={'height':'80%',
+    html.Img(src=data[name]["team_logo"], style={'width':'25%',
                                             'float':'right',
                                             'padding-top':'6%',
                                             'padding-right':'2.5%',
@@ -118,59 +139,108 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black'}),
     html.Div([
-        html.H3('Driver Summary'),
-        html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-    ],id='points', style={'padding-left':'6%',
-                            'padding-top':'4%',
-                            'width':'40%',
-                            'float':'left',
-                            'clear':'both'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'20%', 'width':'40%', 'display':'inline-block', 'margin-left':'3%'}),
+        html.Div([
+            html.H3('Driver Summary'),
+            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+        ],id='points', style={'padding-left':'6%',
+                                'padding-top':'4%',
+                                'width':'40%',
+                                'float':'left',
+                                'clear':'both'}),
+        dcc.Graph(
+            id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'10%', 
+                                    'width':'40%', 
+                                    'margin-right':'3%', 
+                                    'margin-left':'15%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-right':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+    ]),
+    
     html.Div([
-        html.H3('Awards Won:'),
-        html.Ul(children=[html.Li(i) for i in awards]),
-    ],id='awards', style={'float':'right',
-                            'clear':'both',
-                            'padding-right':'6%',
-                            'padding-top':'4%'}),
+        dcc.Graph(
+            id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'20%', 'width':'40%', 
+                                    'display':'inline-block',
+                                    'margin-right': '15%', 
+                                    'margin-left':'3%',
+                                    'margin-top':'3%',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-left':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+        html.Div([
+            html.H3('Awards Won:'),
+            html.Ul(children=[html.Li(i) for i in awards]),
+        ],id='awards', style={'float':'right',
+                                'clear':'both',
+                                'padding-right':'6%',
+                                'padding-top':'4%'}),
+    ],style={}),
     #teamHistory
     html.Div([
-        html.H3('Top Drivers:'),
-        html.Ul(children=[html.Li(i) for i in drivers]),
-    ],id='teamHistory', style={'padding-left':'6%',
-                            'padding-top':'4%',
-                            'width':'40%',
-                            'float':'left',
-                            'clear':'both'}),
-    dcc.Graph(
-        id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
-    
-    dcc.Graph(
-        id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'20%', 'width':'40%', 'margin-left':'3%', 'display':'inline-block'}),
-    
+        html.Div([
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
+        ],id='teamHistory', style={'padding-left':'6%',
+                                'padding-top':'4%',
+                                'width':'40%',
+                                'float':'left',
+                                'clear':'both'}),
+        dcc.Graph(
+            id='example-graph', figure=gs.get_SeasonChampionship(team),  style={'height':'10%', 
+                                    'width':'40%', 
+                                    'margin-right':'3%', 
+                                    'margin-left':'15%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-right':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+        ]),
     html.Div([
-        html.H3('2020 Season'),
-        html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
-    ],id='points', style={'float':'right',
-                            'padding-right':'6%',
-                            'padding-top':'4%',
-                            'width':'40%',
-                            'clear':'both'}),
-    
+        dcc.Graph(
+            id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'20%', 
+                                    'width':'40%', 
+                                    'margin-left':'3%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-left':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+        
+        html.Div([
+            html.H3('2020 Season'),
+            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+        ],id='points', style={'float':'right',
+                                'padding-right':'6%',
+                                'padding-top':'4%',
+                                'width':'40%',
+                                'clear':'both'}),
+    ]),
+
     html.Div([
-        html.H3('2020 Qualifying'),
-        html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
-    ],id='qualifying', style={'float':'left',
-                            'padding-left':'6%',
-                            'padding-top':'4%',
-                            'width':'40%',
-                            'clear':'both'}),
-    
-    dcc.Graph(
-        id='example-graph', figure=gs.get_TeamFinishesScatter(team), style={'height':'10%', 'width':'40%', 'margin-right':'3%', 'margin-left':'15%', 'display':'inline-block'}),
+        html.Div([
+            html.H3('2020 Qualifying'),
+            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+        ],id='qualifying', style={'float':'left',
+                                'padding-left':'6%',
+                                'padding-top':'4%',
+                                'width':'40%',
+                                'clear':'both'}),
+        
+        dcc.Graph(
+            id='example-graph', figure=gs.get_TeamFinishesScatter(team), style={'height':'10%', 
+                                    'width':'40%', 
+                                    'margin-right':'3%', 
+                                    'margin-left':'15%', 
+                                    'display':'inline-block',
+                                    'border-radius': '10px',
+                                    'border-top':'solid 10px' + data[name]["background-color"],
+                                    'border-right':'solid 10px' + data[name]["background-color"],
+                                    'border-bottom':'solid 10px' + data[name]["background-color"]}),
+    ]),
 
     ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px'}),
 
