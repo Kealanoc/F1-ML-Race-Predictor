@@ -138,7 +138,8 @@ layout = html.Div([
                             'padding-top':'10px', 
                             'padding-bottom':'70px', 
                             'font-size':'35px',
-                            'color':'black'}),
+                            'color':'black',
+                            'margin-bottom': '50px'}),
     html.Div([
         html.Div([
             html.H3('Driver Summary'),
@@ -243,7 +244,7 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
     ]),
 
-    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px'}),
+    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px', 'background-color': '#cccccc'}),
 
 if __name__ == '__main__':
     app.run_server(debug=True)

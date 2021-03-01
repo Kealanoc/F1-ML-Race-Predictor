@@ -11,6 +11,9 @@ from markupsafe import escape
 import plotly.express as px
 import pandas as pd
 
+teamlist = ["mercedes", "red_bull", "mclaren", "racing_point", "renault", "ferrari", "alphatauri", "alfa", "haas", "williams"]
+teamcolour = ['#00D2BE', '#1E41FF', '#FF8700', '#F596C8', '#FFF500', '#C80000','#FFFFFF', '#9B0000', '#787878', '#0082FA']
+
 def get_DriverCareerPoints(name):
     df = pd.read_csv("static/Data/DriverStandings.csv")
     points = {}
@@ -32,6 +35,7 @@ def get_QualiDiff(code):
     return fig
 
 def get_TeamCareerPoints(team):
+    colour = teamlist.index(team)
     df = pd.read_csv("static/Data/ConstructorStandings.csv")
     points = {}
     for i in range(len(df)):
@@ -46,6 +50,7 @@ def get_TeamCareerPoints(team):
     return fig
 
 def get_ConstructorChampionship(team):
+    colour = teamlist.index(team)
     df = pd.read_csv("static/Data/ConstructorStandings.csv")
     position = {}
     for i in range(len(df)):
@@ -87,6 +92,7 @@ def get_DriverSeasonPoints(name):
     return fig
 
 def get_SeasonChampionship(team):
+    colour = teamlist.index(team)
     df = pd.read_csv("static/Data/ConstructorStandings.csv")
     position = {}
     for i in range(len(df)):
@@ -112,8 +118,6 @@ def get_TeamLineup(lineup):
     fig = px.pie(df, values='Races', names='Driver', title='Share of each drivers time in a teams history')
     return fig
 
-teamlist = ["mercedes", "red_bull", "mclaren", "racing_point", "renault", "ferrari", "alphatauri", "alfa", "haas", "williams"]
-teamcolour = ['#00D2BE', '#1E41FF', '#FF8700', '#F596C8', '#FFF500', '#C80000','#FFFFFF', '#9B0000', '#787878', '#0082FA']
 def get_FullSeasonChampionship(teamlist):
     df = pd.read_csv("static/Data/ConstructorStandings.csv")
     standings = {}
@@ -137,8 +141,9 @@ def get_FullSeasonChampionship(teamlist):
 
 
 def get_TeamFinishesScatter(team):
+    colour = teamlist.index(team)
     df = pd.read_csv("static/Data/TeamRaceFinishes/{}.csv".format(team))
-    fig = px.scatter(df, x="Race_Num", y="RaceResult")
+    fig = px.scatter(df, x="Race_Num", y="RaceResult", color_discrete_sequence=[teamcolour[colour]])
     fig.update_layout(yaxis_range=[25,0])
     return fig
 
