@@ -202,7 +202,7 @@ layout = html.Div([
         ]),
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'20%', 
+            id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'70%', 
                                     'width':'40%', 
                                     'margin-left':'3%', 
                                     'display':'inline-block',

@@ -145,14 +145,6 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black',
                             'margin-bottom': '50px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-       # id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
     html.Div([
         html.Div([
             html.H3('Driver Summary'),
@@ -163,7 +155,7 @@ layout = html.Div([
                                 'float':'left',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverFinishesScatter(name), 
+            id='example-graph', figure=gs.get_DriverFinishesScatter(name, team), 
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
@@ -177,7 +169,7 @@ layout = html.Div([
 
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverCareerPoints(name), 
+            id='example-graph', figure=gs.get_DriverCareerPoints(name, team), 
                     style={'height':'20%', 'width':'40%', 
                                 'display':'inline-block',
                                 'margin-right': '15%', 
@@ -207,7 +199,7 @@ layout = html.Div([
                                 'float':'left',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverChampionship(name), 
+            id='example-graph', figure=gs.get_DriverChampionship(name, team), 
                             style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
@@ -221,7 +213,7 @@ layout = html.Div([
     
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_DriverSeasonPoints(name), 
+            id='example-graph', figure=gs.get_DriverSeasonPoints(name, team), 
                         style={'height':'20%', 
                                 'width':'40%', 
                                 'margin-left':'3%', 
@@ -249,7 +241,7 @@ layout = html.Div([
                                 'width':'40%',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_QualiDiff(code), 
+            id='example-graph', figure=gs.get_QualiDiff(code, team), 
                             style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 

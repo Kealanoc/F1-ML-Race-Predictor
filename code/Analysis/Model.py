@@ -94,7 +94,7 @@ def random_forest():
     for i in best_predictions:
         f_name = "{}_{}".format(year,str(Round))
         df = pd.DataFrame(i)
-        df.to_csv("../webpages/dash/static/Data/Predictions/{}".format(f_name), index=False)
+        df.to_csv("../webpages/dash/static/Data/Predictions/{}.csv".format(f_name), index=False)
         Round += 1
     print(results)
     print("--- %s seconds ---" % (time.time() - start_time))
