@@ -10,7 +10,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from formulaml_dash import app
 from template import verstappen, albon, ricciardo, ocon, stroll, perez, russell, latifi, magnussen, grosjean, norris, sainz, leclerc, vettel, bottas, hamilton, raikkonen, giovinazzi, gasly, kvyat
-from teams_template import red_bull, renault, mercedes, ferrari
+from teams_template import red_bull, renault, mercedes, ferrari, mclaren, racingpoint, alphatauri, alfaromeo, haas, williams
 
 
 app.layout = html.Div([
@@ -69,6 +69,18 @@ def display_page(pathname):
         return mercedes.layout
     elif pathname == '/team/ferrari':
         return ferrari.layout
+    elif pathname == '/team/mclaren':
+        return mclaren.layout
+    elif pathname == '/team/racingpoint':
+        return racingpoint.layout
+    elif pathname == '/team/alphatauri':
+        return alphatauri.layout
+    elif pathname == '/team/alfaromeo':
+        return alfaromeo.layout
+    elif pathname == '/team/haas':
+        return haas.layout
+    elif pathname == '/team/williams':
+        return williams.layout
     else:
         return dbc.Jumbotron(
         [

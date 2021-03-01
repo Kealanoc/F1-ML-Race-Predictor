@@ -25,7 +25,6 @@ def get_DriverCareerPoints(name):
     fig = px.line(df, x="Season", y="Points")
     return fig
 
-
 def get_QualiDiff(code):
     df = pd.read_csv("static/Data/QualiComparison/{}.csv".format(code))
     fig = px.bar(df, x="Round", y="Quali Time Difference")
@@ -134,7 +133,6 @@ def get_FullSeasonChampionship(teamlist):
     for i in range(len(teamlist)):
         fig['data'][i]['line']['color']=teamcolour[i]
     return fig
-
 
 def get_TeamFinishesScatter(team):
     df = pd.read_csv("static/Data/TeamRaceFinishes/{}.csv".format(team))

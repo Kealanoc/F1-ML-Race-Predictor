@@ -12,7 +12,35 @@ import plotly.express as px
 import pandas as pd
 
 teamlist = ["mercedes", "red_bull", "mclaren", "racing_point", "renault", "ferrari", "alphatauri", "alfa", "haas", "williams"]
-teamcolour = ['#00D2BE', '#1E41FF', '#FF8700', '#F596C8', '#FFF500', '#C80000','#FFFFFF', '#9B0000', '#787878', '#0082FA']
+teamcolour = ['#00D2BE', '#1E41FF', '#FF8700', '#F596C8', '#FFF500', '#C80000','#004C6C', '#9B0000', '#787878', '#0082FA']
+
+def get_AlphaTauriPoints(team):
+    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    points = {}
+    for i in range(len(df)):
+        if df.Constructor[i] == team or df.Constructor[i] == "toro_rosso":
+            Season = df.Season[i]
+            if df.ConstructorPoints[i]!= "":
+                Points = df.ConstructorPoints[i]
+            points[Season] = Points
+    df = {'Points': points.values(), 'Season': points.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Season", y="Points")
+    return fig
+
+def get_AlphaTauriPosition(team):
+    df = pd.read_csv("static/Data/ConstructorStandings.csv")
+    position = {}
+    for i in range(len(df)):
+        if df.Constructor[i] == team or df.Constructor[i] == "toro_rosso":
+            Season = df.Season[i]
+            Position = df.ConstructorStandings[i]
+            position[Season] = Position
+    df = {'Position': position.values(), 'Season': position.keys()}
+    df = pd.DataFrame.from_dict(df)
+    fig = px.line(df, x="Season", y="Position")
+    fig.update_layout(yaxis_range=[10,0])
+    return fig
 
 def get_DriverCareerPoints(name):
     df = pd.read_csv("static/Data/DriverStandings.csv")
