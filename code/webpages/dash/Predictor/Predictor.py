@@ -13,7 +13,7 @@ import pandas as pd
 from .GraphScripts import PlotlyGraphScripts as gs
 
 data=dj()
-name = 'stroll'
+name = 'vettel'
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -92,15 +92,21 @@ layout = html.Div([
     html.Div([
         dcc.Graph(
             id='example-graph', figure=gs.get_prediction(code), 
-                    style={'height':'100%', 'width':'100%', 
+                    style={'height':'10000px', 'width':'100%', 
                                 'display':'inline-block',
                                 'margin-top':'3%',
+                                'margin-bottom':'3%',
                                 'float':'centre',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
                                 'border-left':'solid 10px' + data[name]["background-color"],
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
-    ])],
+    ],style={
+                                'margin-top':'1%',
+                                'margin-left':'3%',
+                                'margin-right':'3%',
+                                'margin-bottom':'3%',
+                                }),],
     style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px','background-color': '#cccccc'}),
 
 if __name__ == '__main__':

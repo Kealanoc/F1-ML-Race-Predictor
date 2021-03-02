@@ -10,6 +10,7 @@ from dash.dependencies import Input, Output, State
 from markupsafe import escape
 import plotly.express as px
 import pandas as pd
+from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
 driverlist = {
@@ -34,26 +35,26 @@ driverlist = {
     "latifi":'#0082FA',
     "russell":'#0082FA'}
 
+fig = make_subplots(rows=17, cols=2, shared_yaxes=True, column_widths=[0.5, 0.5])
+fig.update_layout(showlegend=False, title_text="Model Prediciton Data Compared with Real Results")
 def get_prediction(code):
-    df = pd.read_csv("static/Data/Predictions/2020_1.csv")
-    driver = []
-    results = []
-    actual = []
-    for i in range(len(df.Driver)):
-        pos = i+1
-        driver.append(df.Driver[i])
-        actual.append(df.Podium[i])
-        results.append(pos)
-    fig = go.Figure(
-        data=[
-            go.Bar(name='Predicted', x=driver, y=results, yaxis='y', offsetgroup=1),
-            go.Bar(name='Actual', x=driver, y=actual, yaxis='y2', offsetgroup=2)
-        ],
-        layout={
-            'yaxis': {'title': 'SF Zoo axis'},
-            'yaxis2': {'title': 'LA Zoo axis', 'overlaying': 'y', 'side': 'right'}
-        }
-    )
-    # Change the bar mode
-    fig.update_layout(barmode='group')
+    for i in range(16):
+        num = i+1
+        df = pd.read_csv("static/Data/Predictions/2020_{}.csv".format(str(num)))
+        driver = []
+        actual = []
+        results = []
+        for i in range(len(df.Driver)):
+            pos = i+1
+            driver.append(df.Driver[i])
+            actual.append(df.Podium[i])
+            results.append(pos)
+        get_plot(driver,results,actual, num)
     return fig
+
+def get_plot(driver,results, actual, num):
+
+    fig.add_trace(go.Bar(x=driver, y=results, name="Predicted"),
+                row=num, col=1)
+    fig.add_trace(go.Bar(x=driver, y=actual, name="Actual"),
+                row=num, col=2)
