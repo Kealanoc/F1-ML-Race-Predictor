@@ -12,6 +12,7 @@ from formulaml_dash import app
 from template import verstappen, albon, ricciardo, ocon, stroll, perez, russell, latifi, magnussen, grosjean, norris, sainz, leclerc, vettel, bottas, hamilton, raikkonen, giovinazzi, gasly, kvyat
 from Predictor import Predictor, Predictor_Info
 from teams_template import red_bull, renault, mercedes, ferrari, mclaren, racingpoint, alphatauri, alfaromeo, haas, williams
+from other_templates import season
 
 
 app.layout = html.Div([
@@ -84,14 +85,20 @@ def display_page(pathname):
         return williams.layout
     elif pathname == '/predictor':
         return Predictor.layout
+<<<<<<< HEAD
     elif pathname == '/predictor_info':
         return Predictor_Info.layout
+=======
+    elif pathname == '/season':
+        return season.layout
+>>>>>>> 703cac0f569dfc592b15dea5ff6a3fd491102e8c
     else:
         return dbc.Jumbotron(
         [
             html.H1("404: Not found", className="text-danger"),
             html.Hr(),
             html.P(f"The pathname {pathname} was not recognised..."),
+            html.P(f"Please try something like '/driver/verstappen'"),
         ]
     )
 
