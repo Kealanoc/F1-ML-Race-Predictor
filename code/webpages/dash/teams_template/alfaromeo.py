@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -108,15 +109,16 @@ layout = html.Div([
                                         'display':'inline-block',
                                         'padding-top':'1%'}),
 
-    html.Img(src=data[name]["flag"], style={'width':'75px',
+    html.Img(src=data[name]["flag"], style={'width':'45px',
                                             'height':'45px',
                                             'display':'inline-block',
                                             'clear':'both'}),
     
     html.Img(src=data[name]["team_logo"], style={'width':'25%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -153,10 +155,10 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("Alfa Romeo is an iconic name in F1, winning the first two drivers titles in 1950 and 1951 with Juan Manuel Fangio and Nino Farina they wrote their names into F1 legend. They left the sport after these victories, returning in 1979 for a 6 year spell where they never recaptured that glory. This new run for the team after taking over the Sauber team temporarily so far has not gone to plan either. After a strong 2019 campaign scoring 57 points, they endured a rough 2020 only managing 8 points."),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -190,15 +192,15 @@ layout = html.Div([
                                 'clear':'both',
                                 'width':'40%',
                                 'padding-right':'6%',
-                                'padding-top':'4%'}),
+                                'padding-top':'2%'}),
     ],style={}),
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("Alfa Romeo endured an incredibly difficult season with very little to smile about, especially compared to their previous campaign. Raikkonen picked up his 4 points through two 9th placed finishes and Giovinazzi finished 9th once and 10th twice. In general both finished in the higher half of the non-scoring drivers however there are no points no matter how well you do if you're not 10th or above."),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -225,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -236,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

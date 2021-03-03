@@ -14,9 +14,8 @@ from Predictor import Predictor, Predictor_Info
 from teams_template import red_bull, renault, mercedes, ferrari, mclaren, racingpoint, alphatauri, alfaromeo, haas, williams
 from other_templates import season
 
-
 app.layout = html.Div([
-    dcc.Location(id='url', refresh=False),
+    dcc.Location(id='url', refresh=True),
     html.Div(id='page-content')
 ])
 

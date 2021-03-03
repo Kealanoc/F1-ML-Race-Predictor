@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -113,11 +114,11 @@ layout = html.Div([
                                             'display':'inline-block',
                                             'clear':'both'}),
     
-    html.Img(src=data[name]["team_logo"], style={'width':'10%',
+    html.Img(src=data[name]["team_logo"], style={'height':'100%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-bottom':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -154,10 +155,10 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("Ferrari are the most successful and the most famous F1 team of all time, they made their debut in the inaugural season of the championship and have been a part of the racing since then. Their iconic red livery and prancing horse is known accross the world, and from drivers such as Lauda, Schumacher and Prost they have hosted most star drivers F1 has seen, and created a few stars of their own such as Gilles Villeneuve or even Charles Leclerc who's potential is being realised with the tifosi.  "),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -190,16 +191,16 @@ layout = html.Div([
         ],id='awards', style={'float':'right',
                                 'clear':'both',
                                 'width':'40%',
-                                'padding-right':'3%',
+                                'padding-right':'6%',
                                 'padding-top':'4%'}),
-    ]),
+    ],style={}),
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("After an issue was found with their 2019 Power Unit, Ferrari made a deal with the FIA declaring they would make and use a new one. This sudden development requirement combined with the closure of factories due to COVID-19 led to Ferrari having an under developed car for the 2020 season. The team started off with a podium from Leclerc in Austria, however in the following qualifying and race sessions Ferrari's lack of pace was evident. With only 3 podiums and 131 points Ferrari finished 6th, their worst season since 1980."),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -226,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -237,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',
@@ -257,7 +258,7 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
     ]),
 
-    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px','background-color': '#cccccc'}),
+    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px', 'background-color': '#cccccc'}),
 
 if __name__ == '__main__':
     app.run_server(debug=True)

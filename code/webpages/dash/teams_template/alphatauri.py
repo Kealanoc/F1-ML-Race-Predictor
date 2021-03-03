@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -113,10 +114,11 @@ layout = html.Div([
                                             'display':'inline-block',
                                             'clear':'both'}),
     
-    html.Img(src=data[name]["team_logo"], style={'width':'15%',
+    html.Img(src=data[name]["team_logo"], style={'width':'18%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -153,15 +155,15 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("AlphaTauri originally joined F1 as Toro Rosso in 2006 when Red Bull purchased iconic backmarkers Minardi, the team was to serve as a location for Red Bull's young talent to hone their skills in Formula 1. And the team has fulfilled that purpose excellently, being the home of many of F1's best talents at some point in their careers. Vettel, Verstappen and Ricciardo are some of the top level talents who have driven for the Italian based Red Bull outfit. "),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_AlphaTauriPoints(team), style={'height':'10%', 
+            id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'10%', 
                                     'width':'40%', 
                                     'margin-right':'3%', 
                                     'margin-left':'15%', 
@@ -174,7 +176,7 @@ layout = html.Div([
     
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_AlphaTauriPosition(team), style={'height':'20%', 'width':'40%', 
+            id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'20%', 'width':'40%', 
                                     'display':'inline-block',
                                     'margin-right': '15%', 
                                     'margin-left':'3%',
@@ -195,15 +197,15 @@ layout = html.Div([
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("After an incredible 2019 that saw the team manage two podiums nobody saw an even better season coming, Kvyat's best moment came at the Emilia Romagna Grand Prix where he finished in 4th place only behind the Mercedes duo and former teammate Daniel Ricciardo, Pierre Gasly's shining moment came at Monza where he took his first career victory and the first for a French driver since Olivier Panis at Monaco in 1996. The team picked up an incredible 107 points but still only finished 7th in the Constructor's championship."),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
         dcc.Graph(
-            id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'10%', 
+            id='example-graph', figure=gs.get_SeasonChampionship(team),  style={'height':'10%', 
                                     'width':'40%', 
                                     'margin-right':'3%', 
                                     'margin-left':'15%', 
@@ -225,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -236,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',
