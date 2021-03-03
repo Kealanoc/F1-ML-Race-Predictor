@@ -13,28 +13,6 @@ import pandas as pd
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-driverlist = {
-    "hamilton":'#00D2BE',
-    "bottas":'#00D2BE', 
-    "max_verstappen": '#1E41FF',
-    "albon": '#1E41FF', 
-    "sainz":'#FF8700',
-    "norris":'#FF8700', 
-    "perez":'#F596C8',
-    "stroll":'#F596C8', 
-    "ocon":'#FFF500',
-    "ricciardo":'#FFF500', 
-    "vettel":'#C80000',
-    "leclerc":'#C80000',
-    "kvyat":'#004C6C',
-    "gasly":'#004C6C', 
-    "raikkonen":'#9B0000',
-    "giovinazzi":'#9B0000', 
-    "kevin_magnussen":'#787878',
-    "grosjean":'#787878',  
-    "latifi":'#0082FA',
-    "russell":'#0082FA'}
-
 fig = make_subplots(rows=17, cols=2, shared_yaxes=True, column_widths=[0.5, 0.5])
 fig.update_layout(showlegend=False, title_text="Model Prediciton Data Compared with Real Results")
 def get_prediction(code):
@@ -58,3 +36,13 @@ def get_plot(driver,results, actual, num):
                 row=num, col=1)
     fig.add_trace(go.Bar(x=driver, y=actual, name="Actual"),
                 row=num, col=2)
+
+def get_FeatureImportance():
+    df = pd.read_csv("static/Data/Predictions/2020_FeatureImportance")
+    params = []
+    vals = []
+    for i in range(len(df.columns)):
+        params.append(df.columns[i])
+        vals.append(df[df.columns[i]][0])
+    graph = go.Figure([go.Bar(x=params, y=vals, name="Feature Importance For the 2020 Season")])
+    return graph
