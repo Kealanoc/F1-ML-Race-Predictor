@@ -58,6 +58,19 @@ teams_dd = dbc.DropdownMenu(
                 "padding-top":"7px",
             }
                 )
+
+predictor_dd = dbc.DropdownMenu(
+                    children=[
+                dbc.DropdownMenuItem("Predictor", href="/predictor"),
+                dbc.DropdownMenuItem("Predictor Information", href="/predictor_info"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Predictor",
+            style={
+                "padding-top":"7px",
+            }
+                )
             
 layout = html.Div([
     dcc.Location(id='url', refresh=True),
@@ -65,7 +78,7 @@ layout = html.Div([
     [
         dbc.Navbar(
             [
-                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), teams_dd, dbc.DropdownMenu(
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), predictor_dd, teams_dd, dbc.DropdownMenu(
                     children=[
                 dbc.DropdownMenuItem("Max Verstappen", href="/driver/verstappen"),
                 dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),
@@ -127,7 +140,7 @@ layout = html.Div([
         html.Div([
             html.H3("Story of the season"),
             html.P("The 2020 season was simultaneously one of the most entertaining but predictable seasons in Formula 1 history. The season was originally organised to have 22 races, the most in a single F1 season and was due to begin in Melbourne, the annual season opener. However, due to the COVID-19 pandemic that gripped the world, the season wouldn't get underway until July. Despite being a shortened season and some tracks being forced to host multiple races, there was no loss of drama or of spectacular entertainment."),
-            html.P("The season eventaully kicked off in Austria to empty stands, with back to back races around the Red Bull Ring. The first race of the year was a race of attrition and saw 9 cars fail to finish along with the drama of a crash between Hamilton and Albon, allowing young Lando Norris to swoop in and take his first F1 podium. The Styrian Grand Prix didnt have the same kind of enthralling action with cars dropping out left and right however it did resume the controversy between Leclerc and Vettel after they had a lap 1 turn 3 collision."),
+            html.P("The season eventually kicked off in Austria to empty stands, with back to back races around the Red Bull Ring. The first race of the year was a race of attrition and saw 9 cars fail to finish along with the drama of a crash between Hamilton and Albon, allowing young Lando Norris to swoop in and take his first F1 podium. The Styrian Grand Prix didnt have the same kind of enthralling action with cars dropping out left and right however it did resume the controversy between Leclerc and Vettel after they had a lap 1 turn 3 collision."),
             html.P("The next races were in Hungary and then another back to back, at Silverstone in the UK. Hungary started with a wet track that saw Verstappen hit the wall before the race had even started, the Red Bull mechanics sorted out all the issues in time for him to start the race. During the week prior to the British Grand Prix it was revealed Sergio Perez had contracted COVID-19, Nico Hulkenberg who had been unable to find a seat for the season filled in for his old teammate. The race will be remembered however for the ending. Hamilton finished the race on 3 wheels after suffering a puncture on the final lap, after the same having happened to Bottas and Sainz just in the minutes before. Verstappen had made a precautionary pitstop and when the puncture happened was 30 seconds behind, he finished the race in second, 5 seconds behind Hamilton"),
             html.P("Next was the '70th Anniversary Grand Prix', the second race at Britain. This race saw Verstappen win and take the first non-Mercedes win of the season. After the previous week's disappointment of Hulkenberg being unable to start his substitute driver appearence for Racing Point, this week he filled in again and got to race, finishing in P7 after qualifying 3rd but starting from the back of the grid. Following this was the Spanish Grand Prix, Hamilton took pole position and the race win to continue his domination of the season thus far."),
             html.P("Hamilton made it back to back wins at an emotional Belgian Grand Prix, the anniversary of the death of young Anthoine Hubert created an emotional atmosphere but didn't stop any of the drivers from producing their best. At the following Italian Grand Prix we saw some very surprising developments. With the race seeming like it would be another Mercedes domination the weekend took some very surprising turns. After Magnussen suffered an engine failure on the start finish straight he retired next to the pit lane entry, causing the pitlane to be closed. Hamilton entered the pitlane during this period and received a 10 second time penalty. Leclerc hit the wall hard after the restard leading to a red flag and with Verstappen out due to a faulty power unit, and Bottas lacking pace, the fight for the win was between Stroll, Sainz and Gasly. Stroll fell away from the top two quickly after having issues, and after a multiple lap long battle Pierre Gasly beat Carlos Sainz and took his first F1 race win."),

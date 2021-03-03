@@ -85,13 +85,10 @@ def display_page(pathname):
         return williams.layout
     elif pathname == '/predictor':
         return Predictor.layout
-<<<<<<< HEAD
     elif pathname == '/predictor_info':
         return Predictor_Info.layout
-=======
-    elif pathname == '/season':
+    elif pathname == '/home':
         return season.layout
->>>>>>> 703cac0f569dfc592b15dea5ff6a3fd491102e8c
     else:
         return dbc.Jumbotron(
         [

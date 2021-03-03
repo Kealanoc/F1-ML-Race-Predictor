@@ -46,13 +46,26 @@ teams_dd = dbc.DropdownMenu(
             }
                 )
 
+predictor_dd = dbc.DropdownMenu(
+                    children=[
+                dbc.DropdownMenuItem("Predictor", href="/predictor"),
+                dbc.DropdownMenuItem("Predictor Information", href="/predictor_info"),
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Predictor",
+            style={
+                "padding-top":"7px",
+            }
+                )
+            
 layout = html.Div([
-    dcc.Location(id='url', refresh=False),
+    dcc.Location(id='url', refresh=True),
     html.Div(
     [
         dbc.Navbar(
             [
-                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), dbc.NavLink(dbc.NavLink("Season", href="#", active="exact")), dbc.NavLink(dbc.NavLink("Predictor", href="#", active="exact")), teams_dd, dbc.DropdownMenu(
+                dbc.Nav([dbc.NavLink(dbc.NavLink("Home", href="/home", active="exact")), predictor_dd, teams_dd, dbc.DropdownMenu(
                     children=[
                 dbc.DropdownMenuItem("Max Verstappen", href="/driver/verstappen"),
                 dbc.DropdownMenuItem("Daniel Ricciardo", href="/driver/ricciardo"),
