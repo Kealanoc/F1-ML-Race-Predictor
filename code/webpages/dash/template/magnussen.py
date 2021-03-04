@@ -101,7 +101,7 @@ layout = html.Div([
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -158,12 +158,12 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black',
                             'margin-bottom': '50px'}),
-    html.Div([
+   html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Son of the man believed to be the next Senna, Kevin Magnussen came into F1 with a big weight on his shoulders, that he immediately shrugged off with a podium from his first ever race entry. Joining McLaren in 2014 replacing the dissappointing Sergio Perez, he had it all to prove and he did. He was unable to hold the seat despite a relatively solid rookie season. On his day Magnussen is a rapid driver however with a habit of getting the elbows out a bit too much he developed a reputation as a dirty driver. However despite that reputation its undenialable that Magnussen is a very fast driver."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,17 +237,17 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("In 2020 the Haas had bigger problems than just those they suffered with the chassis the previous season, with the Ferrari engine being very weak the team was in a terrible situation, and this was evident by Magnussen only scoring a single point all season. The amount of work it took to get this point was evident by Magnussen's joy, and it showed how far Haas fell this season compared to previous years."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'clear':'both'}),
     ]),
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("As always the qualifying battle between Grosjean and Magnussen was very tight, this year saw Grosjean take a narrow victory but its clear to see many weekends could have gone either way."),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

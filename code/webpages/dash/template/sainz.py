@@ -161,9 +161,9 @@ layout = html.Div([
     html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Son of one of the greatest WRC drivers, Carlos Sainz Sr, Saniz followed a different path in racing to his father entering F1’s Bull Ring paired alongside Max Verstappen at Toro Rosso in 2015, Sainz quickly showed his fighting spirit. A tenacious racer, Sainz puts the car on the edge as he hustles his way through the pack.  He is well known for being intelligent as well as instinctive, thinking his way through a race and into the points. This calm temperament follows him off track where he remains unfazed by the pressures of forging a Grand Prix career with a famous name."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'13%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,7 +237,7 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("Sainz came into 2020 a changed driver in the eyes of the world. After years of being passed around and underrated by Torro Rosso and Renault, Carlos proved them all wrong in his maiden year with McLaren in 2019, Securing his first podium and helping bring McLaren back into the fight. In 2020 he only cemented ability further and has managed to secure a coveted seat with Ferrari for the 2021 Season."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -247,7 +247,7 @@ layout = html.Div([
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("Just like his teammate Lando Norris, Carlos’ greatest strength is consistency. While other drivers are making headlines for sporadic performances, the two McLaren drivers are always not far behind and ready to take advantage of any slip or mistake."),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

@@ -101,7 +101,7 @@ layout = html.Div([
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -146,7 +146,7 @@ layout = html.Div([
         html.P('Wins: ' + data[name]["wins"]),
         html.P('Podiums: ' + data[name]["podiums"]),
         html.P('First Start: ' + data[name]["first_start"]),
-        html.P('First Win: ' + data[name]["first_win"]),
+        html.P('First Podium: ' + data[name]["first_win"]),
     ],id='right',style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
@@ -158,20 +158,12 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black',
                             'margin-bottom': '50px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_TeamCareerPoints(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-       # id='example-graph', figure=gs.get_ConstructorChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_SeasonChampionship(team), style={'height':'300px', 'width':'500px'}),
-    #dcc.Graph(
-        #id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'300px', 'width':'500px'}),
    html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Raised as RedBull and then a Prancing Horse, F1's poster boy of early achievement had won more than all but two drivers in history by the time he was just 26, including back-to-back world titles between 2010 and 2013. Vettel’s trademark is pure pace and his one-finger victory salute. In the chase to the chequered flag, he likes to lead from the front. Despite having so much success early on, his dream was always to win a Championship with Ferrari. Following his move to Maranello, that mission didn’t exactly go to plan as Vettel’s rivalry with Lewis Hamilton intensified. Then came an additional thorn in his side in the form of young Ferrari team mate Charles Leclerc, the first man to outscore him over a season at the Scuderia."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -180,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -245,7 +237,7 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("Vettel's 2020 Season with Ferrari, his last with the team, was nothing short of a disaster. Where his younger teammate Charles Leclerc seemed to thrive under the pressure of a sub-par car, Vettel never seemed to be able to get to grips with it. His hopes now lie with Aston Martin for 2021 and beyond but it is still a disappointing end to an exciting tenure with Ferrari."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -255,7 +247,7 @@ layout = html.Div([
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("The gap between Charles and Vettel in Qualifying throughout the season was a real indicator of the pace difference between the two and was one of the largest gaps between teammates throughout the season."),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

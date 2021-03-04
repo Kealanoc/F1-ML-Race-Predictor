@@ -101,7 +101,7 @@ layout = html.Div([
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -146,7 +146,7 @@ layout = html.Div([
         html.P('Wins: ' + data[name]["wins"]),
         html.P('Podiums: ' + data[name]["podiums"]),
         html.P('First Start: ' + data[name]["first_start"]),
-        html.P('Highest Finish: ' + data[name]["first_win"]),
+        html.P('First Podium: ' + data[name]["first_win"]),
     ],id='right',style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
@@ -161,9 +161,9 @@ layout = html.Div([
    html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Despite only beginning his karting career at 13 which is incredibly old by F1 standards, Latifi made it to F1 in just 11 years. Largely down to an incredible 2019 F2 season where he improved on his previous season finish of 9th, he managed a massive 2nd place. This combined with an opening coming at the team he was a reserve driver for, meant Latifi would have a 2020 F1 race seat. Despite fan's initial hesitance, he earned their respect by immediately showing he wasnt here just to say he was in F1, he was here to move up the ladder."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,17 +237,17 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("Overall Latifi cannot be too displeased with his season. Prior to Russell's call up to Mercedes Latifi was leading the championship battle between the twoafter earning an 11th place finish in Austria. He would inevitably have to settle for 21st in the championship but the lack of points should not be deterrant with 3 11th placed finishes."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'clear':'both'}),
     ]),
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("The area Latifi must improve on the most is qualifying, but with Russell's apparent unbeatable qualifying pace it may be a tough ask for Latifi. Despite losing the battle 100%, races are where the points are earned and Latifi will be aware of this."),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

@@ -101,7 +101,7 @@ layout = html.Div([
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -146,7 +146,7 @@ layout = html.Div([
         html.P('Wins: ' + data[name]["wins"]),
         html.P('Podiums: ' + data[name]["podiums"]),
         html.P('First Start: ' + data[name]["first_start"]),
-        html.P('First Win: ' + data[name]["first_win"]),
+        html.P('First Podium: ' + data[name]["first_win"]),
     ],id='right',style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
@@ -158,12 +158,12 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black',
                             'margin-bottom': '50px'}),
-    html.Div([
+   html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Kimi Raikkonen, 'The Iceman' is a man known for his lightning fast pace and his insane cult status in F1. No driver on the grid has a following like Kimi, whether it be because you remember the persistence he had in 2007 to win his world title, or whether it be his bravery which saw him plunge into smoke at 300 MPH at Spa Francochamps or maybe its because of his relaxed attitude, that saw him slip onto his yacht after retiring from the Monaco GP, no matter what it is one fact remains, Kimi does his talking on the track"),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,17 +237,17 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("Due to the car and engine Kimi's season was relatively good when it came to race pace, early in the season it was not out of the ordinary to see Kimi as the leading car with a Ferrari engine but as the season went on and Ferrari sorted issues with their aero and chassis he fell back. Kimi will be looking to get back the loss he suffered in the qualifying battle against his teammate as he will not want to get into the habit of losing team battles at the end of his career."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'clear':'both'}),
     ]),
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("Kimi will be disappointed with the qualifying battle result, despite being the leading Alfas when it comes to championship standing Kimi lost a very close qualifying battle against Giovinazzi."),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

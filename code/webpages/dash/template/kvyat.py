@@ -101,7 +101,7 @@ layout = html.Div([
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -161,9 +161,9 @@ layout = html.Div([
    html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Kvyat is yet another product of the Red Bull driver family but unlike the stars he grew up with like Carlos Sainz, Max Verstappen and Daniel Ricciardo he generally fails to capture the same level of excitement and awe that the others have. Nicknamed “The Torpedo” by Sebastian Vettel for his aggressive driving style he has been a consistent mid field driver that seems to have reached his ceiling with no team really showing any desire to invest in his career long term."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,17 +237,17 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("His 2020 season was quite good and showed decent improvement from previous years but was generally overshadowed by his now superstar teammate Pierre Gasly with the Frenchman outscoring Kvyat 75 to 32. He has lost his seat in 2021 to Japanese Rookie Yuki Tsunoda which will be his second exit from F1 in his career but has since been announced as the reserve driver for Renault for 2021."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'clear':'both'}),
     ]),
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("His Qualifying performance this year could really only be described as satisfactory, while consistently behind his teammate it was to be expected and he managed to keep the gap quite small on most occasions. "),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

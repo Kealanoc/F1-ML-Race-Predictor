@@ -161,9 +161,9 @@ layout = html.Div([
    html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("Alex Ablons career thus far has been full of ups and downs and to many, including himself, it is seen as a miracle he ever made it to Formula 1 at all. His junior career wouldn't come to fruition until his 3rd place finish alongside Lando Norris and George Russell in Formula 2. This was enough to earn him a seat at Toro Rosso in 2019 and was drafted into Red Bull halfway through that season to replace the then struggling Pierre Gasly."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,7 +237,7 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("Alex’s 2020 season was nothing short of a nightmare for him from the start. After missing out on a potential win in the first round of the Season due to a crash with Lewis Hamilton, his season only seemed to go downhill from there. The gap between himself and his teammate Max Verstappen, who meanwhile is being pegged as a future world champion, seemed to only grow throughout the season and has left the question of his future up in the air."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -247,7 +247,7 @@ layout = html.Div([
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("There perhaps is no statistic that demonstrates his struggle more than the qualifying difference between himself and Max last year. Whether it's the sheer talent of Max, the inconsistency of the Red Bull or Alex's inability to cope with the pressure, we will probably never know but it is certainly a black spot no driver wants to have on their record."),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

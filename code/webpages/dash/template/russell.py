@@ -101,7 +101,7 @@ layout = html.Div([
         ),
     ]
 ),
-        #header
+    #header
     html.Div(id='driver_dropdown'),
     html.Div([
     html.H1(data[name]["name"], style={'text-indent':'100px', 
@@ -146,7 +146,7 @@ layout = html.Div([
         html.P('Wins: ' + data[name]["wins"]),
         html.P('Podiums: ' + data[name]["podiums"]),
         html.P('First Start: ' + data[name]["first_start"]),
-        html.P('First Points: ' + data[name]["first_win"]),
+        html.P('First Podium: ' + data[name]["first_win"]),
     ],id='right',style={'text-indent':'100px',
                             'vertical-align':'text-top',
                             'line-height':'50%',
@@ -158,12 +158,12 @@ layout = html.Div([
                             'font-size':'35px',
                             'color':'black',
                             'margin-bottom': '50px'}),
-    html.Div([
+   html.Div([
         html.Div([
             html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
-        ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+            html.P("One of the finest young talents to enter F1 in a very long time. Russell has an earned pedigree not many other drivers could even think of. An F2 Championship victory over Lando Norris and Alex Albon along with a dominant GP3 vicotry over drivers like Jack Aitken and Anthoine Hubert. Despite this massive pedigree and the seemingly universally found opinion that he is a future champion, he has had very little chance to show his ability or growth. The coming years will be pivotal to Russell's career."),
+        ],id='points', style={'margin-left':'3%',
+                                'margin-top':'1%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -172,7 +172,7 @@ layout = html.Div([
                         style={'height':'10%', 
                                 'width':'40%', 
                                 'margin-right':'3%', 
-                                'margin-left':'15%', 
+                                'margin-left':'12%', 
                                 'display':'inline-block',
                                 'border-radius': '10px',
                                 'border-top':'solid 10px' + data[name]["background-color"],
@@ -237,17 +237,17 @@ layout = html.Div([
                                 'border-bottom':'solid 10px' + data[name]["background-color"]}),
         html.Div([
             html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.P("2020 was a rollercoaster season for Russell, coming into the season the Williams car was better than it had been in years. Due to him still being unable to find points and with fan pressure mounting from Latifi appearing equally close to points if not closer than him, he got an opportunity of a lifetime thanks to Hamilton's COVID diagnosis. A dominant performance over Bottas with a lot of heartbreak saw George pick up his first career points."),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'clear':'both'}),
     ]),
     html.Div([
         html.Div([
             html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.P("Russell came into the season unbeaten in qualifying against teammates after dominating Robert Kubica the previous year. He held that record right up until he was paired with Bottas and he lost by only a few milliseconds. When it comes to the Williams battle however, he dominated once again and remains unbeaten in qualifying a Williams. "),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',
