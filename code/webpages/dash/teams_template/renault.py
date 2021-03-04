@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -113,11 +114,11 @@ layout = html.Div([
                                             'display':'inline-block',
                                             'clear':'both'}),
     
-    html.Img(src=data[name]["team_logo"], style={'height':'150%',
+    html.Img(src=data[name]["team_logo"], style={'width':'20%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-bottom':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -154,10 +155,10 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("Renault have an interesting history in F1, joining the sport in the late 70s and struggling until their turbo powered engines really came into their own, their greatest gift to F1 in this time was the drivers it introduced the sport to, such as Prost, Jabouille and Arnoux. They left the sport in the 80s and rejoined in the early 2000s, they became the team that knocked Ferrari off their dominant perch with Fernando Alonso. Their most recent iteration hasn't seen that level of success but they believe it can't be far away. "),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -189,16 +190,17 @@ layout = html.Div([
             html.Ul(children=[html.Li(i) for i in awards]),
         ],id='awards', style={'float':'right',
                                 'clear':'both',
+                                'width':'40%',
                                 'padding-right':'6%',
                                 'padding-top':'4%'}),
     ],style={}),
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("2020 was an interesting season for Renault, Ricciardo found his first podiums with the team as did Ocon. However a difficult start to the season for Ocon and his struggle to find real consistency could be chosen as the reason the team failed to grab third position in the constructors. With Ricciardo only failing to finish in the points twice, Ocon's lack of pace hurt the team a bit this season however it was his first back after a year on the sidelines and he'll be itching to get back and prove any doubters wrong. "),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -225,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -236,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

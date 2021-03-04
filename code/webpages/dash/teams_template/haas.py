@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -115,8 +116,9 @@ layout = html.Div([
     
     html.Img(src=data[name]["team_logo"], style={'width':'25%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -153,10 +155,10 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("Haas joined F1 in 2016 as the first American team in many years. Initially they found decent results but by the time 2018 came around they were a force in the midfield, regularly finishing best of the rest and finishing 5th in the constructors. However after rough years in 2019 and 2020 Haas must go back to the drawing board and come with a new approach or their journey could already be over."),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -195,10 +197,10 @@ layout = html.Div([
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("Haas came into the 2020 season under immense pressure, some fans were not happy that the team hadn't gotten rid of Grosjean and the constant talk around whether the team would be sold or not was following the team everywhere. Grosjean picked up his only points at the Nurburgring at the Eifel Grand Prix with an excellent 9th place finish, Magnussen's point came in Hungary with a hard fought 10th place finish."),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -225,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -236,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',

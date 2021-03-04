@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -113,11 +114,11 @@ layout = html.Div([
                                             'display':'inline-block',
                                             'clear':'both'}),
     
-    html.Img(src=data[name]["team_logo"], style={'width':'20%',
+    html.Img(src=data[name]["team_logo"], style={'width':'25%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-bottom':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -154,10 +155,10 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("Mercedes are a relatively new-comer to F1 but at the same time they are not. Originally in the sport in the 1950s, they pulled out after the horrible LeMans cdisaster of 1955 where 84 people died and 120 were injured. The team didn't return to motorsport until 2010 purchasing the reigning champion Brawn GP. They took a few years to get to grips with F1 however after 2014 and the hybrid era begun, Mercedes haven't looked back and have won 7 Constructors titles in a row."),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -190,16 +191,16 @@ layout = html.Div([
         ],id='awards', style={'float':'right',
                                 'clear':'both',
                                 'width':'40%',
-                                'padding-right':'3%',
+                                'padding-right':'6%',
                                 'padding-top':'4%'}),
-    ]),
+    ],style={}),
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("The 2020 season was a tale of 2 drivers, Hamilton had one of his strongest most dominant title wins of his career only failing to win 5 races that he entered and not winning in Sakhir due to his Covid diagnosis. Whereas Bottas has been under increased scrutiny all season due to fan's frustration with Hamilton's dominance. Bottas showed moments of breaking from Hamilton's shadow but with his peformance in Sakhir where Russell was much faster, overtook Bottas from the get go, and overtook him while racing."),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -226,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -237,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',
@@ -257,7 +258,7 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
     ]),
 
-    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px','background-color': '#cccccc'}),
+    ], style={'font-family':'Yu Gothic UI', 'margin':'0', 'padding':'0', 'height':'100%','width':'100%', 'font-size':'25px', 'background-color': '#cccccc'}),
 
 if __name__ == '__main__':
     app.run_server(debug=True)

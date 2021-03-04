@@ -20,6 +20,7 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 awards = data[name]["awards_won"]
 drivers = data[name]["top_drivers"]
+history = data[name]["team_history"]
 
 teams_dd = dbc.DropdownMenu(
                     children=[
@@ -115,8 +116,9 @@ layout = html.Div([
     
     html.Img(src=data[name]["team_logo"], style={'width':'25%',
                                             'float':'right',
-                                            'padding-top':'6%',
-                                            'padding-right':'2.5%',
+                                            'margin-top':'3%',
+                                            'margin-bottom':'3%',
+                                            'margin-right':'3%',
                                             'padding-left':'2%',
                                             'display':'inline-block'}),
 
@@ -153,10 +155,10 @@ layout = html.Div([
                             'margin-bottom': '50px'}),
     html.Div([
         html.Div([
-            html.H3('Driver Summary'),
-            html.P('Max Verstappen is a young top tier Formula 1 talent and is currently one of the best drivers in the Championship. Son of former driver Jos Verstappen Max made his debut in 2015 after winning the Formula 3 Championship. Max truly came of age in 2016 however, when after a mid season promotion to Red Bull, he won his first race of his career and his first race for Red Bull in Spain.'),
+            html.H3('Team Summary'),
+            html.P("Red Bull cut their teeth in F1 in the early 2000s as sponsors of Sauber, before buying the struggling Jaguar outfit for the 2005 season they didn't have to wait long for points thanks to F1 great David Coulthard, and it wasn't long before the team was fighting their way up the championship. After 7th in 2005, 06 and 08, young driver Sebastian Vettel joined the team and helped them to 2nd in 2009, the next 4 years saw 4 double titles for Red Bull and they are still one of the best outfits in F1. "),
         ],id='points', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -188,16 +190,17 @@ layout = html.Div([
             html.Ul(children=[html.Li(i) for i in awards]),
         ],id='awards', style={'float':'right',
                                 'clear':'both',
+                                'width':'40%',
                                 'padding-right':'6%',
                                 'padding-top':'4%'}),
     ],style={}),
     #teamHistory
     html.Div([
         html.Div([
-            html.H3('Top Drivers:'),
-            html.Ul(children=[html.Li(i) for i in drivers]),
+            html.H3('2020 Season'),
+            html.P("Red Bull like Mercedes was a tale of two halves of the garage. Verstappen had an excellent season where he only finished a race off the pdoium once, but with 5 DNF's and some poor luck he couldnt mount a title challenge. Albon started well with a podium being tragically robbed after he was spun by Hamilton in Austria, he seemed to lose confidence and struggled to find any consistent form to challenge or help Verstappen. Eventually finding his first podium, he still was under immense pressure."),
         ],id='teamHistory', style={'padding-left':'6%',
-                                'padding-top':'4%',
+                                'padding-top':'2%',
                                 'width':'40%',
                                 'float':'left',
                                 'clear':'both'}),
@@ -214,7 +217,7 @@ layout = html.Div([
         ]),
     html.Div([
         dcc.Graph(
-            id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'70%', 
+            id='example-graph', figure=gs.get_TeamLineup(lineup), style={'height':'20%', 
                                     'width':'40%', 
                                     'margin-left':'3%', 
                                     'display':'inline-block',
@@ -224,8 +227,8 @@ layout = html.Div([
                                     'border-bottom':'solid 10px' + data[name]["background-color"]}),
         
         html.Div([
-            html.H3('2020 Season'),
-            html.P('The 2020 season was strong for Max despite some unfortunate circumstances at Monza, Tuscany and Sakhir among others. However in a season where you only finish outside the podium once is an incredible achivement, and really shows the elite skill of Max.'),
+            html.H3('Top Drivers:'),
+            html.Ul(children=[html.Li(i) for i in drivers]),
         ],id='points', style={'float':'right',
                                 'padding-right':'6%',
                                 'padding-top':'4%',
@@ -235,8 +238,8 @@ layout = html.Div([
 
     html.Div([
         html.Div([
-            html.H3('2020 Qualifying'),
-            html.P("Along with a year with strong finishes, Max had a year where he was untouchable in qualifying. Albon his teammate of course doesn't have the same amount of experience or the same F1 pedigree Max has but was expected to put up more of a fight than he ended up giving."),
+            html.H3('Previous Teams Under this entry'),
+            html.Ul(children=[html.Li(i) for i in history]),
         ],id='qualifying', style={'float':'left',
                                 'padding-left':'6%',
                                 'padding-top':'4%',
