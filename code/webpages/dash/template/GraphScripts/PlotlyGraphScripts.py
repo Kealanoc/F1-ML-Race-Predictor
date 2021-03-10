@@ -66,6 +66,6 @@ def get_DriverSeasonPoints(name, team):
 def get_DriverFinishesScatter(name, team):
     teamcolour = teamlist[team]
     df = pd.read_csv("static/Data/DriverRaceFinishes/{}.csv".format(name))
-    fig = px.scatter(df, x="Race_Num", y="RaceResult", color_discrete_sequence=[teamcolour], title='Driver Points Throughout History')
+    fig = px.scatter(df, x="Race_Num", y="RaceResult", color_discrete_sequence=[teamcolour], title='Driver finishes throughout career')
     fig.update_layout(yaxis_range=[25,0])
     return fig
