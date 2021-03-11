@@ -42,11 +42,13 @@
 
  - [5.2 Windows](#52-Windows)
 
-**6. Testing**
+**6. Automated Unit & System Tests**
 
  - [6.1 Unit Tests](#61-unit-tests)
 
  - [6.2 Training and Testing of Model](#62-training-and-testing-of-model)
+
+ - [6.3 Heuristic Tests](#62-heurisitc-tests)
 
 # **1. Introduction**
 
@@ -107,11 +109,11 @@ The race result CSV file also is used to produce more data frames and therefore 
 
 - ![Context Diagram](images/contextDiagram.png)
 
-## **3.1 Data Flow Diagram**
+## **3.2 Data Flow Diagram**
 
 - ![Data Flow Diagram](images/dataFlow.png)
 
-## **3.1 Use Case Diagram**
+## **3.3 Use Case Diagram**
 
 - ![Use Case Diagram](images/useCase.png)
 
@@ -176,6 +178,47 @@ The last command is what launches the web app. The cmd will not do anything visi
 - ![Windows2](images/windows2.png)
 
 Navigate to your localhost on your web browser and you will see the web app, enjoy!
+
+
+# **6. Automated Unit & System Tests**
+## 6.1 Unit Tests
+The primary focus of our testing was based around the automated testing of our API, data gathering and processing as many of the functions in the application are entirely dependent on these functioning properly. It easy to understand this level of dependency when you look at this data flow diagram:
+
+- ![Data Flow Diagram](images/dataFlow.png)
+
+From this diagram you can see that it almost forms a tree like structure where each layer is dependent on one or more elements from the previous layer.
+In order to adequately assess the depth and coverage of our tests we started by creating a document outlining all of the vital functions and their intended process and outcomes. This helped us ensure that we didn't have any major gaps in our testing.
+
+- ![Testing Doc](images/TestDoc.png)
+
+In total we have 23 Automated tests that allow for the verification and validation of each function throughout our data processing and analysis.
+
+- ![Test1](images/test1.png)
+
+## 6.2 Training and Testing of Model
+The training and testing of our machine learning model is done at run time. It works by predicting all of the results of the previous years and cross references with the actual results in order to verify if it is correct.
+The model we have used is based on a Random Forest Regression using median standard error. The weighting of hyperparameters is controlled by two parameters for the model itself, Max_features and Max_Depth. The weighting of these was decided through running the model many times using slightly different parameters each time. The chosen values as seen in the screenshot below gave us the best consistency and accuracy so they form the baseline for the model. Once the model has completed its predictions it is then scored based on the accuracy it predicted the winner of the race compared to the real data. We chose this metric as through our testing we saw that the model was more accurate for each result when the winner was predicted correctly. As you can see from the screenshot below, our model was able to predict the winner of each race in 2020 approximately 70% of the time.
+
+- ![Test2](images/test2.png)
+
+## 6.3 Heuristic Tests
+
+The final method of testing and evaluation we conducted was an evaluation based on Jakob Nielsen's heuristics.[https://www.nngroup.com/articles/ten-usability-heuristics/](https://www.nngroup.com/articles/ten-usability-heuristics/)
+
+### 6.3.1 Visibility of system status
+The status of the system is always apparent to the user as the server will display its status upon launching and will inform the user if anything has gone wrong. Dash will also Notify users of any errors that may have occurred on the front-end. 
+
+### 6.3.2 User control and freedom
+The users will have complete freedom to explore and interact with any of our dashboards and graphs. The is easily navigable through our navigation bar and dropdown menus. Each graph is dynamic and allows the user to zoom in, scroll, hover for more information, select data points and also download the graph as a png.
+
+### 6.3.3 Consistency and standards
+Our app was designed with consistency in mind due to the nature of our dynamic dashboards and graphs which allows each page to be structurally the same but also have its own unique look and style via the automatic team/driver colour coding.
+
+### 6.3.4 Error prevention
+The app has been extensively tested on the backend to ensure that all data frames and functions are operating as expected. On the front-end our web framework, Dash, will inform the user of any unexpected errors that occur with an error notification and will point the use towards what exactly has gone wrong. Due to the nature of Dash and its dynamic callbacks, one error will not necessarily cripple the entire system so much of the app may be unaffected by the error.
+
+### 6.3.5 Recognition rather than recall
+As briefly touched upon in the consistency and standards section, our application offers dynamic graphs and dashboards that can change style automatically depending on the driver/team that the user is looking at. The colour schemes chosen are reflective of the drivers and the teams official colour so it is easy to tell each driver and teams association from the style alone.
 
 # **7. Appendices**
   [http://ergast.com/mrd/](http://ergast.com/mrd/)
