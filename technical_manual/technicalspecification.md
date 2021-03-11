@@ -221,8 +221,15 @@ The app has been extensively tested on the backend to ensure that all data frame
 As briefly touched upon in the consistency and standards section, our application offers dynamic graphs and dashboards that can change style automatically depending on the driver/team that the user is looking at. The colour schemes chosen are reflective of the drivers and the teams official colour so it is easy to tell each driver and teams association from the style alone.
 
 # **7. Appendices**
-  [http://ergast.com/mrd/](http://ergast.com/mrd/)
-  [https://flask.palletsprojects.com/en/1.1.x/](https://flask.palletsprojects.com/en/1.1.x/)
-  [https://www.formula1.com/](https://www.formula1.com/)
-  [https://www.fia.com/](https://www.fia.com/)
-  [https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
+Ergast API
+[http://ergast.com/mrd/](http://ergast.com/mrd/)
+Flask Framework
+[https://flask.palletsprojects.com/en/1.1.x/](https://flask.palletsprojects.com/en/1.1.x/)
+F1.com
+[https://www.formula1.com/](https://www.formula1.com/)
+FIA.com
+[https://www.fia.com/](https://www.fia.com/)
+Scikit-Learn
+[https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
+Plotly-Dash
+[https://plotly.com/dash/](https://plotly.com/dash/)
