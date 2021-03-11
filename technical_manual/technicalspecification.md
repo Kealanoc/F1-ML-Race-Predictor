@@ -113,7 +113,7 @@ The race result CSV file also is used to produce more data frames and therefore 
 
 ## **3.1 Use Case Diagram**
 
-- ![Use Case](images/useCase.png)
+- ![Use Case Diagram](images/useCase.png)
 
 # **4. Problems and Resolutions**
 
@@ -144,7 +144,7 @@ Once Docker is installed it is a very simple process to install the web app.
 Navigate to the “dash” directory using the command line.
 Enter the command: “sudo docker run -p 8050:8050 formula_ml”
 
-- ![Use Case](images/linux.png)
+- ![Linux](images/linux.png)
 
 Once the command is entered the site should start up, you then navigate to your localhost on your browser, enjoy!
 
@@ -161,7 +161,7 @@ However, If you have any issues with Docker or do not have it installed, there i
 
 First go to your Windows search function in the bottom left and enter “cmd”
 
-- ![Use Case](images/windows1.png)
+- ![Windows1](images/windows1.png)
 
 Once in the CMD screen navigate to where you have downloaded the web app. This is done by using the ‘cd’ command.
 
@@ -173,7 +173,7 @@ Once within the file structure of our web application, enter the following comma
 
 The last command is what launches the web app. The cmd will not do anything visible for a couple of seconds. After a period of time the following will appear on your screen and will mean the app is up and operational.
 
-- ![Use Case](images/windows2.png)
+- ![Windows2](images/windows2.png)
 
 Navigate to your localhost on your web browser and you will see the web app, enjoy!
 
