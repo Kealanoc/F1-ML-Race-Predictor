@@ -108,10 +108,13 @@ The race result CSV file also is used to produce more data frames and therefore 
 ## **3.1 Context Diagram**
 
 - ![Context Diagram](images/contextDiagram.png)
+
 -A context diagram displaying a high level overview of the compnents of the system and how they communitcate with eachother.
+
 ## **3.2 Data Flow Diagram**
 
 - ![Data Flow Diagram](images/dataFlow.png)
+
 -This Diagram displays the flow of data between fucntions, dataframes and API's. Due to the architecture and design of our system each level branches out with either entire or partial reliance on previous funcitons or dataframes.
 ## **3.3 Use Case Diagram**
 
